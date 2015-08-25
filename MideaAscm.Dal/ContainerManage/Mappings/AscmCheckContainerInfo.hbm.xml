@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.ContainerManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmCheckContainerInfo" table="Ascm_Check_ContainerInfo" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+  <property name="checkId">
+    <column name="checkId" sql-type="int default 0"></column>
+  </property>
+  <property name="supplierId">
+    <column name="supplierId" sql-type="int default 0"></column>
+  </property>
+  <property name="containerId" column="containerId" length="30" />
+  <property name="createUser" column="createUser" length="20" />
+  <property name="createTime" column="createTime" length="20" />
+  <property name="status" column="status" length="20" />
+  <property name="tip" column="tip" length="200" />
+  </class>
+</hibernate-mapping>

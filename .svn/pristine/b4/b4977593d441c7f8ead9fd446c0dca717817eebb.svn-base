@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWhTeamUser" table="ASCM_WH_TEAM_USER" batch-size="50">
+    <composite-id name="pk" class="AscmWhTeamUserPK">
+      <key-property name="teamId" column="teamId" />
+      <key-property name="userId" column="userId" />
+    </composite-id>
+    <property name="isLeader" column="isLeader"/>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+  </class>
+</hibernate-mapping> 

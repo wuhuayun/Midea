@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <accMenu id="1" name="系统管理" target="" sortNo="1">
+    <accMenuTree id="1" parentId="0" name="菜单管理" sortNo="1" moduleId="1" iconCls="icon-gears"/>
+    <accMenuTree id="2" parentId="0" name="模块管理" sortNo="2" moduleId="2" iconCls="icon-gears"/>
+    <accMenuTree id="3" parentId="0" name="用户管理" sortNo="3" moduleId="3" iconCls="icon-gears"/>
+    <accMenuTree id="4" parentId="0" name="角色管理" sortNo="4" moduleId="4" iconCls="icon-gears"/>
+    <accMenuTree id="5" parentId="0" name="权限管理" sortNo="5" moduleId="5" iconCls="icon-gears"/>
+  </accMenu>
+  <modules>
+    <module id="1" name="菜单管理" url="/YnPublic/YnWebMenu/Index" sortNo="1" parameter=""/>
+    <module id="2" name="模块管理" url="/YnPublic/YnWebModule/Index" sortNo="2" parameter=""/>
+    <module id="3" name="用户管理" url="/YnPublic/YnUser/Index" sortNo="3" parameter=""/>
+    <module id="4" name="角色管理" url="/YnPublic/YnRole/Index" sortNo="4" parameter=""/>
+    <module id="5" name="权限管理" url="/YnPublic/YnWebRight/Index" sortNo="5" parameter=""/>
+  </modules>
+</menu>

@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFDD71A2-7DE8-4209-B723-4F65E0122CCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MideaAscm.Dal</RootNamespace>
+    <AssemblyName>MideaAscm.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Utils.Zip">
+      <HintPath>..\Dll\Ionic.Utils.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Net.SourceForge.Koogra">
+      <HintPath>..\Dll\Net.SourceForge.Koogra.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\Dll\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\Dll\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YnBaseClass2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnBaseClass2.dll</HintPath>
+    </Reference>
+    <Reference Include="YnBaseDal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnBaseDal.dll</HintPath>
+    </Reference>
+    <Reference Include="YnFrame.Dal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnFrame.Dal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Entities\AscmForkliftContainerLog.cs" />
+    <Compile Include="Base\Entities\AscmMaterialItem.cs" />
+    <Compile Include="Base\Entities\AscmReadingHeadLog.cs" />
+    <Compile Include="FromErp\Entities\AscmWipDiscreteJobsStatus.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmGenerateTaskRule.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmContainerUnitQuantity.cs" />
+    <Compile Include="Warehouse\Entities\AscmWhTeam.cs" />
+    <Compile Include="Warehouse\Entities\AscmWhTeamUser.cs" />
+    <Compile Include="Warehouse\Entities\AscmWhTeamUserPK.cs" />
+    <Compile Include="Base\Entities\AscmSupplier.cs" />
+    <Compile Include="Base\Entities\AscmSupplierAddress.cs" />
+    <Compile Include="Base\Entities\AscmSupplierMaterialLink.cs" />
+    <Compile Include="Base\Entities\AscmWarehouse.cs" />
+    <Compile Include="Base\Entities\AscmEmployee.cs" />
+    <Compile Include="Base\Entities\AscmEmployeeCar.cs" />
+    <Compile Include="Base\Entities\AscmRfid.cs" />
+    <Compile Include="Base\Entities\AscmUserInfo.cs" />
+    <Compile Include="Base\MyParameter.cs" />
+    <Compile Include="ContainerManage\Entities\AscmCheck.cs" />
+    <Compile Include="ContainerManage\Entities\AscmCheckContainerInfo.cs" />
+    <Compile Include="ContainerManage\Entities\AscmStoreInOut.cs" />
+    <Compile Include="ContainerManage\Entities\AscmTagLog.cs" />
+    <Compile Include="FromErp\Entities\AscmBomDepartments.cs" />
+    <Compile Include="FromErp\Entities\AscmCuxWipReleaseHeaders.cs" />
+    <Compile Include="FromErp\Entities\AscmCuxWipReleaseLines.cs" />
+    <Compile Include="FromErp\Entities\AscmHrLocationsAll.cs" />
+    <Compile Include="FromErp\Entities\AscmMtlOnhandQuantitiesDetail.cs" />
+    <Compile Include="FromErp\Entities\AscmMtlTransactionReasons.cs" />
+    <Compile Include="FromErp\Entities\AscmRcvSupply.cs" />
+    <Compile Include="FromErp\Entities\AscmWipEntities.cs" />
+    <Compile Include="FromErp\Entities\AscmWipDiscreteJobs.cs" />
+    <Compile Include="FromErp\Entities\AscmFndLookupValues.cs" />
+    <Compile Include="FromErp\Entities\AscmAkWebUserSecAttrValues.cs" />
+    <Compile Include="FromErp\Entities\AscmWipRequirementOperations.cs" />
+    <Compile Include="FromErp\Entities\AscmWipScheduleGroups.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmAllocateRule.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmBomMaterialInfo.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmDiscreteJobs.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmForklift.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmGetMaterialCreateTask.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmGetMaterialLog.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmGetMaterialTask.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmLogisticsClassInfo.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmMarkTaskLog.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmMaterialCategory.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmMaterialSubCategory.cs" />
+    <Compile Include="GetMaterialManage\Entities\AscmRequirementList.cs" />
+    <Compile Include="GetMaterialManage\Entities\ExcelUtils.cs" />
+    <Compile Include="GetMaterialManage\Entities\ImOrExMaterialDefine.cs" />
+    <Compile Include="GetMaterialManage\Entities\MtlCategoryStatusDefine.cs" />
+    <Compile Include="GetMaterialManage\Entities\WorkerIdentificationDefine.cs" />
+    <Compile Include="GetMaterialManage\Entities\WorkloadStatistics.cs" />
+    <Compile Include="IEntity\WmsAndLogistics.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmAppointmentDistribution.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmContainer.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmContainerSpec.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmContainerDelivery.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmDeliBatOrderLink.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmDeliBatSumDetail.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmDeliBatSumMain.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmDriver.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmPallet.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmPalletDelivery.cs" />
+    <Compile Include="SupplierPreparation\Entities\AscmDriverDelivery.cs" />
+    <Compile Include="Vehicle\Entities\AscmUnloadingPointController.cs" />
+    <Compile Include="Vehicle\Entities\AscmEmpCarSwipeLog.cs" />
+    <Compile Include="Base\Entities\AscmReadingHead.cs" />
+    <Compile Include="FromErp\Entities\AscmDeliveryNotifyMain.cs" />
+    <Compile Include="FromErp\Entities\AscmDeliveryNotifyDetail.cs" />
+    <Compile Include="FromErp\Entities\AscmDeliveryOrderMain.cs" />
+    <Compile Include="FromErp\Entities\AscmDeliveryOrderDetail.cs" />
+    <Compile Include="FromErp\Entities\AscmDeliveryOrderBatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base\Entities\AscmDoor.cs" />
+    <Compile Include="Vehicle\Entities\AscmTruckSwipeLog.cs" />
+    <Compile Include="Vehicle\Entities\AscmUnloadingPoint.cs" />
+    <Compile Include="Vehicle\Entities\AscmUnloadingPointLog.cs" />
+    <Compile Include="Vehicle\Entities\AscmUnloadingPointMap.cs" />
+    <Compile Include="Vehicle\Entities\AscmUnloadingPointMapLink.cs" />
+    <Compile Include="Warehouse\Entities\AscmLocationMaterialLinkPK.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMaterialLabel.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsStoreIssueCheck.cs" />
+    <Compile Include="Warehouse\Entities\AscmAssignWarelocation.cs" />
+    <Compile Include="Warehouse\Entities\AscmLocationMaterialLinkLog.cs" />
+    <Compile Include="Warehouse\Entities\AscmMesInteractiveLog.cs" />
+    <Compile Include="Warehouse\Entities\AscmMesTransStyle.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsBackInvoiceLink.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsContainerDelivery.cs" />
+    <Compile Include="Warehouse\Entities\AscmLocationMaterialLink.cs" />
+    <Compile Include="Warehouse\Entities\AscmWarelocation.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsBackInvoiceMain.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsIncManAccDetail.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsIncManAccMain.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsLocationTransfer.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsLogisticsDetailLog.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsLogisticsMainLog.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlReqDetailLink.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlReqDetailLinkPK.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlRequisitionMain.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlRequisitionDetail.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlReturnDetail.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlReturnMain.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsPreparationDetail.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsPreparationMain.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsStockTransDetail.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsStockTransMain.cs" />
+    <Compile Include="Warehouse\Entities\AscmWorkshopBuilding.cs" />
+    <Compile Include="Warehouse\Entities\AscmBuildingWarehouseLink.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsBackInvoiceDetail.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlReqMainLinkPK.cs" />
+    <Compile Include="Warehouse\Entities\AscmWmsMtlReqMainLink.cs" />
+    <Compile Include="Warehouse\Entities\CurrentDeliBatSum.cs" />
+    <Compile Include="YnDaoHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmMaterialItem.hbm.xml" />
+    <EmbeddedResource Include="Base\Mappings\AscmSupplier.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmWarehouse.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmDeliveryNotifyMain.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Purchase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmDeliveryNotifyDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmDeliveryOrderMain.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmDeliveryOrderDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmDeliveryOrderBatch.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmEmployee.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmEmployeeCar.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmRfid.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmEmpCarSwipeLog.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmReadingHead.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmDoor.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmUserInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmBomDepartments.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmHrLocationsAll.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmFndLookupValues.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmAkWebUserSsecAttrValues.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmContainerSpec.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmContainer.hbm.xml" />
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmContainerDelivery.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmDriver.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmPallet.hbm.xml" />
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmPalletDelivery.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmDriverDelivery.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmDeliBatSumDetail.hbm.xml" />
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmDeliBatSumMain.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmUnloadingPoint.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmUnloadingPointMap.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmUnloadingPointMapLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmTruckSwipeLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmUnloadingPointLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWorkshopBuilding.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmBuildingWarehouseLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWarelocation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmCuxWipReleaseHeaders.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmCuxWipReleaseLines.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmWipDiscreteJobs.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmWipEntities.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmWipRequirementOperations.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmWipScheduleGroups.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmAssignWarelocation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmLocationMaterialLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsIncManAccMain.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmSupplierAddress.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsIncManAccDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmMtlOnhandQuantitiesDetail.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmMtlTransactionReasons.hbm.xml" />
+    <EmbeddedResource Include="FromErp\Mappings\AscmRcvSupply.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsBackInvoiceMain.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsBackInvoiceDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsStockTransMain.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsStockTransDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsPreparationDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsPreparationMain.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMtlReturnMain.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMtlReturnDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsContainerDelivery.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmDeliBatOrderLink.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vehicle\Mappings\AscmUnloadingPointController.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmReadingHeadLog.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsLocationTransfer.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMtlRequisitionMain.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMtlRequisitionDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmMesInteractiveLog.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmMesTransStyle.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsBackInvoiceLink.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ContainerManage\Mappings\AscmCheck.hbm.xml" />
+    <EmbeddedResource Include="ContainerManage\Mappings\AscmCheckContainerInfo.hbm.xml" />
+    <EmbeddedResource Include="ContainerManage\Mappings\AscmStoreInOut.hbm.xml" />
+    <EmbeddedResource Include="ContainerManage\Mappings\AscmTagLog.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmAllocateRule.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmBomMaterialInfo.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmDiscreteJobs.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmForklift.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmGetMaterialLog.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmGetMaterialTask.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmMaterialCategory.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmMaterialSubCategory.hbm.xml" />
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmRequirementList.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmLocationMaterialLinkLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmAppointmentDistribution.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsLogisticsMainLog.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsLogisticsDetailLog.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmSupplierMaterialLink.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMtlReqDetailLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMtlReqMainLink.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Mappings\AscmForkliftContainerLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmMarkTaskLog.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmLogisticsClassInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWmsMaterialLabel.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWhTeamUser.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FromErp\Mappings\AscmWipDiscreteJobsStatus.hbm.xml" />
+    <EmbeddedResource Include="Warehouse\Mappings\AscmWhTeam.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GetMaterialManage\Mappings\AscmGenerateTaskRule.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SupplierPreparation\Mappings\AscmContainerUnitQuantity.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+This template was written to work with NHibernate.Test.
+Copy the template to your NHibernate.Test project folder and rename it in hibernate.cfg.xml and change it 
+for your own use before compile tests in VisualStudio.
+-->
+<!-- This is the System.Data.dll provider for SQL Server -->
+<hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <session-factory name="NHibernate.Test">
+    <property name='proxyfactory.factory_class'>NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
+    <property name="connection.driver_class">NHibernate.Driver.OracleClientDriver</property>
+    <property name="connection.connection_string">
+      <!--server=192.168.0.15;uid=sa;pwd=sa;database=ZhypInvoicing_new;-->
+      <!--User ID=mdascm;Password=123;Data Source=192.168.206.129;-->
+      <!--Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.206.129)(PORT=1521))(CONNECT_DATA=(SID=XE)));User Id=mdascm;Password=123;-->
+      <!--Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.108)(PORT=1521))(CONNECT_DATA=(SID=orcl)));User Id=yntest;Password=123;-->
+      <!--Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.108)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=orcl)));User ID=yntest;Password=123;-->
+      <!--server=.\MsSql2005;uid=sa;pwd=123;database=ZhypInvoicing;-->
+      <!--Server=(local);initial catalog=ef_test;Integrated Security=SSPI-->
+      <!--User ID=yntest;Password=123;Data Source=ynorcl;-->
+      Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.16.9.191)(PORT=1522))(CONNECT_DATA=(SERVICE_NAME=md_ascm)));User Id=ascm;Password=AScm1240#;
+      <!--Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.16.17.77)(PORT=1601)(CONNECT_DATA=(SERVICE_NAME=md_ascm)));User Id=ascm;Password=Ascm32@;-->
+
+    </property>
+    <property name="adonet.batch_size">10</property>
+    <property name="show_sql">false</property>
+    <property name="dialect">NHibernate.Dialect.Oracle10gDialect</property>
+    <property name="command_timeout">60</property>
+    <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+    <property name="hbm2ddl.auto">update</property>
+    <!--<mapping assembly="YnFrame.Dal"/>
+    <mapping assembly="MideaAscm.Dal"/>-->
+  </session-factory>
+</hibernate-configuration>

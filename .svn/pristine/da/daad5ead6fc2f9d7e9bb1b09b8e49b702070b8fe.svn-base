@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Base.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmUserInfo" table="YnUser" batch-size="50">
+    <id name="userId" column="userId" length="50">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="userName" column="userName" length="200"/>
+    <property name="password" column="password" length="150"/>
+    <property name="sex" column="sex" length="4"/>
+    <property name="email" column="email" length="200"/>
+    <property name="officeTel" column="officeTel" length="50"/>
+    <property name="mobileTel" column="mobileTel" length="50"/>
+    <property name="sortNo">
+      <column name="sortNo" sql-type="int default 0"/>
+    </property>
+    <property name="lastLoginDate" column="lastLoginDate" length="20"/>
+    <property name="lastLoginIp" column="lastLoginIp" length="20"/>
+    <property name="isAccountLocked" column="isAccountLocked"/>
+    <property name="description" column="description" length="200"/>
+    <property name="employeeId">
+      <column name="employeeId" sql-type="int default 0"/>
+    </property>
+    <property name="extExpandType" column="extExpandType" length="20"/>
+    <property name="extExpandId" column="extExpandId" length="20"/>
+    <property name="logisticsClass" column="logisticsClass" length="20"/>
+  </class>
+</hibernate-mapping>

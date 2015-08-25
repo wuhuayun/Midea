@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.SupplierPreparation.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmPallet" table="Ascm_Pallet" batch-size="50">
+    <id name="sn" column="sn" length="20">
+      <generator class="assigned"/>
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="rfid" column="rfid" length="20"/>
+    <property name="supplierId">
+      <column name="supplierId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="status" column="status" length="20"/>
+    <property name="description" column="description" length="200"/>
+  </class>
+</hibernate-mapping> 

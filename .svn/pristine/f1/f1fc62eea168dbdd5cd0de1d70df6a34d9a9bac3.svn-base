@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MideaAscm.Pad.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MideaAscm_Pad_AscmWebService_AscmWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:23784/AscmWebService.asmx</Value>
+    </Setting>
+    <Setting Name="MideaAscm_Pad_YnWebService_YnWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:23784/YnWebService.asmx
+                </Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

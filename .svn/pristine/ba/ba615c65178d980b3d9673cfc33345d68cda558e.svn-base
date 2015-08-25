@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.ContainerManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmTagLog" table="Ascm_Tag_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="sequence">
+        <!-- Oracle Sequence的名字 -->
+        <param name="sequence">Ascm_Tag_Log_id</param>
+      </generator>
+    </id>
+  <property name="bindType" column="bindType" length="20" />
+  <property name="readingHeadId">
+    <column name="readingHeadId" sql-type="int default 0"></column>
+  </property>
+  <property name="epcId" column="epcId" length="30" />
+  <property name="readTime" column="readTime" length="20" />
+  <property name="place" column="place" length="30" />
+  <property name="description" column="description" length="20" />
+  <property name="createTime" column="createTime" length="20" />
+  <property name="status" column="status" length="20" />
+  <property name="tip" column="tip" length="200" />
+  </class>
+</hibernate-mapping>

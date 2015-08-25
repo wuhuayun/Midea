@@ -1,0 +1,291 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+using MideaAscm.Dal;
+using YnBaseDal;
+using NHibernate;
+using MideaAscm.Dal.Warehouse.Entities;
+using MideaAscm.Services.Base;
+
+namespace MideaAscm.Services.Warehouse
+{
+    public class AscmWmsStockTransMainService
+    {
+        private static AscmWmsStockTransMainService ascmWmsStockTransMainServices;
+        public static AscmWmsStockTransMainService GetInstance()
+        {
+            if (ascmWmsStockTransMainServices == null)
+                ascmWmsStockTransMainServices = new AscmWmsStockTransMainService();
+            return ascmWmsStockTransMainServices;
+        }
+
+        public int GetMaxId()
+        {
+            int maxId = 0;
+            try
+            {
+                maxId = YnDaoHelper.GetInstance().nHibernateHelper.GetMaxId("select max(id) from AscmWmsStockTransMain");
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Get AscmWmsStockTransMain MaxId)", ex);
+                throw ex;
+            }
+            return maxId;
+        }
+        public AscmWmsStockTransMain Get(int id)
+        {
+            AscmWmsStockTransMain ascmWmsStockTransMain = null;
+            try
+            {
+                ascmWmsStockTransMain = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmWmsStockTransMain>(id);
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Get AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+            return ascmWmsStockTransMain;
+        }
+        public List<AscmWmsStockTransMain> GetList(string sql)
+        {
+            List<AscmWmsStockTransMain> list = null;
+            try
+            {
+                IList<AscmWmsStockTransMain> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmWmsStockTransMain>(sql);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmWmsStockTransMain>(ilist);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmWmsStockTransMain> GetList(YnPage ynPage, string sortName, string sortOrder, string queryWord, string whereOther)
+        {
+            List<AscmWmsStockTransMain> list = null;
+            try
+            {
+                string sort = " order by id ";
+                if (!string.IsNullOrEmpty(sortName))
+                {
+                    sort = " order by " + sortName.Trim() + " ";
+                    if (!string.IsNullOrEmpty(sortOrder))
+                        sort += sortOrder.Trim();
+                }
+
+                string where = "", whereQueryWord = "";
+                if (!string.IsNullOrEmpty(queryWord))
+                {
+                    whereQueryWord = " docNumber like '%" + queryWord.Trim() + "%'";
+                }
+                where = YnBaseClass2.Helper.StringHelper.SqlWhereAndAdd(where, whereQueryWord);
+                where = YnBaseClass2.Helper.StringHelper.SqlWhereAndAdd(where, whereOther);
+
+                string sql = "from AscmWmsStockTransMain ";
+                
+                if (!string.IsNullOrEmpty(where))
+                {
+                    sql += " where " + where;
+                }
+                IList<AscmWmsStockTransMain> ilist = null;
+                if (ynPage != null)
+                    ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmWmsStockTransMain>(sql + sort, sql, ynPage);
+                else
+                    ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmWmsStockTransMain>(sql + sort);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmWmsStockTransMain>(ilist);
+                    SetUserName(list);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public void Save(List<AscmWmsStockTransMain> listAscmWmsStockTransMain)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.SaveList(listAscmWmsStockTransMain);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+        }
+        public void Save(AscmWmsStockTransMain ascmWmsStockTransMain)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Save(ascmWmsStockTransMain);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+        }
+        public void Update(AscmWmsStockTransMain ascmWmsStockTransMain)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmWmsStockTransMain>(ascmWmsStockTransMain);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmWmsStockTransMain)", ex);
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Save AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+        }
+        public void Update(List<AscmWmsStockTransMain> listAscmWmsStockTransMain)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.UpdateList(listAscmWmsStockTransMain);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmWmsStockTransMain)", ex);
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Save AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+        }
+        public void Delete(int id)
+        {
+            try
+            {
+                AscmWmsStockTransMain ascmWmsStockTransMain = Get(id);
+                Delete(ascmWmsStockTransMain);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Delete(AscmWmsStockTransMain ascmWmsStockTransMain)
+        {
+            try
+            {
+                YnDaoHelper.GetInstance().nHibernateHelper.Delete<AscmWmsStockTransMain>(ascmWmsStockTransMain);
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("删除失败(Delete AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+        }
+        public void Delete(List<AscmWmsStockTransMain> listAscmWmsStockTransMain)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.DeleteList(listAscmWmsStockTransMain);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("删除失败(Delete AscmWmsStockTransMain)", ex);
+                throw ex;
+            }
+        }
+        private void SetUserName(List<AscmWmsStockTransMain> list)
+        {
+            if (list != null && list.Count > 0)
+            {
+                string ids = string.Empty;
+                foreach (AscmWmsStockTransMain ascmWmsStockTransMain in list)
+                {
+                    if (!string.IsNullOrEmpty(ids))
+                        ids += ",'";
+                    else
+                        ids += "'";
+                    ids += ascmWmsStockTransMain.createUser + "','" + ascmWmsStockTransMain.fromWarehouseUser + "','" + ascmWmsStockTransMain.toWarehouseUser + "','" + ascmWmsStockTransMain.modifyUser + "'";
+                }
+                string sql = "from AscmUserInfo where userId in (" + ids + ")";//
+                IList<AscmUserInfo> ilistAscmUserInfo = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmUserInfo>(sql);
+                if (ilistAscmUserInfo != null && ilistAscmUserInfo.Count > 0)
+                {
+                    List<AscmUserInfo> listAscmUserInfo = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmUserInfo>(ilistAscmUserInfo);
+                //List<AscmUserInfo> listAscmUserInfo = AscmUserInfoService.GetInstance().GetList(null,"","",sql,"");
+                    foreach (AscmWmsStockTransMain ascmWmsStockTransMain in list)
+                    {
+                        ascmWmsStockTransMain.createUserName = listAscmUserInfo.Find(e => e.userId == ascmWmsStockTransMain.createUser).userName;
+                        ascmWmsStockTransMain.toWarehouseUserName = listAscmUserInfo.Find(e => e.userId == ascmWmsStockTransMain.toWarehouseUser).userName;
+                        ascmWmsStockTransMain.fromWarehouseUserName = listAscmUserInfo.Find(e => e.userId == ascmWmsStockTransMain.fromWarehouseUser).userName;
+                        ascmWmsStockTransMain.modifyUserName = listAscmUserInfo.Find(e => e.userId == ascmWmsStockTransMain.modifyUser).userName;
+                    }
+                }
+            }
+        }
+    }
+}

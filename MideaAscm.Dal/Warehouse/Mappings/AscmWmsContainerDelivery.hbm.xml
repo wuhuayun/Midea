@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsContainerDelivery" table="Ascm_Wms_Container_Delivery" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="containerSn" column="containerSn" length="20"/>
+    <property name="preparationMainId">
+      <column name="preparationMainId" sql-type="int default 0"/>
+    </property>
+    <property name="materialId">
+      <column name="materialId" sql-type="int default 0"/>
+    </property>
+    <property name="quantity">
+      <column name="quantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="status" column="status" length="20"/>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping> 

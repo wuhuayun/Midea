@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.FromErp.Entities;
+
+namespace MideaAscm.Dal.Warehouse.Entities
+{
+    /// <summary>仓库领料单主表</summary>
+    public class AscmWmsMtlRequisitionMain
+    {
+        /// <summary>ID</summary>
+        public virtual int id { get; set; }
+        /// <summary>库存组织ID</summary>
+        public virtual int organizationId { get; set; }
+        /// <summary>创建人</summary>
+        public virtual string createUser { get; set; }
+        /// <summary>创建时间</summary>
+        public virtual string createTime { get; set; }
+        /// <summary>最后更新人</summary>
+        public virtual string modifyUser { get; set; }
+        /// <summary>最后更新时间</summary>
+        public virtual string modifyTime { get; set; }
+        /// <summary>领料单号:获取MES领料单闭环单号</summary>
+        public virtual string docNumber { get; set; }
+        /// <summary>手工单号（仓管员手工输入：领料单时为空；作业领料时必须输入）</summary>
+        public virtual string manualDocNumber { get; set; }
+        /// <summary>作业ID</summary>
+        public virtual int wipEntityId { get; set; }
+        /// <summary>描述</summary>
+        public virtual string description { get; set; }
+        /// <summary>状态</summary>
+        public virtual string status { get; set; }
+        ///<summary>领料员</summary>
+        public virtual string workerId { get; set; }
+        ///<summary>校验</summary>
+        public virtual bool checkout { get; set; }
+        ///<summary>当天校验的编号(发料校验)</summary>
+        public virtual int checkOutNo { get; set; }
+        ///<summary>校验时间</summary>
+        public virtual string checkTime { get; set; }
+
+        //辅助信息
+        public string createTimeCn
+        {
+            get
+            {
+                if (YnBaseClass2.Helper.DateHelper.GetDateTime(createTime) != null)
+                    return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(createTime)).ToString("yyyy-MM-dd HH:mm");
+                return "";
+            }
+        }
+        public string statusCn { get { return StatusDefine.DisplayText(status); } }
+        public List<AscmWmsMtlRequisitionDetail> listDetail { get; set; }
+        public List<AscmWmsPreparationDetail> listPreparationDetail { get; set; }
+        public List<AscmWmsMtlReqDetailLink> listReqDetailLink { get; set; }
+        /// <summary>备料单单号（以逗号间隔）</summary>
+        public string preparationDocNumbers { get; set; }
+        
+        public AscmWipDiscreteJobs ascmWipDiscreteJobs { get; set; }
+        /// <summary>作业计划开始时间</summary>
+        public string jobScheduledStartDate
+        {
+            get
+            {
+                if (ascmWipDiscreteJobs != null)
+                {
+                    object objDate = YnBaseClass2.Helper.DateHelper.GetDateTime(ascmWipDiscreteJobs.scheduledStartDate);
+                    if (objDate != null)
+                        return ((DateTime)objDate).ToString("yyyy-MM-dd HH:mm");
+                }
+                return string.Empty;
+            }
+        }
+        /// <summary>产线</summary>
+        public string jobProductionLine { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.productionLine; return string.Empty; } }
+        /// <summary>作业号</summary>
+        public string jobWipEntityName { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmWipEntities_Name; return string.Empty; } }
+        /// <summary>装配件编码</summary>
+        public string jobPrimaryItemDoc { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmMaterialItem_DocNumber; return string.Empty; } }
+        /// <summary>装配件描述</summary>
+        public string jobPrimaryItemDes { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmMaterialItem_Description; return string.Empty; } }
+        /// <summary>计划组</summary>
+        public string jobScheduleGroupsName { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmWipScheduleGroupsName; return string.Empty; } }
+        /// <summary>作业数量</summary>
+        public decimal jobQuantity { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.netQuantity; return decimal.Zero; } }
+        /// <summary>作业描述</summary>
+        public string jobDescription { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.description; return string.Empty; } }
+        /// <summary>作业状态</summary>
+        public string jobStatusTypeCn { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.statusType_Cn; return string.Empty; } }
+
+        public class StatusDefine
+        {
+            /// <summary>领料成功</summary>
+            public const string succeeded = "succeeded";
+            /// <summary>领料失败</summary>
+            public const string failed = "failed";
+
+            public static string DisplayText(string status)
+            {
+                switch (status)
+                {
+                    case succeeded: return "领料成功";
+                    case failed: return "领料失败";
+                    default: return status;
+                }
+            }
+        }
+    }
+}

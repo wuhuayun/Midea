@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+
+namespace MideaAscm.Dal.GetMaterialManage.Entities
+{
+    public class AscmGenerateTaskRule
+    {
+        /// <summary>记录编号</summary>
+        public virtual int id { get; set; }
+        /// <summary>创建人</summary>
+        public virtual string createUser { get; set; }
+        /// <summary>创建时间</summary>
+        public virtual string createTime { get; set; }
+        /// <summary>最后更新人</summary>
+        public virtual string modifyUser { get; set; }
+        /// <summary>最后更新时间</summary>
+        public virtual string modifyTime { get; set; }
+        /// <summary>总装/电装标识号</summary>
+        public virtual int identificationId { get; set; }
+        /// <summary>规则类型</summary>
+        public virtual string ruleType { get; set; }
+        /// <summary>生成规则</summary>
+        public virtual string ruleCode { get; set; }
+        /// <summary>生成方式</summary>
+        public virtual string generateMode { get; set; }
+        /// <summary>是否启用</summary>
+        public virtual string isEnable { get; set; }
+        /// <summary>关联排产员</summary>
+        public virtual string relatedRanker { get; set; }
+        /// <summary>描述</summary>
+        public virtual string description { get; set; }
+        /// <summary>其他</summary>
+        public virtual string others { get; set; }
+        /// <summary>备注</summary>
+        public virtual string tip { get; set; }
+        /// <summary>优先级</summary>
+        public virtual int priority { get; set; }
+
+        //辅助信息
+        public virtual string _createTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(createTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(createTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public virtual string _modifyTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public virtual string ruleTypeCn { get { return RuleTypeDefine.DisplayText(ruleType); } }
+        public virtual string identificationIdCn { get { return AscmDiscreteJobs.IdentificationIdDefine.DisplayText(identificationId); } }
+        
+        //关联排产员
+        public virtual AscmUserInfo ascmUserInfo { get; set; }
+        public virtual string ascmUserInfo_Name { get { if (ascmUserInfo != null) return ascmUserInfo.userName; return relatedRanker; } }
+
+        //For Example:
+        //[(子库|子库|...)&(子库:物料%物料|子库:物料%物料|...)]
+        //":"代表筛选，例如：子库:物料表示子库下筛选该物料，该物料不产生任务
+        //"%"代表物料分隔符
+        //"|"代表子库与产线分隔符
+
+        public class RuleTypeDefine
+        {
+            /// <summary>按须备料</summary>
+            public const string typeofPreStock = "TYPEOFPRESTOCK";
+            /// <summary>按须配料</summary>
+            public const string typeofMixStock = "TYPEOFMIXSTOCK";
+            /// <summary>按仓库</summary>
+            public const string typeofWarehouse = "TYPEOFWAREHOUSE";
+            /// <summary>按物料</summary>
+            public const string typeofMaterial = "TYPEOFMATERIAL";
+            /// <summary>按产线</summary>
+            public const string typeofProductLine = "TYPEOFPRODUCTLINE";
+
+            public static List<string> GetList()
+            {
+                List<string> list = new List<string>();
+                list.Add(typeofPreStock);
+                list.Add(typeofMixStock);
+                list.Add(typeofWarehouse);
+                list.Add(typeofMaterial);
+                list.Add(typeofProductLine);
+
+                return list;
+            }
+
+            public static string DisplayText(string value)
+            {
+                if (typeofPreStock == value)
+                    return "按须备料";
+                else if (typeofMixStock == value)
+                    return "按须配料";
+                else if (typeofWarehouse == value)
+                    return "按仓库";
+                else if (typeofMaterial == value)
+                    return "按物料";
+                else if (typeofProductLine == value)
+                    return "按产线";
+
+                return value;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.icon-extract{
+	background:url('icons/ynextract.gif') no-repeat;
+}
+.icon-run{
+	background:url('icons/ynrun.ico') no-repeat center center;
+}
+.icon-stop{
+	background:url('icons/ynstop.png') no-repeat center center;
+}

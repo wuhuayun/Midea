@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWipDiscreteJobsStatus" table="Ascm_Wip_Discrete_Jobs_Status" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    
+    <property name="wipEntityId" column="wipEntityId"/>
+    <property name="leaderId" column="leaderId"/>
+    <property name="leaderName" column="leaderName"/>
+    <property name="subStatus" column="subStatus"/>
+    <property name="organizationId" column="organizationId"/>
+	<property name="isStop" column="isStop"/>
+  </class>
+</hibernate-mapping> 

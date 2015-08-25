@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsIncManAccMain" table="Ascm_Wms_Inc_Man_Acc_Main" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="supplierId">
+      <column name="supplierId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="supplierAddressId">
+      <column name="supplierAddressId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="supperWarehouse" column="supperWarehouse" length="20"/>
+    <property name="supperPlateNumber" column="supperPlateNumber" length="20"/>
+    <property name="supperTelephone" column="supperTelephone" length="20"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="int default 0"/>
+    </property>
+    <property name="memo" column="memo" length="240"/>
+    <property name="responsiblePerson" column="responsiblePerson" length="20"/>
+	  <property name="uploadTime" column="uploadTime" length="20"/>
+	<property name="returnCode" column="returnCode" length="200"/>
+	<property name="returnMessage" column="returnMessage" length="500"/>
+  </class>
+</hibernate-mapping> 

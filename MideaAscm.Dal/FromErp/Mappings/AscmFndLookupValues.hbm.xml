@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmFndLookupValues" table="Ascm_Fnd_Lookup_Values" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="type" column="type" length="30"/>
+    <property name="code" column="code" length="30"/>
+    <property name="meaning" column="meaning" length="100"/>
+    <property name="description" column="description" length="240"/>
+  </class>
+</hibernate-mapping> 

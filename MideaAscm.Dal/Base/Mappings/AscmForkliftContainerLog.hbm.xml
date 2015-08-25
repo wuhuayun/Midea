@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Base.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmForkliftContainerLog" table="Ascm_Forklift_Container_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="forkliftId">
+      <column name="forkliftId" sql-type="int default 0"/>
+    </property>
+    <property name="forkliftIdRfidId" column="forkliftIdRfidId" length="20"/>
+    <property name="containerRfidId" column="containerRfidId" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="passDate" column="passDate" length="20"/>
+    <property name="times">
+      <column name="times" sql-type="int default 0"/>
+    </property>
+    <property name="readingHeadId">
+      <column name="readingHeadId" sql-type="int default 0"/>
+    </property>
+    <property name="readingHeadIp" column="readingHeadIp" length="20"/>
+    <property name="status" column="status" length="20"/>
+  </class>
+</hibernate-mapping> 

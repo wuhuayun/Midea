@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmAllocateRule" table="Ascm_Allocate_Rule" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/> 
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="workerName" column="workerName" length="20"/>
+    <property name="zRankerName" column="zRankerName" length="20"/>
+    <property name="dRankerName" column="dRankerName" length="20"/>
+    <property name="ruleCode" column="ruleCode" length="200"/>
+    <property name="other" column="other" length="100"/>
+    <property name="tip1" column="tip1" length="200"/>
+    <property name="tip2" column="tip2" length="200"/>
+    <property name="taskCount">
+      <column name="taskCount" sql-type="int default 0"/>
+    </property>
+    <property name="logisticsClassId">
+      <column name="logisticsClassId" sql-type="int default 0"/>
+    </property>
+  </class>
+</hibernate-mapping>

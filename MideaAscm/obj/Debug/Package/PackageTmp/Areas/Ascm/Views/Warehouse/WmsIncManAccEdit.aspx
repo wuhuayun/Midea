@@ -1,0 +1,628 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/YnPublic/Views/Shared/Module.Master" Inherits="System.Web.Mvc.ViewPage<MideaAscm.Dal.Warehouse.Entities.AscmWmsIncManAccMain>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	手工单接收
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <div region="north" title="" border="false" style="height:180px; padding:0px 0px 2px 0px; overflow:hidden;">
+        <div class="easyui-panel" title="" fit="true" border="true" style="overflow:hidden;">
+            <div class="easyui-layout" fit="true">
+                <div region="north" title="" border="false" style="height:30px;overflow:hidden;">
+                    <div class="div_toolbar" style="float:left; height:26px; width:100%; border-bottom:1px solid #99BBE8; padding:1px;">
+                        <% if (ynWebRight.rightEdit){ %>
+			            <a href="javascript:void(0);" id="wmsIncManAccMainSave" class="easyui-linkbutton" plain="true" icon="icon-save" onclick="Save();">收货确认</a>
+                        <%} %>
+	                </div>
+                </div>
+                <div region="center" border="false" style="overflow:auto;">
+                    <form id="editWmsIncManAccMainForm" method="post" style="">
+				        <table style="width:720px;" border="0" cellpadding="0" cellspacing="0">
+					        <tr style="height:24px">
+						        <td style="width:80px; text-align:right;" nowrap="nowrap">
+							        <span>送货单号：</span>
+						        </td>
+						        <td style="width:180px">
+                                    <input type="text" name="docNumber" style="width:120px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.docNumber%>"/>
+						        </td>
+                                <td style="width:80px; text-align:right;" nowrap="nowrap">
+							        <span>生成时间：</span>
+						        </td>
+						        <td style="width:150px">
+							        <input type="text" name="createTime" style="width:120px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.createTimeShow%>"/>
+						        </td>
+                                <td style="width:80px; text-align:right;" nowrap="nowrap">
+							        <span>责任人：</span>
+						        </td>
+						        <td style="width:150px">
+							        <input type="text" name="responsiblePerson" style="width:140px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.responsiblePerson%>"/>
+						        </td>
+					        </tr>
+					        <tr style="height:24px">
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>供方编码：</span>
+						        </td>
+						        <td>
+							        <input type="text" id="supplierDocNumber" name="supplierDocNumber" style="width:120px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.supplierDocNumber%>"/>
+							        <input id="supplierId" name="supplierId" type="hidden" value="<%=Model.supplierId%>"/>
+							        <a href="javascript:void(0);" id="selectSupplier" class="easyui-linkbutton" plain="true" iconCls="icon-extract" title="选择供应商" onclick="SelectSupplier();"></a>
+						        </td>
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>供方名称：</span>
+						        </td>
+						        <td colspan="3">
+							        <input type="text" id="supplierName" name="supplierName" style="width:372px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.supplierName%>"/>
+						        </td>
+					        </tr>
+					        <tr style="height:24px">
+                                <td style="text-align:right;" nowrap="nowrap">
+							        <span>供方地点：</span>
+						        </td>
+						        <td>
+							        <input type="text" id="supplierAddressVendorSiteCode" name="supplierAddressVendorSiteCode" style="width:120px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.supplierAddressVendorSiteCode%>"/>
+							        <input id="supplierAddressId" name="supplierAddressId" type="hidden" value="<%=Model.supplierAddressId%>"/>
+							        <a href="javascript:void(0);" id="selectSupplierAddress" class="easyui-linkbutton" plain="true" iconCls="icon-extract" title="选择供应商地址" onclick="SelectSupplierAddress($('#supplierId').val());"></a>
+						        </td>
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>地点简称：</span>
+						        </td>
+						        <td colspan="3">
+							        <input type="text" id="supplierAddressVendorSiteCodeAlt" name="supplierAddressVendorSiteCodeAlt" style="width:372px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.supplierAddressVendorSiteCodeAlt%>"/>
+						        </td>
+					        </tr>
+					        <tr style="height:24px">
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>收货仓库：</span>
+						        </td>
+						        <td>
+                                    <input id="warehouseId" name="warehouseId" type="text" style="width:120px;background-color:#F0F0F0;" readonly="readonly" value="<%=Model.warehouseId%>"/>
+							        <a href="javascript:void(0);" id="selectWarehouse" class="easyui-linkbutton" plain="true" iconCls="icon-extract" title="选择仓库" onclick="SelectWarehouse();"></a>
+						        </td>
+                                <td style="text-align:right;" nowrap="nowrap">
+							        <span>供应子库：</span>
+						        </td>
+						        <td>
+                                    <input type="text" id="supperWarehouse" name="supperWarehouse" style="width:100px;" value="<%=Model.supperWarehouse%>"/>
+                                    <a href="javascript:void(0);" id="btnSelectSupplierWarehouse" class="easyui-linkbutton" plain="true" iconCls="icon-extract" title="选择供应子库" onclick="SelectSupplierWarehouse();"></a>
+						        </td>
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>运输车牌：</span>
+						        </td>
+						        <td>
+							        <input type="text" name="supperPlateNumber" style="width:140px;" value="<%=Model.supperPlateNumber%>"/>
+						        </td>
+					        </tr>
+					        <tr style="height:24px">
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>联系电话：</span>
+						        </td>
+						        <td>
+							        <input type="text" name="supperTelephone" style="width:120px;" value="<%=Model.supperPlateNumber%>"/>
+						        </td>
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>备注：</span>
+						        </td>
+						        <td colspan="3">
+							        <input type="text" name="memo" style="width:372px;" value="<%=Model.memo%>"/>
+						        </td>
+					        </tr>
+							<tr style="height:24px">
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>上传状态：</span>
+						        </td>
+						        <td>
+							        <input type="text" id="uploadStatusCn" name="uploadStatusCn" style="width:120px;" readonly="readonly" value="<%=Model.uploadStatusCn%>" />
+						        </td>
+						        <td style="text-align:right;" nowrap="nowrap">
+							        <span>&nbsp;</span>
+						        </td>
+						        <td colspan="3">
+							         <span>&nbsp;</span>
+						        </td>
+					        </tr>
+				        </table>
+                    </form>
+                    <%-- 选择供应商 --%>
+                    <%Html.RenderPartial("~/Areas/Ascm/Views/Purchase/SupplierSelect.ascx"); %>
+                    <%-- 选择供应商地址 --%>
+                    <%Html.RenderPartial("~/Areas/Ascm/Views/Purchase/SupplierAddressSelect.ascx"); %>
+                    <%-- 选择仓库 --%>
+                    <%Html.RenderPartial("~/Areas/Ascm/Views/Warehouse/WarehouseSelect.ascx"); %>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div region="center" title="" border="true" style="padding:0px;overflow:auto;">
+		<table id="dataGridWmsIncManAccDetail" title="送货单明细信息" style="" border="false" fit="true" singleSelect="true"
+			idField="id" sortName="sortNo" sortOrder="asc" striped="true" toolbar="#tb2">
+		</table>
+        <div id="tb2">
+            <% if (ynWebRight.rightEdit){ %>
+            <span>选择物料：</span>
+            <%Html.RenderPartial("~/Areas/Ascm/Views/Public/MaterialItemSelectCombo.ascx", new MideaAscm.Code.SelectCombo() { width = "150px", onChange = "MateriaComboChange" }); %>
+            <a href="javascript:void(0);" id="wmsIncManAccDetailAdd" class="easyui-linkbutton" plain="true" icon="icon-ok" onclick="DetailAdd();">添加</a>
+			<a href="javascript:void(0);" id="wmsIncManAccDetailDelete" class="easyui-linkbutton" plain="true" icon="icon-cancel" onclick="DetailDelete();">删除</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-add" onclick="ImportExcel();" >导入数据</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="ExportExcel();">导出数据</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-remove" onclick="ExportExcelTemplate();">导出Excel模板</a>
+            <%} %>
+        </div>
+        <!--进度条-->           
+        <div id="wProgressbar" class="easyui-window" title="完成接收......" style="padding: 10px;width:440px;height:80px;"
+            data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,modal:true,shadow:true,closed:true">
+            <div id="p" class="easyui-progressbar" style="width:400px;"></div>
+        </div>
+
+        <div id="popImport" class="easyui-window" title="数据导入" style="padding: 10px;width:380px;height:200px;"
+            iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" resizable="false" collapsible="false" modal="true" shadow="true">
+            <div class="easyui-layout" fit="true">
+                <div region="center" id="FileUpload" border="false" style="padding:10px;background:#fff;border:1px solid #ccc;">
+					<form id="FormUpload" enctype="multipart/form-data" method="post" ><br />
+                        <p><input type="file" id="fileImport" name="fileImport" size="35" value=''/>&nbsp;&nbsp;</p>
+                    </form>
+                </div>
+				<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+                    <% if (ynWebRight.rightAdd || ynWebRight.rightEdit){ %>
+					<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="ImportOk()">保存</a>
+                    <% } %>
+					<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="$('#popImport').window('close');">取消</a>
+				</div>
+            </div>
+        </div>
+        <div id="wImportProgressbar" class="easyui-window" title="正在导入......" style="padding: 10px;width:440px;height:80px;"
+            data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,modal:true,shadow:true,closed:true">
+            <div id="pImport" class="easyui-progressbar" style="width:400px;"></div>
+        </div>
+	</div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentScriptAndCss" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <%-- 主表 --%>
+    <script type="text/javascript">
+        var status="new";
+        var warehouseOpenType = "";
+		setMainUploadStatus("<%=Model.returnCode%>");
+
+        function SupplierSelected(r) {
+            if (r) {
+                $('#supplierDocNumber').val(r.docNumber);
+                $('#supplierId').val(r.id);
+                $('#supplierName').val(r.name);
+                var sUrl = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Purchase/GetDefaultSupplierAddress/' + r.id;
+                $.ajax({
+                    url: sUrl,
+                    type: "post",
+                    dataType: "json",
+                    success: function (r) {
+                        if (r) {
+                            $('#supplierAddressId').val(r.vendorSiteId);
+                            $('#supplierAddressVendorSiteCode').val(r.vendorSiteCode);
+                            $('#supplierAddressVendorSiteCodeAlt').val(r.vendorSiteCodeAlt);
+                        }
+                    }
+                });
+            }
+        }
+        function SetStatus() {
+            $('#wmsIncManAccMainSave').hide();
+            $('#wmsIncManAccDetailAdd').hide();
+            $('#wmsIncManAccDetailDelete').hide();
+            $('#selectSupplier').hide();
+            $('#selectSupplierAddress').hide();
+            $('#selectWarehouse').hide();
+            $('#btnSelectSupplierWarehouse').hide();
+
+            <% if (ynWebRight.rightEdit){ %>
+            if (status=="new") {
+                $('#wmsIncManAccMainSave').show();
+                $('#wmsIncManAccDetailAdd').show();
+                $('#wmsIncManAccDetailDelete').show();
+                $('#selectSupplier').show();
+                $('#selectSupplierAddress').show();
+                $('#selectWarehouse').show();
+                $('#btnSelectSupplierWarehouse').show();
+            }
+            <%} %>
+        }
+        function SupplierAddressSelected(r) {
+            if (r) {
+                $('#supplierAddressId').val(r.vendorSiteId);
+                $('#supplierAddressVendorSiteCode').val(r.vendorSiteCode);
+                $('#supplierAddressVendorSiteCodeAlt').val(r.vendorSiteCodeAlt);
+            }
+        }
+        function WarehouseSelected(r) {
+            if (r) {
+                var detailRows = $('#dataGridWmsIncManAccDetail').datagrid('getRows');
+                if(detailRows.length>0)
+                {
+                    $.messager.confirm('确认', '更改仓库会清空收货单明细，是否确认更改？', function (result) {
+                         if (result) {
+                            $('#warehouseId').val(r.id);
+                            $('#dataGridWmsIncManAccDetail').datagrid('loadData',[]);
+                         }
+                    });
+                }
+                else
+                {
+                    $('#warehouseId').val(r.id);
+                }
+            }
+        }
+
+        function SelectSupplierWarehouse(){
+            warehouseOpenType = "supplier";
+            SelectWarehouse();
+        }
+
+        function SupplierWarehouseSelected(r) {
+            if (r) {
+                $('#supperWarehouse').val(r.id);
+            }
+
+            warehouseOpenType = "";
+        }
+
+        function Save() {
+            var rowsDetail = $('#dataGridWmsIncManAccDetail').datagrid('getRows');
+            acceptProcedureArgument();
+            if (rowsDetail == null || rowsDetail.length==0) {
+                $.messager.alert('确认', '没有送货明细!', 'error');
+                return;
+            }
+            var errorMsg = "";
+            for(var i=0;i<rowsDetail.length;i++)
+            {
+                var warelocation = $('#dataGridWmsIncManAccDetail').datagrid('getRows')[i]['warelocationId'];
+                var receivedQuantity = $('#dataGridWmsIncManAccDetail').datagrid('getRows')[i]['receivedQuantity'];
+                if(warelocation==null || warelocation=="" || warelocation=="0")
+                {
+                    errorMsg += "<li>物料<font color='red'>" + rowsDetail[i].materialDocNumber + "</font>未选择目标货位；</li>";
+                }
+                if(receivedQuantity==0 || receivedQuantity=="" || receivedQuantity=="0")
+                {
+                    errorMsg += "<li>物料<font color='red'>" + rowsDetail[i].materialDocNumber + "</font>实收数量必须大于0；</li>";
+                }
+            }
+            if (errorMsg != ""){
+                $.messager.alert('错误', "<ul>" + errorMsg + "</ul>", 'error');
+                return;
+            }
+            $.messager.confirm("确认", "确认提交保存?", function (r) {
+                if (r) {
+                    var data = {
+                        "detailJson": $.toJSON(rowsDetail)
+                    };
+                    var options = {
+                        url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsIncManAccSave/',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: data,
+                        beforeSubmit: function () {
+                            var flag = $('#editWmsIncManAccMainForm').form('validate');
+                            if (flag) {
+                                $('#wProgressbar').window('open');
+                                $('#p').progressbar('setValue', 0);
+                                setInterval(updateProgress, 200);
+                            }
+                            return flag;
+                        },
+                        success: function (r) {
+                            if (r.result) {
+                                $('#p').progressbar('setValue', 100);
+                                $('#wProgressbar').window('close');
+
+                                $("#editWmsIncManAccMainForm input[name='docNumber']").val(r.entity.docNumber);
+                                $("#editWmsIncManAccMainForm input[name='responsiblePerson']").val(r.entity.responsiblePerson);
+                                status="query";
+                                SetStatus();
+                                $.messager.alert('提示', '提交完成!', 'info');
+
+								//上传状态
+								setMainUploadStatus(r.entity.returnCode);
+                            } else {
+                                $('#p').progressbar('setValue', 100);
+                                $('#wProgressbar').window('close');
+
+                                $.messager.alert('错误', '提交失败:' + r.message, 'error');
+                            }
+                        }
+                    };
+                    $('#editWmsIncManAccMainForm').ajaxForm(options);
+                    $('#editWmsIncManAccMainForm').submit();
+                }
+            });
+        }
+        function updateProgress() {
+            var value = $('#p').progressbar('getValue');
+            if (value < 99) {
+                $('#p').progressbar('setValue', value + 1);
+            }
+        }
+    </script>
+    <%-- 明细表 --%>
+    <script type="text/javascript">
+        var currentDetailId = null;
+        $(function () {
+            $('#dataGridWmsIncManAccDetail').datagrid({
+                rownumbers: true,
+                loadMsg: '更新数据......',
+                frozenColumns: [[
+                    { field: 'releaseLineId', title: 'ID', width: 20, align: 'center', hidden: 'true' },
+                    { field: 'materialDocNumber', title: '物料编码', width: 100, align: 'center' }
+                ]],
+                columns: [[
+                    { field: 'materialName', title: '物料描述', width: 300, align: 'left' },
+                    { field: 'warelocationId', title: '货位', width: 110, align: 'center',
+                        formatter:function(value,row){
+                        return row.docNumber;
+                    },
+                    editor:{
+                        type:'combobox',
+                        options:
+                        {
+                            valueField:'id',
+                            textField:'docNumber',
+                            multiple:false,
+                            editable:false,
+                            mode:'remote'
+                        }
+                    }},
+                    { field: 'materialUnit', title: '单位', width: 40, align: 'center' },
+                    { field: 'receivedQuantity', title: '实收数量', width: 80, align: 'center',editor: { type: 'numberbox', options: { min: 0, validType: 'checkQuantity'}}}
+                ]],
+                onSelect: function (rowIndex, rowData) {
+                    currentId = rowData.id;
+                },
+                onClickRow:function(rowIndex,rowRec){
+                    <% if (ynWebRight.rightEdit){ %>
+                    clickWmsStockTransDetailRow(rowIndex);
+                    <%} %>
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+
+                },
+                onLoadSuccess: function () {
+                    editIndex=undefined;
+                    $(this).datagrid('clearSelections');
+                    if (currentDetailId) {
+                        $(this).datagrid('selectRecord', currentDetailId);
+                    }
+                }
+            });
+            SetStatus();
+        });
+        $.extend($.fn.numberbox.defaults.rules, {
+            checkQuantity: {
+                validator: function (value, param) {
+                    if (editIndex == undefined) { return true; }
+                    return value > 0;
+                },
+                message: '实收数量必须大于0！'
+            }
+        });
+        function DetailDelete() {
+            var selectRow = $('#dataGridWmsIncManAccDetail').datagrid('getSelected');
+            if (selectRow) {
+                var currentDetailRowIndex = $('#dataGridWmsIncManAccDetail').datagrid('getRowIndex', selectRow);
+                $('#dataGridWmsIncManAccDetail').datagrid('deleteRow', parseInt(currentDetailRowIndex));
+                editIndex = undefined;
+            } else {
+                $.messager.alert('提示', '请选择要删除的明细记录！', 'info');
+            }
+        }
+        function DeliveryQuantityChange()
+        {
+            $('#receivedQuantity').val($('#deliveryQuantity').val());
+        }
+        var iFlag=false;
+        function MateriaComboChange()
+        {
+            iFlag=true;
+        }
+        function DetailAdd()
+        {   
+            var warehouseId=$('#warehouseId').val();
+            if(warehouseId==null||warehouseId==""||warehouseId=="0")
+            {
+                $.messager.alert("提示", "请先选择收货仓库！", "info");
+                $('#warehouseId').focus();
+                return;
+            }
+            if(iFlag)
+            {
+                iFlag=false;
+                var materialDoc=$('#materialItemSelect').combogrid('getText');
+                var detialRows=$('#dataGridWmsIncManAccDetail').datagrid('getRows');
+                var bAdd=true;
+                if(materialDoc)
+                {
+                    $.each(detialRows,function(index,item){
+                        if(materialDoc==item.materialDocNumber)
+                        {
+                            bAdd=false;
+                            return;
+                        }
+                    });
+                    if(bAdd)
+                    {
+                        var sUrl = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/MaterialAdd/?materialDoc=' + materialDoc+"&warehouseId="+encodeURIComponent(warehouseId);
+                        $.ajax({
+                            url: sUrl,
+                            type: "post",
+                            dataType: "json",
+                            success: function (r) {
+                                if (r.result) {
+                                    var warelocationId=r.entity.warelocationId;
+                                    if(warelocationId==0)
+                                        warelocationId="";
+                                    $('#dataGridWmsIncManAccDetail').datagrid('appendRow',{
+                                        incManAccDetailId: 0,
+                                        materialId: r.entity.id,
+                                        materialDocNumber: r.entity.docNumber,
+                                        materialName: r.entity.description,
+                                        materialUnit: r.entity.unit,
+                                        docNumber:r.entity.warelocationDoc,
+                                        warelocationId:warelocationId,
+                                        receivedQuantity: 0
+                                    });
+                                    $('#materialItemSelect').combogrid('clear');
+                                }
+                                else{
+                                    $.messager.alert('警告', r.message, 'error');
+                                }
+                            }
+                        });
+                    }
+                    else
+                    {
+                        $.messager.alert('提示', '已存在物料'+materialDoc+'！', 'info');
+                    }
+                }
+                else
+                {
+                    $.messager.alert('提示', '请选择物料！', 'info');
+                }
+            }
+        }
+    </script>
+    <%-- 单击编辑 --%>
+    <script type="text/javascript">
+        var editIndex = undefined;
+        function endEditing() {
+            if (editIndex == undefined) { return true }
+            if ($('#dataGridWmsIncManAccDetail').datagrid('validateRow', editIndex)) {
+                var ed = $('#dataGridWmsIncManAccDetail').datagrid('getEditor', { index: editIndex, field: 'warelocationId' });
+                var docNumber = $(ed.target).combobox('getText');
+                $('#dataGridWmsIncManAccDetail').datagrid('getRows')[editIndex]['docNumber'] = docNumber;
+                $('#dataGridWmsIncManAccDetail').datagrid('endEdit', editIndex);
+                editIndex = undefined;
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function clickWmsStockTransDetailRow(index, warelocationId) {
+            if (editIndex != index) {
+                if (endEditing()) {
+                    $('#dataGridWmsIncManAccDetail').datagrid('selectRow', index).datagrid('beginEdit', index);
+
+                    var ed = $('#dataGridWmsIncManAccDetail').datagrid('getEditor', { index: index, field: 'warelocationId' });
+                    var mateDoc=$('#dataGridWmsIncManAccDetail').datagrid('getRows')[index]['materialDocNumber'];
+                    var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WareLocationCbList/?warehouseId=' + encodeURIComponent($('#warehouseId').val()) + "&materialDocNumber=" + mateDoc;
+                    $(ed.target).combobox('reload', url);
+
+                    if (warelocationId != undefined && warelocationId > 0) {
+                        $(ed.target).combobox('setValue', warelocationId);
+
+                        $('#dataGridWmsIncManAccDetail').datagrid('endEdit', index);
+                        editIndex = undefined;
+                    }
+                    else {
+                        editIndex = index;
+                    }
+                } else {
+                    $('#dataGridWmsIncManAccDetail').datagrid('selectRow', editIndex);
+                }
+            }
+        }
+        function acceptProcedureArgument() {
+            if (endEditing()) {
+                $('#dataGridWmsIncManAccDetail').datagrid('acceptChanges');
+            }
+        }
+    </script>
+    <%-- 导入物料 --%>
+    <script type="text/javascript">
+        function ImportExcel() {
+            $('#popImport').window('open');
+        }
+
+        function ImportOk() {
+            var _selFile = $('#FormUpload input[Name=fileImport]').val();
+            if (_selFile == "") {
+                $.messager.alert('警告', "请选择文件！", 'warning');
+                return;
+            }
+            $('#wImportProgressbar').window('open');
+            $('#pImport').progressbar('setValue', 0);
+            setInterval(updateProgressImport, 600);
+            $('#FormUpload').form('submit', {
+                url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/ManAccImportMaterial/',
+                onSubmit: function () {
+                    return $('#FormUpload').form('validate');
+                },
+                success: function (result) {
+                    $('#pImport').progressbar('setValue', 100);
+                    $('#wImportProgressbar').window('close');
+                    var retValue = eval('(' + result + ')');
+                    $('#popImport').window('close');
+                    if (retValue.result) {
+                        var rows = retValue.rows;
+                        if (rows && rows.length > 0) {
+                            for (var i = 0; i < rows.length; i++) {
+                                var row = rows[i];
+
+                                $('#dataGridWmsIncManAccDetail').datagrid('appendRow', {
+                                    incManAccDetailId: 0,
+                                    materialId: row.materialId,
+                                    materialDocNumber: row.materialDocNumber,
+                                    materialName: row.materialName,
+                                    materialUnit: row.materialUnit,
+                                    docNumber: row.warelocationdocNumber,
+                                    warelocationId: row.warelocationId,
+                                    receivedQuantity: row.receivedQuantity
+                                });
+                            }
+
+                            $.messager.alert('确认', "导入成功！", '');
+                        }
+                    }
+                    else {
+                        $.messager.alert('错误', retValue.message, 'error');
+                    }
+                }
+            });
+        }
+
+        function updateProgressImport() {
+            var value = $('#pImport').progressbar('getValue');
+            if (value < 99) {
+                $('#pImport').progressbar('setValue', value + 1);
+            }
+        }
+    </script>
+
+    <%-- 导出物料 --%>
+    <script type="text/javascript">
+        function ExportExcel() {
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/ManAccExportMaterial/';
+            var rowsDetail = $('#dataGridWmsIncManAccDetail').datagrid('getRows');
+            acceptProcedureArgument();
+            if (rowsDetail == null || rowsDetail.length == 0) {
+                $.messager.alert('确认', '没有送货明细!', 'error');
+                return;
+            }
+
+            var params = {
+                "detailJson": $.toJSON(rowsDetail)
+            };
+            var iframe = document.createElement("iframe");
+            iframe.src = url + "?" + $.param(params);
+            iframe.style.display = "none";
+            document.body.appendChild(iframe);
+        }
+
+        function ExportExcelTemplate() {
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/ManAccExportMaterialTemplate/';
+
+            var iframe = document.createElement("iframe");
+            iframe.src = url;
+            iframe.style.display = "none";
+            document.body.appendChild(iframe);
+        }
+    </script>
+</asp:Content>

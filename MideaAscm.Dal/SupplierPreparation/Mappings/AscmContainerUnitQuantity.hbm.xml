@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.SupplierPreparation.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmContainerUnitQuantity" table="Ascm_Container_Unit_Quantity" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="supplierId" column="supplierId"/>
+    <property name="materialDocNumber" column="materialDocNumber" length="20"/>
+    <property name="container" column="container" length="20"/>
+    <property name="unitQuantity">
+      <column name="unitQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+  </class>
+</hibernate-mapping>

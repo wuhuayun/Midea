@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using YnFrame.Dal.Entities;
+using MideaAscm.Dal.FromErp.Entities;
+
+namespace MideaAscm.Dal.GetMaterialManage.Entities
+{
+    /// <summary>
+    /// 任务标记
+    /// </summary>
+    public class AscmMarkTaskLog
+    {
+        /// <summary>记录编号</summary>
+        public virtual int id { get; set; }
+        /// <summary>创建人</summary>
+        public virtual string createUser { get; set; }
+        /// <summary>创建时间</summary>
+        public virtual string createTime { get; set; }
+        /// <summary>最后更新人</summary>
+        public virtual string modifyUser { get; set; }
+        /// <summary>最后更新时间</summary>
+        public virtual string modifyTime { get; set; }
+        /// <summary>作业号ID</summary>
+        public virtual int wipEntityId { get; set; }
+        /// <summary>任务号</summary>
+        public virtual int taskId { get; set; }
+        /// <summary>是否标记</summary>
+        public virtual int isMark { get; set; }
+        /// <summary>标记类型</summary>
+        public virtual string markType { get; set; }
+        /// <summary>仓库</summary>
+        public virtual string warehouseId { get; set; }
+
+        //辅助信息
+        public virtual string _createTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(createTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(createTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public virtual string _modifyTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public YnUser CreateUser;
+        public virtual string createUserName { get { if (CreateUser != null) return CreateUser.userName; return createUser; } }
+        public YnUser ModifyUser;
+        public virtual string modifyUserName { get { if (ModifyUser != null) return ModifyUser.userName; return modifyUser; } }
+        public AscmWipEntities ascmWipEntities;
+        public virtual string ascmWipEntitiesName { get { if (ascmWipEntities != null) return ascmWipEntities.name; return wipEntityId.ToString(); } }
+        public AscmGetMaterialTask ascmGetMaterialTask;
+        public virtual string ascmGetMaterialTaskId { get { if (ascmGetMaterialTask != null) return ascmGetMaterialTask.taskIdCn; return taskId.ToString(); } }
+        public virtual string markTypeCn { get { return MarkTypeDefine.Display(markType); } }
+
+        #region 标记定义
+        public class MarkDefine
+        {
+            /// <summary>取消标记</summary>
+            public const int isFalse = 0;
+            /// <summary>标记</summary>
+            public const int isTrue = 1;
+
+            public static string Display(int value)
+            {
+                if (value == isFalse)
+                    return "未标记";
+                if (value == isTrue)
+                    return "已标记";
+
+                return value.ToString();
+            }
+
+            public static List<int> GetList()
+            {
+                List<int> list = new List<int>();
+                list.Add(isFalse);
+                list.Add(isTrue);
+
+                return list;
+            }
+        }
+        #endregion
+
+        #region 标记类型定义
+        public class MarkTypeDefine
+        {
+            /// <summary>自动</summary>
+            public const string auto = "AUTO";
+            /// <summary>非自动</summary>
+            public const string nonauto = "NONAUTO";
+
+            public static string Display(string value)
+            {
+                if (value == auto)
+                    return "自动";
+                if (value == nonauto)
+                    return "非自动";
+
+                return value;
+            }
+
+            public static List<string> GetList()
+            {
+                List<string> list = new List<string>();
+                list.Add(auto);
+                list.Add(nonauto);
+
+                return list;
+            }
+        }
+        #endregion
+    }
+}

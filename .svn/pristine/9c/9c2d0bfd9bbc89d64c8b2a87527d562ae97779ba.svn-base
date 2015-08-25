@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Base.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmEmployee" table="Ascm_Employee" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="30"/>
+    <property name="departmentId">
+      <column name="departmentId" sql-type="int default 0"/>
+    </property>
+    <property name="name" column="name" length="20"/>
+    <property name="sex" column="sex" length="4"/>
+    <property name="idNumber" column="idNumber" length="20"/>
+    <property name="email" column="email" length="100"/>
+    <property name="officeTel" column="officeTel" length="20"/>
+    <property name="mobileTel" column="mobileTel" length="20"/>
+    <property name="startTime" column="startTime" length="20"/>
+    <property name="birth" column="birth" length="20"/>
+    <property name="memo" column="memo" length="240"/>
+    <property name="status" column="status" length="20"/>
+  </class>
+</hibernate-mapping> 

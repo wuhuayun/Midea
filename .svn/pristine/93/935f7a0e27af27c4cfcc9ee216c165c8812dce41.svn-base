@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="MideaAscm.Pad.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <system.serviceModel>
+        <bindings/>
+        <client/>
+    </system.serviceModel>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup>
+    <applicationSettings>
+        <MideaAscm.Pad.Properties.Settings>
+            <setting name="MideaAscm_Pad_AscmWebService_AscmWebService" serializeAs="String">
+                <value>http://10.16.9.42:8080/AscmWebService.asmx</value>
+            </setting>
+            <setting name="MideaAscm_Pad_YnWebService_YnWebService" serializeAs="String">
+                <value>http://10.16.9.42:8080/YnWebService.asmx</value>
+            </setting>
+        </MideaAscm.Pad.Properties.Settings>
+    </applicationSettings>
+</configuration>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsMtlReqDetailLink" table="Ascm_Wms_Mtl_Req_Detail_Link" batch-size="50">
+    <composite-id name="reqDetailLinkPK" class="AscmWmsMtlReqDetailLinkPK">
+      <key-property name="reqDetailId" column="reqDetailId"/>
+      <key-property name="preDetailId" column="preDetailId"/>
+    </composite-id>
+    <property name="quantity">
+      <column name="quantity" sql-type="NUMBER default 0"/>
+    </property>
+  </class>
+</hibernate-mapping> 

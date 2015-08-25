@@ -1,0 +1,562 @@
+记录时间：2015-08-24 18:04:01,532 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:07,833 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:12,536 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:18,836 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:24,539 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:30,836 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:36,537 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:42,843 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:48,536 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:04:54,839 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:00,540 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:06,841 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:12,538 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:18,839 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:34,357 线程ID:[19] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-24 18:05:55,150 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:55,954 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:05:59,032 线程ID:[20] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-24 18:06:21,687 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:29,898 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:29,913 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:36,995 线程ID:[9] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:37,019 线程ID:[24] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:37,063 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:37,103 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:37,145 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:42,969 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:48,669 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:06:54,973 线程ID:[18] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:00,667 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:06,974 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:12,668 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:18,971 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:24,713 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:30,975 线程ID:[9] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:36,670 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:42,976 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:48,670 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:07:54,974 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:08:00,676 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:08:06,974 线程ID:[24] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:08:12,672 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:08:40,169 线程ID:[8] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-24 18:09:07,823 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobs)
+Oracle.DataAccess.Client.OracleException ORA-04063: package body "MD_ASCM.CUX_ASCM_INTERFACE_UTL" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "MD_ASCM.CUX_ASCM_INTERFACE_UTL"
+ORA-06512: at line 1    在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   在 MideaAscm.Services.FromErp.AscmWipDiscreteJobsService.GetListForMonitor(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, Boolean isSetWipEntities, Boolean isSetScheduleGroups, Boolean isSetMaterialItem, Boolean isSetLookupValues) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipDiscreteJobsService.cs:行号 214
+记录时间：2015-08-24 18:09:35,425 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2015-08-24 18:10:59,405 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-24 18:10:59,405 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-24 18:12:22,886 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select wipEntit1_124_,organiza2_124_,createUser124_,createTime124_,modifyUser124_,modifyTime124_,name124_,type124_,descript9_124_,primary10_124_,genObje11_124_ from ( select ascmwipent0_.wipEntityId as wipEntit1_124_, ascmwipent0_.organizationId as organiza2_124_, ascmwipent0_.createUser as createUser124_, ascmwipent0_.createTime as createTime124_, ascmwipent0_.modifyUser as modifyUser124_, ascmwipent0_.modifyTime as modifyTime124_, ascmwipent0_.name as name124_, ascmwipent0_.type as type124_, ascmwipent0_.description as descript9_124_, ascmwipent0_.primaryItemId as primary10_124_, ascmwipent0_.genObjectId as genObje11_124_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' order by ascmwipent0_.name asc ) where rownum <=:p0 ]
+[SQL: select wipEntit1_124_,organiza2_124_,createUser124_,createTime124_,modifyUser124_,modifyTime124_,name124_,type124_,descript9_124_,primary10_124_,genObje11_124_ from ( select ascmwipent0_.wipEntityId as wipEntit1_124_, ascmwipent0_.organizationId as organiza2_124_, ascmwipent0_.createUser as createUser124_, ascmwipent0_.createTime as createTime124_, ascmwipent0_.modifyUser as modifyUser124_, ascmwipent0_.modifyTime as modifyTime124_, ascmwipent0_.name as name124_, ascmwipent0_.type as type124_, ascmwipent0_.description as descript9_124_, ascmwipent0_.primaryItemId as primary10_124_, ascmwipent0_.genObjectId as genObje11_124_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' order by ascmwipent0_.name asc ) where rownum <=:p0] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleDataReader.Read()
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-24 18:12:22,896 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select wipEntit1_124_,organiza2_124_,createUser124_,createTime124_,modifyUser124_,modifyTime124_,name124_,type124_,descript9_124_,primary10_124_,genObje11_124_ from ( select ascmwipent0_.wipEntityId as wipEntit1_124_, ascmwipent0_.organizationId as organiza2_124_, ascmwipent0_.createUser as createUser124_, ascmwipent0_.createTime as createTime124_, ascmwipent0_.modifyUser as modifyUser124_, ascmwipent0_.modifyTime as modifyTime124_, ascmwipent0_.name as name124_, ascmwipent0_.type as type124_, ascmwipent0_.description as descript9_124_, ascmwipent0_.primaryItemId as primary10_124_, ascmwipent0_.genObjectId as genObje11_124_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' order by ascmwipent0_.name asc ) where rownum <=:p0 ]
+[SQL: select wipEntit1_124_,organiza2_124_,createUser124_,createTime124_,modifyUser124_,modifyTime124_,name124_,type124_,descript9_124_,primary10_124_,genObje11_124_ from ( select ascmwipent0_.wipEntityId as wipEntit1_124_, ascmwipent0_.organizationId as organiza2_124_, ascmwipent0_.createUser as createUser124_, ascmwipent0_.createTime as createTime124_, ascmwipent0_.modifyUser as modifyUser124_, ascmwipent0_.modifyTime as modifyTime124_, ascmwipent0_.name as name124_, ascmwipent0_.type as type124_, ascmwipent0_.description as descript9_124_, ascmwipent0_.primaryItemId as primary10_124_, ascmwipent0_.genObjectId as genObje11_124_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' order by ascmwipent0_.name asc ) where rownum <=:p0] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleDataReader.Read()
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 09:10:56,644 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-25 09:11:26,494 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2015-08-25 09:12:36,262 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 09:12:46,829 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 09:12:46,832 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 11:04:32,154 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-25 11:05:03,480 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2015-08-25 11:06:23,309 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-25 11:06:47,573 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2015-08-25 11:07:58,506 线程ID:[18] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 11:07:58,521 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 11:07:59,427 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 11:08:00,589 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where upper(ascmwipent0_.name) like '%%'] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: user requested cancel of current operation
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 F:\Works\ASCM\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2015-08-25 11:08:25,322 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2015-08-25 11:08:53,229 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2015-08-25 11:08:53,307 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2015-08-25 11:29:54,293 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...

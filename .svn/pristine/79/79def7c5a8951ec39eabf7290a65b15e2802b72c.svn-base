@@ -1,0 +1,103 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/YnPublic/Views/Shared/Module.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	手工单查询
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+	<div region="center" title="" border="true" style="padding:0px;overflow:auto;">
+		<table id="dataGridWmsIncManAccMain" title="手工单查询" style="" border="false" fit="true" singleSelect="true"
+			idField="id" sortName="id" sortOrder="asc" striped="true" toolbar="#tb1">
+		</table>
+        <div id="tb1">
+			<div style="margin-bottom:5px;">
+				送货单号：<input id="docNumber" type="text" style="width:130px;" />
+				供方编号：<input id="supplierDoc" type="text" style="width:130px;" />
+				<a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-search" onclick="Search();"></a>
+				<a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-print" onclick="Print();">打印</a>
+			</div>
+			<div style="margin-bottom:5px;">
+				<span>更新时间：</span>
+				<input class="easyui-datebox" id="queryStartModifyTime" type="text" style="width:100px;" value="<%=ViewData["dtStart"] %>" />-<input class="easyui-datebox" id="queryEndModifyTime" type="text" style="width:100px;" value="<%=ViewData["dtEnd"] %>" />
+				
+				<span> 上传状态： </span>
+			    <select id="queryReturnCode" name="queryReturnCode" style="width:80px;">
+					<option value="" selected="selected">所有</option>
+                    <option value="0" >正常</option>
+					<option value="-1" >异常</option>
+                </select>
+			</div>
+        </div>
+	</div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentScriptAndCss" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <script type="text/javascript">
+        $(function () {
+            $('#dataGridWmsIncManAccMain').datagrid({
+//                url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsIncManAccMainList',
+                pagination: true,
+                pageSize: 50,
+                loadMsg: '更新数据......',
+                columns: [[
+                    { field: 'id', title: 'ID', width: 20, align: 'center', hidden: 'true' },
+                    { field: 'docNumber', title: '送货单号', width: 150, align: 'center' },
+                    { field: 'supplierDocNumber', title: '供应商编号', width: 100, align: 'center' },
+                    { field: 'supplierName', title: '供应商', width: 300, align: 'left' },
+//                    { field: 'supplierAddressVendorSiteCode', title: '供应商地址', width: 150, align: 'left' },
+                    { field: 'supperWarehouse', title: '出货子库', width: 100, align: 'center' },
+//                    { field: 'supperPlateNumber', title: '车牌号', width: 80, align: 'center' },
+//                    { field: 'supperTelephone', title: '联系方式', width: 100, align: 'center' },
+                    { field: 'warehouseId', title: '收货子库', width: 100, align: 'center' },
+                    { field: 'modifyTime', title: '更新时间', width: 150, align: 'center' },
+                    { field: 'memo', title: '备注', width: 200, align: 'left' },
+					{ field: 'uploadStatusCn', title: '上传状态', width: 100, align: 'center' },
+					{ field: 'uploadTimeShow', title: '上传日期', width: 100, align: 'center' }
+                ]],
+				rowStyler : setRowStyle_ReturnCode,
+                onSelect: function (rowIndex, rowData) {
+                    currentId=rowData.id;
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    WmsIncManAccView();
+                },
+                onLoadSuccess: function () {
+                    $(this).datagrid('clearSelections');
+                    if (currentId) {
+                        $(this).datagrid('selectRecord', currentId);
+                    }
+                }
+            });
+        });
+        function Search() {
+            var options=$('#dataGridWmsIncManAccMain').datagrid('options');
+            options.url='<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsIncManAccMainList';
+            options.queryParams.queryWord = $('#docNumber').val();
+            options.queryParams.supplierDoc = $('#supplierDoc').val();
+            options.queryParams.startModifyTime = $('#queryStartModifyTime').datebox('getText');
+            options.queryParams.endModifyTime = $('#queryEndModifyTime').datebox('getText');
+			options.queryParams.returnCode = $('#queryReturnCode').val();
+            $('#dataGridWmsIncManAccMain').datagrid('reload');
+        }
+        var currentId = null;
+        function WmsIncManAccView() {
+            var selectRow = $('#dataGridWmsIncManAccMain').datagrid('getSelected');
+            if (selectRow) {
+                var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsIncManAccView/' + selectRow.id+"?mi=<%=Request["mi"].ToString() %>";
+                parent.openTab('手工单_' + selectRow.docNumber, url);
+            } else {
+                $.messager.alert('提示', '请选择手工单！', 'info');
+            }
+        }
+        function Print() { 
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/Ascm/ReportViewer/WmsIncManAccMainPrint.aspx';
+            url += "?docNumber=" + $('#docNumber').val();
+            url += "&supplierDoc=" + $("#supplierDoc").val();
+            url += "&queryStartModifyTime=" + $("#queryStartModifyTime").datebox('getText');
+            url += "&queryEndModifyTime=" + $("#queryEndModifyTime").datebox('getText');
+            parent.openTab('手工单查询日志打印', url);
+        }
+    </script>
+</asp:Content>

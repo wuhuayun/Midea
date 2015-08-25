@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Base.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmReadingHeadLog" table="Ascm_Reading_Head_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="sequence">
+        <!-- Oracle Sequence的名字 -->
+        <param name="sequence">Ascm_Reading_Head_Log_id</param>
+      </generator>
+    </id>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="readingHeadId">
+      <column name="readingHeadId" sql-type="NUMBER(10)"/>
+    </property>
+    <property name="sn" column="sn" length="20"/>
+    <property name="rfid" column="rfid" length="30"/>
+    <property name="processed" column="processed"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,176 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.FromErp.Entities;
+using MideaAscm.Dal.Base.Entities;
+
+namespace MideaAscm.Dal.SupplierPreparation.Entities
+{
+    /// <summary>送货合单明细</summary>
+    public class AscmDeliBatSumDetail
+    {
+        ///<summary>标识</summary>
+        public virtual int id { get; set; }
+        ///<summary>合单号</summary>
+        public virtual int mainId { get; set; }
+        ///<summary>批送货单标识</summary>
+        public virtual int batchId { get; set; }
+        ///<summary>物料Id</summary>
+        public virtual int materialId { get; set; }
+        /// <summary>总数量(物料总数量)</summary>
+        public virtual decimal totalNumber { get; set; }
+        ///<summary>预约开始时间</summary>
+        public virtual string appointmentStartTime { get; set; }
+        ///<summary>预约最后时间</summary>
+        public virtual string appointmentEndTime { get; set; }
+        ///<summary>条码号</summary>
+        public virtual string barcode { get; set; }
+		/// <summary>上传返回代码</summary>
+		public virtual string returnCode { get; set; }
+		/// <summary>上传返回消息</summary>
+		public virtual string returnMessage { get; set; }
+
+		//上传状态
+		public string uploadStatusCn
+		{
+			get
+			{
+				if (string.IsNullOrEmpty(returnCode)) return "";
+				if (returnCode == "0") return "成功！";
+
+				return "失败！";
+			}
+		}
+
+		/// <summary>上传日期</summary>
+		public virtual string uploadTime { get; set; }
+
+		//上传日期
+		public string uploadTimeShow
+		{
+			get
+			{
+				if (YnBaseClass2.Helper.DateHelper.GetDateTime(uploadTime) != null)
+					return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(uploadTime)).ToString("yyyy-MM-dd");
+				return "";
+			}
+		}
+
+        public AscmDeliBatSumDetail() { }
+        public AscmDeliBatSumDetail(AscmDeliBatSumDetail ascmDeliBatSumDetail, decimal containerBindNumber, decimal checkQuantity, decimal receivedQuantity, Int64 containerNumber)
+        {
+            this.id = ascmDeliBatSumDetail.id;
+            this.mainId = ascmDeliBatSumDetail.mainId;
+            this.batchId = ascmDeliBatSumDetail.batchId;
+            this.materialId = ascmDeliBatSumDetail.materialId;
+            this.totalNumber = ascmDeliBatSumDetail.totalNumber;
+            this.appointmentStartTime = ascmDeliBatSumDetail.appointmentStartTime;
+            this.appointmentEndTime = ascmDeliBatSumDetail.appointmentEndTime;
+            this.barcode = ascmDeliBatSumDetail.barcode;
+
+            this.containerBindNumber = containerBindNumber;
+            this.checkQuantity = checkQuantity;
+            this.receivedQuantity = receivedQuantity;
+            this.containerNumber = containerNumber;
+        }
+        public AscmDeliBatSumDetail(AscmDeliBatSumDetail ascmDeliBatSumDetail, string ascmStatus, string mtlDocNumber)
+        {
+            this.id = ascmDeliBatSumDetail.id;
+            this.mainId = ascmDeliBatSumDetail.mainId;
+            this.batchId = ascmDeliBatSumDetail.batchId;
+            this.materialId = ascmDeliBatSumDetail.materialId;
+            this.totalNumber = ascmDeliBatSumDetail.totalNumber;
+            this.appointmentStartTime = ascmDeliBatSumDetail.appointmentStartTime;
+            this.appointmentEndTime = ascmDeliBatSumDetail.appointmentEndTime;
+            this.barcode = ascmDeliBatSumDetail.barcode;
+
+            this.ascmStatus = ascmStatus;
+            this.mtlDocNumber = mtlDocNumber;
+        }
+        public AscmDeliBatSumDetail(int mainId, string acceptTime)
+        {
+            this.mainId = mainId;
+            this.acceptTime = acceptTime;
+        }
+
+        //辅助属性
+        public string appointmentStartTimeShow { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentStartTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentStartTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string appointmentEndTimeShow { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentEndTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentEndTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public AscmDeliveryOrderBatch ascmDeliveryOrderBatch { get; set; }
+        ///<summary>批送货单编号</summary>
+        public string batchDocNumber { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.docNumber; return ""; } }
+        ///<summary>批送货单条码</summary>
+        public string batchBarCode { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.barCode; return ""; } }
+        ///<summary>生成日期</summary>
+        public string batchCreateTime { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.createTimeShow; return ""; } }
+        ///<summary>出货子库</summary>
+        public string batchSupperWarehouse { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.supperWarehouse; return ""; } }
+        ///<summary>收货子库</summary>
+        public string batchWarehouseId { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.receivedWarehouseId; return ""; } }
+        ///<summary>状态</summary>
+        public string batchStatusCn { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.statusCn; return ""; } }
+        ///<summary>送货地点</summary>
+        public string batchWipLine { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.wipLine; return ""; } }
+        ///<summary>备注</summary>
+        public string batchComments 
+        { 
+            get 
+            {
+                if (ascmDeliveryOrderBatch != null && !string.IsNullOrEmpty(ascmDeliveryOrderBatch.comments))
+                {
+                    string comments = ascmDeliveryOrderBatch.comments;
+                    DateTime dt = DateTime.Now;
+                    string suffix = dt.ToString("MM/dd hh:mm") + "-" + dt.ToString("MM/dd hh:mm") + "(送货时间)";
+                    if (comments.Length >= suffix.Length)
+                    {
+                        int index = comments.LastIndexOf('-');
+                        int len = dt.ToString("MM/dd hh:mm").Length;
+                        if (index >= len && DateTime.TryParse(string.Join("/", dt.Year, comments.Substring(index - len, len)), out dt))
+                            comments = comments.Substring(0, index - len);
+                    }
+                    if (comments.Length > 8)
+                        comments = comments.Substring(0, 8);
+                    return comments;
+                }
+                return string.Empty; 
+            } 
+        }
+        ///<summary>以字符串形式显示分配的货位</summary>
+        public string assignWarelocation { get; set; }
+        ///<summary>ASCM状态</summary>
+        public string ascmStatusCn { get { if (ascmDeliveryOrderBatch != null) return ascmDeliveryOrderBatch.ascmStatusCn; return ""; } }
+        public string ascmStatus { get; set; }
+        public AscmMaterialItem ascmMaterialItem { get; set; }
+        ///<summary>物料编码</summary>
+        public string materialDocNumber { get { if (ascmMaterialItem != null) return ascmMaterialItem.docNumber; return ""; } }
+        public string mtlDocNumber { get; set; }
+        ///<summary>物料描述</summary>
+        public string materialDescription { get { if (ascmMaterialItem != null) return ascmMaterialItem.description; return ""; } }
+        ///<summary>物料描述</summary>
+        public string materialUnit { get { if (ascmMaterialItem != null) return ascmMaterialItem.unit; return ""; } }
+
+        /// <summary>作业名称</summary>
+        public string wipEntityNames { get; set; }
+        /// <summary>接收时间</summary>
+        public string acceptTime { get; set; }
+
+        ///<summary>容器绑定数量</summary>
+        public virtual decimal containerBindNumber { get; set; }
+        ///<summary>容器数量</summary>
+        public virtual Int64 containerNumber { get; set; }
+        ///<summary>托盘绑定数量</summary>
+        public virtual decimal palletBindNumber { get; set; }
+        ///<summary>司机绑定数量</summary>
+        public virtual decimal driverBindNumber { get; set; }
+        ///<summary>入库校验数量</summary>
+        public virtual decimal checkQuantity { get; set; }
+        ///<summary>到货接收数量</summary>
+        public virtual decimal receivedQuantity { get; set; }
+
+        /// <summary>条码</summary>
+        public virtual byte[] barcodeShow { get; set; }
+        /// <summary>物料条码</summary>
+        public virtual byte[] materialBarcode { get; set; }
+    }
+}

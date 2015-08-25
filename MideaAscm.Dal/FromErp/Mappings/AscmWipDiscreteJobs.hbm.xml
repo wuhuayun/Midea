@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWipDiscreteJobs" table="Ascm_Wip_Discrete_Jobs" batch-size="50">
+    <id name="wipEntityId" column="wipEntityId">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="requestId">
+      <column name="requestId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="programId">
+      <column name="programId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="statusType">
+      <column name="statusType" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="primaryItemId">
+      <column name="primaryItemId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="jobType">
+      <column name="jobType" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="wipSupplyType">
+      <column name="wipSupplyType" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="description" column="description" length="240"/>
+    <property name="classCode" column="classCode" length="20"/>
+    <property name="materialAccount">
+      <column name="materialAccount" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="scheduledStartDate" column="scheduledStartDate" length="20"/>
+    <property name="scheduledCompletionDate" column="scheduledCompletionDate" length="20"/>
+    <property name="bomRevisionDate" column="bomRevisionDate" length="20"/>
+    <property name="routingRevisionDate" column="routingRevisionDate" length="20"/>
+    <property name="scheduleGroupId">
+      <column name="scheduleGroupId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="productionLine" column="productionLine" length="100"/>
+    <property name="netQuantity">
+      <column name="netQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="startQuantity">
+      <column name="startQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="quantityCompleted">
+      <column name="quantityCompleted" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="dateReleased" column="dateReleased" length="20"/>
+    <property name="dateClosed" column="dateClosed" length="20"/>
+    <property name="tempBindContainSn" column="tempBindContainSn" length="20"/>
+    <property name="ascmStatus" column="ascmStatus" length="20"/>
+  </class>
+</hibernate-mapping> 

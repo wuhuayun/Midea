@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmCuxWipReleaseLines" table="Ascm_Cux_Wip_Release_Lines" batch-size="50">
+    <id name="releaseLineId" column="releaseLineId">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="releaseHeaderId">
+      <column name="releaseHeaderId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="lineNumber">
+      <column name="lineNumber" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="inventoryItemId">
+      <column name="inventoryItemId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="operationSeqNum">
+      <column name="operationSeqNum" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="subInventory" column="subInventory" length="30"/>
+    <property name="printQuantity">
+      <column name="printQuantity" sql-type="NUMBER default 0"/>
+    </property>
+  </class>
+</hibernate-mapping> 

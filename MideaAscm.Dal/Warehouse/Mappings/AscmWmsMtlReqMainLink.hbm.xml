@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsMtlReqMainLink" table="Ascm_Wms_Mtl_Req_Main_Link" batch-size="50">
+    <composite-id name="reqMainLinkPK" class="AscmWmsMtlReqMainLinkPK">
+      <key-property name="reqMainId" column="reqMainId"/>
+      <key-property name="preMainId" column="preMainId"/>
+    </composite-id>
+  </class>
+</hibernate-mapping> 

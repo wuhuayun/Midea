@@ -1,0 +1,119 @@
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<YnFrame.Models.LogOnModel>" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>系统登录</title>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Content/jquery/jquery-1.7.1.min.js"></script>
+    <style type="text/css"> 
+        body
+        {
+        	/*background-color: #EAF5FB;
+        	background-color: red;*/
+            background:#EAF5FB url("../../Content/images/login_bg.jpg") repeat-x;
+            /*font-size: .75em;*/
+            font-size: .85em;
+        }
+        .login
+        {
+            width:525px;
+            height:306px;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-153px 0 0 -267px;
+            background:url("../../Content/images/login_bg3.jpg") no-repeat;
+            padding:0px 0px 0px 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#UserName").focus();
+        });
+
+        function downLoadAscm() {
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/_data/供应链物流智能化管理系统安装文件.exe';
+            var iframe = document.createElement("iframe");
+            iframe.src = url;
+            iframe.style.display = "none";
+            document.body.appendChild(iframe);
+        }
+        function downLoadMaterialPrintPlug() {
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/_data/install_lodop.exe';
+            var iframe = document.createElement("iframe");
+            iframe.src = url;
+            iframe.style.display = "none";
+            document.body.appendChild(iframe);
+        }
+    </script>
+</head>
+<body>
+    <div class="login" style="">
+    <% using (Html.BeginForm()){ %>
+        <table border="0" cellspacing="0" style="width:525px;height:306px;">
+			<tr style="height:80px">
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+			<tr style="height:200px">
+				<td style="padding:20px 20px 10px 240px;">
+		            <table border="0" cellspacing="0" style="width:240px;">
+			            <tr style="height:30px;">
+				            <td align="right" style="width:30%;">
+                                <font color="#2E6399">用户名：</font>
+				            </td>
+				            <td style="width:70%;">
+                                <%: Html.TextBoxFor(model => model.UserName, new { style="width:140px;"})%>
+                                <font color="red"><%: Html.ValidationMessageFor(model => model.UserName)%></font>
+				            </td>
+			            </tr>
+			            <tr style="height:30px">
+				            <td align="right">
+                                <font color="#2E6399">密&nbsp;&nbsp;&nbsp;&nbsp;码：</font>
+				            </td>
+				            <td>
+                                <%: Html.PasswordFor(model => model.Password, new Dictionary<string, object>() { { "style", "width:140px;" } })%>
+                                <font color="red"><%: Html.ValidationMessageFor(model => model.Password)%></font>
+				            </td>
+			            </tr>
+			            <tr style="height:20px">
+				            <td>
+				            </td>
+				            <td>
+                            <!--记住我-->
+				            </td>
+                        </tr>
+			            <tr style="height:20px">
+				            <td colspan="2">
+                                <font color="red"><%: Html.ValidationSummary(true, "登录不成功。请更正错误并重试。") %></font>
+				            </td>
+			            </tr>
+			            <tr style="height:30px;">
+				            <td colspan="2" align="right" style="padding-right:20px;">
+					            <input type="submit" value="&nbsp;登&nbsp;&nbsp;录&nbsp;"/>
+				            </td>
+			            </tr>
+		            </table>
+                </td>
+			</tr>
+			<tr style="height:30px">
+				<td>
+                    <table border="0" cellspacing="0" style="width:100%;height:100%;">
+			            <tr>
+				            <td style="text-align:left;padding-left:10px;">
+					            <font color="#FF6800"></font>
+				            </td>
+				            <td style="text-align:right; padding-right:20px;">
+					            <font color="#FF6800"></font>
+				            </td>
+			            </tr>
+                    </table>
+				</td>
+			</tr>
+		</table>
+    <% } %>
+    </div>
+</body>
+</html>

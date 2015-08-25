@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.SupplierPreparation.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmDeliBatSumDetail" table="Ascm_Deli_Bat_Sum_Detail" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="mainId" column="mainId"/>
+    <property name="batchId">
+      <column name="batchId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="materialId">
+      <column name="materialId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="totalNumber">
+      <column name="totalNumber" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="appointmentStartTime" column="appointmentStartTime" length="20"/>
+    <property name="appointmentEndTime" column="appointmentEndTime" length="20"/>
+    <property name="barcode" column="barcode" length="20"/>
+	  <property name="uploadTime" column="uploadTime" length="20"/>
+	  <property name="returnCode" column="returnCode" length="200"/>
+	  <property name="returnMessage" column="returnMessage" length="500"/>
+  </class>
+</hibernate-mapping> 

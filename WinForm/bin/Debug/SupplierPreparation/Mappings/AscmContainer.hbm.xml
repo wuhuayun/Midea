@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.SupplierPreparation.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmContainer" table="Ascm_Container" batch-size="50">
+    <id name="sn" column="sn" length="20">
+      <generator class="assigned"/>
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="specId">
+      <column name="specId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="rfid" column="rfid" length="20"/>
+    <property name="supplierId">
+      <column name="supplierId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="place" column="place" length="20"/>
+    <property name="status">
+      <column name="status"  sql-type="int default 4"/>
+    </property>
+    <property name="description" column="description" length="200"/>
+    <property name="storeInTime" column="storeInTime" length="20"/>
+    <property name="isCheck">
+      <column name="isCheck" sql-type="int default 0" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45E4E618-D4D0-4407-A490-B08290531193}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinForm</RootNamespace>
+    <AssemblyName>WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\WinForm\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\WinForm\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Net.SourceForge.Koogra, Version=3.1.5.0, Culture=neutral, PublicKeyToken=5acac79db1633ace, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Net.SourceForge.Koogra.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\WinForm\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YnBaseClass2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnBaseClass2.dll</HintPath>
+    </Reference>
+    <Reference Include="YnBaseDal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnBaseDal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCheckTaskInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckTaskInfo.Designer.cs">
+      <DependentUpon>frmCheckTaskInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialList.Designer.cs">
+      <DependentUpon>frmMaterialList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonitorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonitorView.Designer.cs">
+      <DependentUpon>frmMonitorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSumMaterialInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSumMaterialInfo.Designer.cs">
+      <DependentUpon>frmSumMaterialInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\AboutUs.designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material\wipDiscreteJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\wipDiscreteJobs.Designer.cs">
+      <DependentUpon>wipDiscreteJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageControl\PageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageControl\PageControl.designer.cs">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\AddTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task\AddTask.Designer.cs">
+      <DependentUpon>AddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\EditTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task\EditTask.Designer.cs">
+      <DependentUpon>EditTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AscmWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\YnWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="frmTasksView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTasksView.Designer.cs">
+      <DependentUpon>frmTasksView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialView.Designer.cs">
+      <DependentUpon>frmMaterialView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCheckTaskInfo.resx">
+      <DependentUpon>frmCheckTaskInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialList.resx">
+      <DependentUpon>frmMaterialList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonitorView.resx">
+      <DependentUpon>frmMonitorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSumMaterialInfo.resx">
+      <DependentUpon>frmSumMaterialInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\wipDiscreteJobs.resx">
+      <DependentUpon>wipDiscreteJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageControl\PageControl.resx">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Task\AddTask.resx">
+      <DependentUpon>AddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\EditTask.resx">
+      <DependentUpon>EditTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTasksView.resx">
+      <DependentUpon>frmTasksView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialView.resx">
+      <DependentUpon>frmMaterialView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\AscmWebService\AscmWebService.wsdl" />
+    <None Include="Web References\AscmWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\YnWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\YnWebService\YnWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.16.9.42:8080/AscmWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AscmWebService\</RelPath>
+      <UpdateFromURL>http://10.16.9.42:8080/AscmWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinForm_AscmWebService_AscmWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.16.9.42:8080/YnWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\YnWebService\</RelPath>
+      <UpdateFromURL>http://10.16.9.42:8080/YnWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinForm_YnWebService_YnWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MideaAscm.Dal\MideaAscm.Dal.csproj">
+      <Project>{DFDD71A2-7DE8-4209-B723-4F65E0122CCD}</Project>
+      <Name>MideaAscm.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\AscmWebService\AscmWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\YnWebService\YnWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <None Include="Resources\Login_bg.jpg" />
+    <Content Include="sygole.ico" />
+    <None Include="Resources\task.png" />
+    <None Include="Resources\exit.png" />
+    <Content Include="Resources\Harddrive.png" />
+    <Content Include="Resources\home.png" />
+    <Content Include="Resources\home1.png" />
+    <Content Include="Resources\home2.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\search_35.png" />
+    <None Include="Resources\search_25.png" />
+    <None Include="Resources\search_28.png" />
+    <None Include="Resources\home_28.png" />
+    <Content Include="Resources\sum.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmForklift" table="Ascm_Forklift" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/>
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="assetsId" column="assetsId" length="20"/>
+    <property name="tagId" column="tagId" length="20"/>
+    <property name="forkliftNumber" column="forkliftNumber" length="20"/>
+    <property name="forkliftType" column="forkliftType" length="20"/>
+    <property name="forkliftSpec" column="forkliftSpec" length="20"/>
+    <property name="workContent" column="workContent" length="50"/>
+    <property name="forkliftWay" column="forkliftWay" length="200"/>
+    <property name="actionLimits" column="actionLimits" length="200"/>
+    <property name="logisticsClass" column="logisticsClass" length="20"/>
+    <property name="workerId" column="workerId" length="20"/>
+    <property name="status" column="status" length="20"/>
+    <property name="tip" column="tip" length="200"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,689 @@
+记录时间：2013-10-22 08:43:00,640 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 08:43:54,799 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 09:16:39,671 线程ID:[34] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationMain)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wms_Preparation_Main ascmwmspre0_ where ascmwmspre0_.wipEntityId=34240319 and ascmwmspre0_.pattern='wipJob' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wms_Preparation_Main ascmwmspre0_ where ascmwmspre0_.wipEntityId=34240319 and ascmwmspre0_.pattern='wipJob'] ---> Oracle.DataAccess.Client.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 56688766
+会话 ID: 779 序列号: 49837
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationMainService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationMainService.cs:行号 91
+记录时间：2013-10-22 09:16:59,020 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 09:17:32,504 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 09:39:35,414 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 09:40:27,958 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 10:09:39,839 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 10:14:10,149 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 10:14:54,579 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 10:23:18,935 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 10:23:58,241 线程ID:[10] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 11:35:52,038 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 11:37:05,474 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 13:51:39,684 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 13:52:15,624 线程ID:[46] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 14:03:03,031 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 14:03:09,954 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 14:04:02,698 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 14:45:58,255 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 14:46:32,719 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 15:14:09,355 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 15:14:43,366 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 17:00:21,028 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 17:01:28,530 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 17:03:37,023 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 17:17:04,443 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 17:17:38,941 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-22 22:03:19,390 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 22:04:36,088 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-22 22:05:14,000 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 14:39:28,728 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 14:40:18,492 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 15:08:08,611 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 15:09:12,954 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-10-23 15:13:14,243 线程ID:[25] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 15:13:39,059 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-10-23 15:15:48,400 线程ID:[25] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 16:59:32,431 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 17:00:16,026 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-10-23 17:05:47,659 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 17:07:52,442 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 17:08:29,639 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 23:07:09,308 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 23:07:49,139 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 23:08:05,109 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipScheduleGroups)
+NHibernate.QueryException: Unable to resolve path [t.schedulegroupname], unexpected token [t] [from AscmWipScheduleGroups  order by translate(t.schedulegroupname, '一二三四五六七八九', '123456789') ]
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipScheduleGroupsService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\FromErp\AscmWipScheduleGroupsService.cs:行号 65
+记录时间：2013-10-23 23:08:05,116 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipScheduleGroups)
+NHibernate.QueryException: Unable to resolve path [t.schedulegroupname], unexpected token [t] [from AscmWipScheduleGroups  order by translate(t.schedulegroupname, '一二三四五六七八九', '123456789') ]
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipScheduleGroupsService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\FromErp\AscmWipScheduleGroupsService.cs:行号 65
+记录时间：2013-10-23 23:08:45,784 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 23:09:26,706 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 23:10:38,330 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 23:11:55,767 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-23 23:17:22,610 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-23 23:18:02,258 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 10:19:34,634 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 10:20:16,533 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 10:40:59,614 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 10:41:58,623 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 10:56:05,968 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 10:56:41,115 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 13:49:16,488 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 13:50:02,332 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 14:19:56,023 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 14:21:03,895 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 14:23:15,473 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 14:23:57,626 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 16:15:46,330 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 16:16:48,313 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 16:17:28,216 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 16:24:09,437 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 16:24:49,441 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 16:32:28,814 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 16:33:08,066 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 16:43:31,133 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 16:44:11,092 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-24 16:55:51,559 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-24 16:56:32,161 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 14:20:42,685 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 14:21:26,753 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 14:49:32,212 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 15:01:04,037 线程ID:[43] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 15:22:22,145 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 15:23:06,923 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 15:23:17,837 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipEntities)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where (ascmwipent0_.name like '%%') and (statusType in (3 , 4 , 5)) ]
+[SQL: select count(*) as col_0_0_ from Ascm_Wip_Entities ascmwipent0_ where (ascmwipent0_.name like '%%') and (statusType in (3 , 4 , 5))] ---> Oracle.DataAccess.Client.OracleException: ORA-00904: "STATUSTYPE": 标识符无效
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.FromErp.AscmWipEntitiesService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\FromErp\AscmWipEntitiesService.cs:行号 70
+记录时间：2013-10-25 15:25:45,238 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 15:26:24,597 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 15:36:26,529 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 16:29:12,574 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 16:29:54,074 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 17:05:38,614 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 17:08:11,592 线程ID:[24] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 17:22:02,651 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 17:22:36,784 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-25 17:31:48,042 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-25 17:32:22,161 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-26 09:26:23,455 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-26 09:27:04,543 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-26 09:58:29,336 线程ID:[35] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmWmsPreparationMain)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationMain#285][SQL: SELECT ascmwmspre0_.id as id55_0_, ascmwmspre0_.organizationId as organiza2_55_0_, ascmwmspre0_.createUser as createUser55_0_, ascmwmspre0_.createTime as createTime55_0_, ascmwmspre0_.modifyUser as modifyUser55_0_, ascmwmspre0_.modifyTime as modifyTime55_0_, ascmwmspre0_.docNumber as docNumber55_0_, ascmwmspre0_.manualDocNumber as manualDo8_55_0_, ascmwmspre0_.warehouseId as warehous9_55_0_, ascmwmspre0_.status as status55_0_, ascmwmspre0_.type as type55_0_, ascmwmspre0_.description as descrip12_55_0_, ascmwmspre0_.pattern as pattern55_0_, ascmwmspre0_.wipEntityId as wipEnti14_55_0_ FROM Ascm_Wms_Preparation_Main ascmwmspre0_ WHERE ascmwmspre0_.id=?] ---> Oracle.DataAccess.Client.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 59310288
+会话 ID: 124 序列号: 41959
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationMainService.Get(Int32 id) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationMainService.cs:行号 30
+记录时间：2013-10-26 09:59:19,857 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmWmsPreparationMain)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationMain#285][SQL: SELECT ascmwmspre0_.id as id55_0_, ascmwmspre0_.organizationId as organiza2_55_0_, ascmwmspre0_.createUser as createUser55_0_, ascmwmspre0_.createTime as createTime55_0_, ascmwmspre0_.modifyUser as modifyUser55_0_, ascmwmspre0_.modifyTime as modifyTime55_0_, ascmwmspre0_.docNumber as docNumber55_0_, ascmwmspre0_.manualDocNumber as manualDo8_55_0_, ascmwmspre0_.warehouseId as warehous9_55_0_, ascmwmspre0_.status as status55_0_, ascmwmspre0_.type as type55_0_, ascmwmspre0_.description as descrip12_55_0_, ascmwmspre0_.pattern as pattern55_0_, ascmwmspre0_.wipEntityId as wipEnti14_55_0_ FROM Ascm_Wms_Preparation_Main ascmwmspre0_ WHERE ascmwmspre0_.id=?] ---> Oracle.DataAccess.Client.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 40698084
+会话 ID: 864 序列号: 4577
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationMainService.Get(Int32 id) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationMainService.cs:行号 30
+记录时间：2013-10-26 09:59:48,912 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-26 10:00:44,566 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-26 16:10:49,952 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-26 16:11:44,216 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-26 16:47:53,296 线程ID:[30] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmMesInteractiveLog)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select count(*) as col_0_0_ from Ascm_Mes_Interactive_Log ascmmesint0_ where ascmmesint0_.modifyTime>='2013-10-26 00:00:00' and ascmmesint0_.modifyTime<'2013-10-28 00:00:00' ]
+[SQL: select count(*) as col_0_0_ from Ascm_Mes_Interactive_Log ascmmesint0_ where ascmmesint0_.modifyTime>='2013-10-26 00:00:00' and ascmmesint0_.modifyTime<'2013-10-28 00:00:00'] ---> Oracle.DataAccess.Client.OracleException: ORA-03113: 通信通道的文件结尾
+进程 ID: 17760956
+会话 ID: 1539 序列号: 6853
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String queryStringNoOrder, YnPage ynPage, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmMesInteractiveLogService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmMesInteractiveLogService.cs:行号 77
+记录时间：2013-10-27 11:52:36,132 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-27 11:54:30,367 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-27 11:55:12,379 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-29 09:06:40,228 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-29 09:07:23,766 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-10-30 11:10:59,626 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-30 11:11:32,341 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-10-30 11:12:12,993 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-01 10:52:22,296 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-01 10:53:05,069 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-01 14:03:19,223 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-01 14:04:16,844 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-01 14:12:45,266 线程ID:[10] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-01 14:13:42,297 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-01 15:58:18,181 线程ID:[40] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-01 15:58:54,015 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-02 08:57:58,620 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-02 08:58:47,115 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-02 09:35:44,565 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-02 09:44:21,139 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-02 10:34:19,492 线程ID:[47] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-02 12:23:14,728 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-02 12:24:01,197 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-02 12:24:41,257 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-03 09:15:55,189 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-03 09:16:34,240 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-03 11:29:09,241 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-03 12:01:01,051 线程ID:[34] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-03 13:39:30,389 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-03 13:40:21,153 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-03 14:03:20,406 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-03 14:06:48,948 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-04 08:51:00,716 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-04 08:51:57,618 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-04 09:00:51,033 线程ID:[32] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-04 09:01:52,047 线程ID:[39] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-04 16:19:10,782 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-04 16:21:10,404 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-04 16:32:12,111 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-04 21:50:27,488 线程ID:[45] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-04 21:54:50,693 线程ID:[36] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-04 22:27:52,575 线程ID:[22] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-04 22:29:31,296 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-05 10:21:40,663 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-05 10:23:08,500 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-05 14:28:23,272 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 11:17:00,879 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 11:17:51,820 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-06 13:50:30,522 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 13:56:11,142 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-06 14:03:14,351 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-06 14:53:20,984 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 14:54:06,328 线程ID:[25] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-06 14:57:04,031 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 14:59:35,642 线程ID:[19] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-06 15:15:57,103 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 15:17:07,394 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-06 15:23:51,807 线程ID:[24] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-06 15:24:50,804 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-07 09:48:38,997 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-07 09:55:29,890 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-07 09:57:42,975 线程ID:[19] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-07 11:31:49,631 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-07 13:58:34,200 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-07 22:03:26,535 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-07 22:03:59,853 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-07 22:04:42,452 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 09:49:08,377 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 09:49:52,094 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 10:24:53,263 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 10:25:39,346 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 10:30:55,962 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 10:31:35,793 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 10:35:06,130 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 10:35:46,168 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 10:47:37,805 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 10:48:19,138 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 11:24:09,220 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 11:24:48,040 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 11:36:46,959 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 11:37:25,346 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 11:47:50,993 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 11:49:03,126 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 14:30:46,818 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 14:31:57,027 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 14:43:59,218 线程ID:[38] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 15:01:32,364 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 15:08:55,001 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 22:22:47,735 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 22:23:41,703 线程ID:[8] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 22:27:53,182 线程ID:[18] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select ascmwmspre0_.id as col_0_0_, (select ascmwarelo1_.docNumber from Ascm_Warelocation ascmwarelo1_ where ascmwarelo1_.id=ascmwmspre0_.warelocationId) as col_1_0_, (select ascmwipent2_.name from Ascm_Wip_Entities ascmwipent2_ where ascmwipent2_.wipEntityId=ascmwmspre0_.billId) as col_2_0_, (select ascmwipreq3_.ascmPreparationQuantity from Ascm_Wip_Require_Operat ascmwipreq3_ where ascmwipreq3_.wipEntityId=ascmwmspre0_.billId and ascmwipreq3_.inventoryItemId=ascmwmspre0_.materialId) as col_3_0_, ascmwmspre0_.id as id91_, ascmwmspre0_.createUser as createUser91_, ascmwmspre0_.createTime as createTime91_, ascmwmspre0_.modifyUser as modifyUser91_, ascmwmspre0_.modifyTime as modifyTime91_, ascmwmspre0_.mainId as mainId91_, ascmwmspre0_.materialId as materialId91_, ascmwmspre0_.warehouseId as warehous8_91_, ascmwmspre0_.wipSupplyType as wipSuppl9_91_, ascmwmspre0_.warelocationId as wareloc10_91_, ascmwmspre0_.planQuantity as planQua11_91_, ascmwmspre0_.quantity as quantity91_, ascmwmspre0_.issueQuantity as issueQu13_91_, ascmwmspre0_.billId as billId91_, ascmwmspre0_.sendLogisticsQuantity as sendLog15_91_ from Ascm_Wms_Preparation_Detail ascmwmspre0_ where ascmwmspre0_.mainId=292 order by ascmwmspre0_.id ]
+[SQL: select ascmwmspre0_.id as col_0_0_, (select ascmwarelo1_.docNumber from Ascm_Warelocation ascmwarelo1_ where ascmwarelo1_.id=ascmwmspre0_.warelocationId) as col_1_0_, (select ascmwipent2_.name from Ascm_Wip_Entities ascmwipent2_ where ascmwipent2_.wipEntityId=ascmwmspre0_.billId) as col_2_0_, (select ascmwipreq3_.ascmPreparationQuantity from Ascm_Wip_Require_Operat ascmwipreq3_ where ascmwipreq3_.wipEntityId=ascmwmspre0_.billId and ascmwipreq3_.inventoryItemId=ascmwmspre0_.materialId) as col_3_0_, ascmwmspre0_.id as id91_, ascmwmspre0_.createUser as createUser91_, ascmwmspre0_.createTime as createTime91_, ascmwmspre0_.modifyUser as modifyUser91_, ascmwmspre0_.modifyTime as modifyTime91_, ascmwmspre0_.mainId as mainId91_, ascmwmspre0_.materialId as materialId91_, ascmwmspre0_.warehouseId as warehous8_91_, ascmwmspre0_.wipSupplyType as wipSuppl9_91_, ascmwmspre0_.warelocationId as wareloc10_91_, ascmwmspre0_.planQuantity as planQua11_91_, ascmwmspre0_.quantity as quantity91_, ascmwmspre0_.issueQuantity as issueQu13_91_, ascmwmspre0_.billId as billId91_, ascmwmspre0_.sendLogisticsQuantity as sendLog15_91_ from Ascm_Wms_Preparation_Detail ascmwmspre0_ where ascmwmspre0_.mainId=292 order by ascmwmspre0_.id] ---> Oracle.DataAccess.Client.OracleException: ORA-01427: 单行子查询返回多个行
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetList(YnPage ynPage, String sortName, String sortOrder, Int32 mainId, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 105
+记录时间：2013-11-08 22:50:53,386 线程ID:[48] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 23:29:16,408 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 23:30:16,046 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-08 23:34:26,407 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-08 23:35:02,578 线程ID:[10] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 08:36:09,651 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 11:13:02,176 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 11:13:57,600 线程ID:[10] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-09 11:14:46,296 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 11:18:43,869 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-09 11:19:11,102 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 11:19:52,044 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-09 11:21:18,718 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 11:22:00,761 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-09 11:28:43,487 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 11:29:27,418 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-09 15:05:53,745 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 15:27:54,561 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 15:28:35,690 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 15:31:36,657 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select ascmwmspre0_.id as col_0_0_, (select ascmwarelo1_.docNumber from Ascm_Warelocation ascmwarelo1_ where ascmwarelo1_.id=ascmwmspre0_.warelocationId) as col_1_0_, (select ascmwipent2_.name from Ascm_Wip_Entities ascmwipent2_ where ascmwipent2_.wipEntityId=ascmwmspre0_.billId) as col_2_0_, (select ascmwipreq3_.ascmPreparationQuantity from Ascm_Wip_Require_Operat ascmwipreq3_ where ascmwipreq3_.wipEntityId=ascmwmspre0_.billId and ascmwipreq3_.inventoryItemId=ascmwmspre0_.materialId) as col_3_0_, ascmwmspre0_.id as id109_, ascmwmspre0_.createUser as createUser109_, ascmwmspre0_.createTime as createTime109_, ascmwmspre0_.modifyUser as modifyUser109_, ascmwmspre0_.modifyTime as modifyTime109_, ascmwmspre0_.mainId as mainId109_, ascmwmspre0_.materialId as materialId109_, ascmwmspre0_.warehouseId as warehous8_109_, ascmwmspre0_.wipSupplyType as wipSuppl9_109_, ascmwmspre0_.warelocationId as wareloc10_109_, ascmwmspre0_.planQuantity as planQua11_109_, ascmwmspre0_.quantity as quantity109_, ascmwmspre0_.issueQuantity as issueQu13_109_, ascmwmspre0_.billId as billId109_, ascmwmspre0_.sendLogisticsQuantity as sendLog15_109_ from Ascm_Wms_Preparation_Detail ascmwmspre0_ where ascmwmspre0_.mainId=292 order by ascmwmspre0_.id ]
+[SQL: select ascmwmspre0_.id as col_0_0_, (select ascmwarelo1_.docNumber from Ascm_Warelocation ascmwarelo1_ where ascmwarelo1_.id=ascmwmspre0_.warelocationId) as col_1_0_, (select ascmwipent2_.name from Ascm_Wip_Entities ascmwipent2_ where ascmwipent2_.wipEntityId=ascmwmspre0_.billId) as col_2_0_, (select ascmwipreq3_.ascmPreparationQuantity from Ascm_Wip_Require_Operat ascmwipreq3_ where ascmwipreq3_.wipEntityId=ascmwmspre0_.billId and ascmwipreq3_.inventoryItemId=ascmwmspre0_.materialId) as col_3_0_, ascmwmspre0_.id as id109_, ascmwmspre0_.createUser as createUser109_, ascmwmspre0_.createTime as createTime109_, ascmwmspre0_.modifyUser as modifyUser109_, ascmwmspre0_.modifyTime as modifyTime109_, ascmwmspre0_.mainId as mainId109_, ascmwmspre0_.materialId as materialId109_, ascmwmspre0_.warehouseId as warehous8_109_, ascmwmspre0_.wipSupplyType as wipSuppl9_109_, ascmwmspre0_.warelocationId as wareloc10_109_, ascmwmspre0_.planQuantity as planQua11_109_, ascmwmspre0_.quantity as quantity109_, ascmwmspre0_.issueQuantity as issueQu13_109_, ascmwmspre0_.billId as billId109_, ascmwmspre0_.sendLogisticsQuantity as sendLog15_109_ from Ascm_Wms_Preparation_Detail ascmwmspre0_ where ascmwmspre0_.mainId=292 order by ascmwmspre0_.id] ---> Oracle.DataAccess.Client.OracleException: ORA-01427: 单行子查询返回多个行
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetList(YnPage ynPage, String sortName, String sortOrder, Int32 mainId, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 96
+记录时间：2013-11-09 16:17:28,264 线程ID:[32] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 16:18:08,991 线程ID:[34] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 16:18:30,136 线程ID:[18] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Hql.Ast.ANTLR.InvalidPathException: Invalid path: 'awo.ascmPreparationQuantity' [select new AscmWmsPreparationDetail(awpd.materialId,sum(awpd.quantity),sum(awo.ascmPreparationQuantity)) from AscmWmsPreparationDetail awpd,AscmWipRequirementOperations awro group by awpd.materialId ]
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetSumList(Int32 mainId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 152
+记录时间：2013-11-09 16:20:28,653 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 16:21:06,188 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 16:22:27,716 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select ascmwmspre0_.materialId as col_0_0_, sum(ascmwmspre0_.quantity) as col_1_0_, sum(ascmwipreq1_.requiredQuantity) as col_2_0_ from Ascm_Wms_Preparation_Detail ascmwmspre0_, Ascm_Wip_Require_Operat ascmwipreq1_ group by ascmwmspre0_.materialId ]
+[SQL: select ascmwmspre0_.materialId as col_0_0_, sum(ascmwmspre0_.quantity) as col_1_0_, sum(ascmwipreq1_.requiredQuantity) as col_2_0_ from Ascm_Wms_Preparation_Detail ascmwmspre0_, Ascm_Wip_Require_Operat ascmwipreq1_ group by ascmwmspre0_.materialId] ---> Oracle.DataAccess.Client.OracleException: ORA-01013: 用户请求取消当前的操作
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetSumList(Int32 mainId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 153
+记录时间：2013-11-09 16:23:34,283 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 16:24:11,279 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 17:05:50,983 线程ID:[39] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 17:06:28,917 线程ID:[38] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 17:33:30,587 线程ID:[31] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 20:27:12,239 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 21:40:06,131 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 21:40:46,572 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 21:42:24,848 线程ID:[30] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Hql.Ast.ANTLR.QuerySyntaxException: 引发类型为“Antlr.Runtime.NoViableAltException”的异常。 near line 1, column 264
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Int32 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 191
+记录时间：2013-11-09 21:44:43,361 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 21:45:22,826 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 21:47:46,635 线程ID:[28] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.QueryException: Unable to locate appropriate constructor on class [MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationDetail, MideaAscm.Dal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null] [select new AscmWmsPreparationDetail(awpd.id,awe.name,awpd.materialId,awpd.quantity,awro.ascmPreparationQuantity) from AscmWmsPreparationDetail awpd,AscmWipEntities awe,AscmWipRequirementOperations awro where  (awpd.billId=awe.wipEntityId)  and  (awpd.billId=awro.wipEntityId)  and  (awpd.materialId=awro.inventoryItemId)  and  (awpd.mainId=296)  order by awe.name ] ---> NHibernate.InstantiationException: no constructor compatible with (System.Int32, System.String, System.Int32, System.Decimal, System.Decimal) found in class: MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationDetail
+   在 NHibernate.Util.ReflectHelper.GetConstructor(Type type, IType[] types)
+   在 NHibernate.Hql.Ast.ANTLR.Tree.ConstructorNode.ResolveConstructor(String path)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Int32 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 192
+记录时间：2013-11-09 21:48:21,858 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 21:49:13,793 线程ID:[30] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 21:53:52,998 线程ID:[34] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 21:54:42,451 线程ID:[34] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 21:55:26,055 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Hql.Ast.ANTLR.QuerySyntaxException: 引发类型为“Antlr.Runtime.NoViableAltException”的异常。 near line 1, column 254
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Int32 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 191
+记录时间：2013-11-09 22:21:41,702 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 22:42:39,998 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 22:44:37,935 线程ID:[33] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 22:46:04,621 线程ID:[8] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-09 22:52:35,652 线程ID:[8] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-09 22:53:09,370 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:22:37,914 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 09:23:25,989 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:24:42,618 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 09:25:15,719 线程ID:[9] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:38:24,830 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 09:39:02,780 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:39:37,530 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Hql.Ast.ANTLR.QuerySyntaxException: 引发类型为“Antlr.Runtime.NoViableAltException”的异常。 near line 1, column 355
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Nullable`1 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 193
+记录时间：2013-11-10 09:43:51,654 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 09:44:27,051 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:53:23,889 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 09:53:58,800 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:54:17,652 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Nullable`1 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 193
+记录时间：2013-11-10 09:54:58,234 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Nullable`1 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 193
+记录时间：2013-11-10 09:58:14,893 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 09:58:50,323 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 09:59:20,895 线程ID:[9] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Hql.Ast.ANTLR.QuerySyntaxException: 引发类型为“Antlr.Runtime.MismatchedTokenException”的异常。 near line 1, column 347
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetListByMainId(Int32 mainId, Nullable`1 materialId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 193
+记录时间：2013-11-10 10:02:58,099 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 10:03:47,244 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 10:09:33,295 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 10:10:06,662 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 11:39:14,083 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 11:39:48,802 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 16:33:50,372 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmWmsPreparationMain)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationMain#296][SQL: SELECT ascmwmspre0_.id as id72_0_, ascmwmspre0_.organizationId as organiza2_72_0_, ascmwmspre0_.createUser as createUser72_0_, ascmwmspre0_.createTime as createTime72_0_, ascmwmspre0_.modifyUser as modifyUser72_0_, ascmwmspre0_.modifyTime as modifyTime72_0_, ascmwmspre0_.docNumber as docNumber72_0_, ascmwmspre0_.manualDocNumber as manualDo8_72_0_, ascmwmspre0_.warehouseId as warehous9_72_0_, ascmwmspre0_.status as status72_0_, ascmwmspre0_.type as type72_0_, ascmwmspre0_.description as descrip12_72_0_, ascmwmspre0_.pattern as pattern72_0_, ascmwmspre0_.wipEntityId as wipEnti14_72_0_ FROM Ascm_Wms_Preparation_Main ascmwmspre0_ WHERE ascmwmspre0_.id=?] ---> Oracle.DataAccess.Client.OracleException: ORA-12571: TNS: 包写入程序失败
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationMainService.Get(Int32 id) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsPreparationMainService.cs:行号 30
+记录时间：2013-11-10 16:34:06,381 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 16:34:40,064 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 17:24:57,916 线程ID:[41] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 17:25:33,079 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 22:01:55,881 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 22:46:02,390 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 22:46:37,521 线程ID:[41] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-10 23:37:44,929 线程ID:[39] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-10 23:39:36,303 线程ID:[39] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 08:55:02,451 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 09:02:56,244 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 14:14:10,972 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 14:14:46,918 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 16:21:17,689 线程ID:[24] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 16:22:38,768 线程ID:[24] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 16:47:55,030 线程ID:[28] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 16:48:34,365 线程ID:[44] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 17:47:52,223 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 17:49:06,427 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 17:58:22,911 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 17:59:37,506 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 18:02:21,866 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 18:03:01,993 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 18:09:48,127 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 18:18:46,861 线程ID:[38] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 19:20:45,095 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 19:21:29,302 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 19:23:16,203 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 19:23:59,151 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 19:29:10,948 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 19:29:52,762 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 21:16:59,747 线程ID:[46] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 21:17:44,728 线程ID:[22] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 22:24:35,056 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-11 22:25:16,422 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-11 22:31:36,438 线程ID:[25] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-12 09:53:41,300 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 09:54:23,490 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-12 11:06:09,404 线程ID:[30] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 11:06:53,953 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-12 16:17:14,214 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 16:17:55,663 线程ID:[35] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-12 16:23:09,549 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 16:23:51,333 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-12 20:21:12,135 线程ID:[20] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 20:21:56,183 线程ID:[20] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-12 23:15:11,415 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 23:17:54,507 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 23:26:03,695 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-12 23:30:29,606 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 08:58:02,233 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 08:59:34,238 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 10:37:26,831 线程ID:[53] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 10:38:11,838 线程ID:[38] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 10:38:24,587 线程ID:[53] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobsV)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 MideaAscm.View.Services.AscmWipDiscreteJobsVService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, String whereBomOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.View.Services\AscmWipDiscreteJobsVService.cs:行号 52
+记录时间：2013-11-13 10:38:55,114 线程ID:[46] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 10:39:18,409 线程ID:[27] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobsV)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 MideaAscm.View.Services.AscmWipDiscreteJobsVService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, String whereBomOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.View.Services\AscmWipDiscreteJobsVService.cs:行号 52
+记录时间：2013-11-13 10:42:23,783 线程ID:[37] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWipDiscreteJobsV)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 MideaAscm.View.Services.AscmWipDiscreteJobsVService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther, String whereBomOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.View.Services\AscmWipDiscreteJobsVService.cs:行号 52
+记录时间：2013-11-13 10:44:10,539 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 10:46:03,062 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 10:47:33,981 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 10:48:19,008 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 11:34:47,926 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 11:35:27,290 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 11:37:50,435 线程ID:[29] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 11:39:07,134 线程ID:[30] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 12:39:04,588 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 12:40:09,841 线程ID:[45] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 12:53:23,202 线程ID:[52] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 12:54:08,677 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 13:27:58,362 线程ID:[10] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 13:28:42,367 线程ID:[44] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 13:32:58,714 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 13:34:13,895 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 13:41:37,983 线程ID:[46] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 13:42:20,906 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 14:26:41,784 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 14:27:53,639 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 14:35:40,470 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 14:36:27,816 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 14:37:00,923 线程ID:[9] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsMtlRequisitionMain)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select ascmwmsmtl0_.id as id87_, ascmwmsmtl0_.organizationId as organiza2_87_, ascmwmsmtl0_.createUser as createUser87_, ascmwmsmtl0_.createTime as createTime87_, ascmwmsmtl0_.modifyUser as modifyUser87_, ascmwmsmtl0_.modifyTime as modifyTime87_, ascmwmsmtl0_.docNumber as docNumber87_, ascmwmsmtl0_.wipEntityId as wipEntit8_87_, ascmwmsmtl0_.warehouseId as warehous9_87_, ascmwmsmtl0_.returnArea as returnArea87_, ascmwmsmtl0_.reasonId as reasonId87_, ascmwmsmtl0_.memo as memo87_, ascmwmsmtl0_.billType as billType87_ from Ascm_Wms_Mtl_Return_Main ascmwmsmtl0_ where (ascmwmsmtl0_.id in (100 , 101 , 102 , 103 , 104 , 105 , 106 , 108 , 109)) and status='failed' ]
+[SQL: select ascmwmsmtl0_.id as id87_, ascmwmsmtl0_.organizationId as organiza2_87_, ascmwmsmtl0_.createUser as createUser87_, ascmwmsmtl0_.createTime as createTime87_, ascmwmsmtl0_.modifyUser as modifyUser87_, ascmwmsmtl0_.modifyTime as modifyTime87_, ascmwmsmtl0_.docNumber as docNumber87_, ascmwmsmtl0_.wipEntityId as wipEntit8_87_, ascmwmsmtl0_.warehouseId as warehous9_87_, ascmwmsmtl0_.returnArea as returnArea87_, ascmwmsmtl0_.reasonId as reasonId87_, ascmwmsmtl0_.memo as memo87_, ascmwmsmtl0_.billType as billType87_ from Ascm_Wms_Mtl_Return_Main ascmwmsmtl0_ where (ascmwmsmtl0_.id in (100 , 101 , 102 , 103 , 104 , 105 , 106 , 108 , 109)) and status='failed'] ---> Oracle.DataAccess.Client.OracleException: ORA-00904: "STATUS": 标识符无效
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsMtlRequisitionMainService.GetList(String sql) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsMtlRequisitionMainService.cs:行号 46
+记录时间：2013-11-13 14:41:23,117 线程ID:[9] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsMtlRequisitionMain)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select ascmwmsmtl0_.id as id87_, ascmwmsmtl0_.organizationId as organiza2_87_, ascmwmsmtl0_.createUser as createUser87_, ascmwmsmtl0_.createTime as createTime87_, ascmwmsmtl0_.modifyUser as modifyUser87_, ascmwmsmtl0_.modifyTime as modifyTime87_, ascmwmsmtl0_.docNumber as docNumber87_, ascmwmsmtl0_.wipEntityId as wipEntit8_87_, ascmwmsmtl0_.warehouseId as warehous9_87_, ascmwmsmtl0_.returnArea as returnArea87_, ascmwmsmtl0_.reasonId as reasonId87_, ascmwmsmtl0_.memo as memo87_, ascmwmsmtl0_.billType as billType87_ from Ascm_Wms_Mtl_Return_Main ascmwmsmtl0_ where (ascmwmsmtl0_.id in (100 , 101 , 102 , 103 , 104 , 105 , 106 , 108 , 109)) and status='failed' ]
+[SQL: select ascmwmsmtl0_.id as id87_, ascmwmsmtl0_.organizationId as organiza2_87_, ascmwmsmtl0_.createUser as createUser87_, ascmwmsmtl0_.createTime as createTime87_, ascmwmsmtl0_.modifyUser as modifyUser87_, ascmwmsmtl0_.modifyTime as modifyTime87_, ascmwmsmtl0_.docNumber as docNumber87_, ascmwmsmtl0_.wipEntityId as wipEntit8_87_, ascmwmsmtl0_.warehouseId as warehous9_87_, ascmwmsmtl0_.returnArea as returnArea87_, ascmwmsmtl0_.reasonId as reasonId87_, ascmwmsmtl0_.memo as memo87_, ascmwmsmtl0_.billType as billType87_ from Ascm_Wms_Mtl_Return_Main ascmwmsmtl0_ where (ascmwmsmtl0_.id in (100 , 101 , 102 , 103 , 104 , 105 , 106 , 108 , 109)) and status='failed'] ---> Oracle.DataAccess.Client.OracleException: ORA-00904: "STATUS": 标识符无效
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsMtlRequisitionMainService.GetList(String sql) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsMtlRequisitionMainService.cs:行号 46
+记录时间：2013-11-13 14:42:41,530 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 14:45:20,171 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 14:57:10,860 线程ID:[22] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 14:57:57,671 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 15:01:38,495 线程ID:[22] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：保存失败(Save AscmMesInteractiveLog)
+NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> Oracle.DataAccess.Client.OracleException: ORA-00001: 违反唯一约束条件 (ASCM.SYS_C0082811)
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   在 NHibernate.AdoNet.OracleDataClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 MideaAscm.Services.Warehouse.AscmMesInteractiveLogService.Save(List`1 listAscmMesInteractiveLog) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmMesInteractiveLogService.cs:行号 104
+记录时间：2013-11-13 15:02:57,768 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 15:33:48,765 线程ID:[31] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 15:34:33,011 线程ID:[32] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 19:42:25,904 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 19:43:14,796 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-13 19:48:33,058 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 20:38:23,230 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 21:07:30,605 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 21:08:17,493 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-13 21:29:53,029 线程ID:[28] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-13 21:30:36,282 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 10:16:36,430 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 10:17:51,005 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 10:18:40,330 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 13:52:02,831 线程ID:[44] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 13:52:53,065 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 16:23:26,665 线程ID:[51] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 16:24:40,315 线程ID:[44] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 16:36:08,243 线程ID:[52] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 16:36:59,378 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 16:57:18,999 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 17:00:56,149 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 17:30:10,232 线程ID:[28] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 17:31:06,961 线程ID:[56] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 22:58:40,166 线程ID:[45] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 22:59:22,913 线程ID:[45] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 23:01:25,554 线程ID:[9] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get YnBillKey)
+System.Exception: Count 必须大于0
+   在 YnFrame.Services.YnBillKeyService.GetBillKey(String tableId, String header, String dataformat, Int32 snLength, Int32 count)
+记录时间：2013-11-14 23:08:25,373 线程ID:[37] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 23:09:33,811 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 23:15:51,351 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 23:16:33,495 线程ID:[37] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-14 23:36:13,069 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-14 23:38:29,931 线程ID:[38] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-15 11:12:19,234 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-15 11:16:31,993 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-15 11:17:22,774 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-15 11:57:52,614 线程ID:[33] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-15 14:04:16,569 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-15 14:47:04,338 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-15 14:48:21,861 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-15 16:22:22,335 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-15 16:23:10,078 线程ID:[29] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-16 09:03:28,411 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-16 09:04:12,014 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-16 09:04:49,128 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：删除失败(Delete YnUser)
+System.Exception: 外部用户不能修改信息！
+   在 YnFrame.Areas.YnPublic.Controllers.YnUserController.UserDelete(String userIds)
+记录时间：2013-11-16 09:09:26,211 线程ID:[24] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-16 09:10:14,473 线程ID:[22] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-17 21:46:54,800 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-17 21:47:51,221 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-17 21:53:31,283 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-17 23:02:35,383 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-17 23:03:17,802 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-17 23:03:28,402 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"erp_2226"登录
+记录时间：2013-11-17 23:04:09,377 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get YnBillKey)
+System.ArgumentNullException: 键不能为 null。
+参数名: key
+   在 System.Collections.Hashtable.get_Item(Object key)
+   在 YnBaseDal.NHibernateWeb.GetCurrentSession(String sessionKey)
+   在 YnBaseDal.NHibernateHelper.GetCurrentSession(String sessionKey)
+   在 YnFrame.Services.YnBillKeyService.Update(YnBillKey _ynBillKey, String sessionKey)
+   在 YnFrame.Services.YnBillKeyService.GetBillKey(String tableId, String header, String dataformat, Int32 snLength, Int32 count, String sessionKey)
+记录时间：2013-11-17 23:05:20,128 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get YnBillKey)
+System.ArgumentNullException: 键不能为 null。
+参数名: key
+   在 System.Collections.Hashtable.get_Item(Object key)
+   在 YnBaseDal.NHibernateWeb.GetCurrentSession(String sessionKey)
+   在 YnBaseDal.NHibernateHelper.GetCurrentSession(String sessionKey)
+   在 YnFrame.Services.YnBillKeyService.Update(YnBillKey _ynBillKey, String sessionKey)
+   在 YnFrame.Services.YnBillKeyService.GetBillKey(String tableId, String header, String dataformat, Int32 snLength, Int32 count, String sessionKey)
+记录时间：2013-11-18 01:37:02,849 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 01:38:16,390 线程ID:[39] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 02:20:19,015 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 02:21:03,551 线程ID:[52] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 04:59:21,763 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 05:00:03,071 线程ID:[21] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 16:09:06,971 线程ID:[8] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 16:09:52,333 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 17:12:35,217 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 17:13:23,970 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 17:20:04,447 线程ID:[20] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 17:20:47,882 线程ID:[37] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 17:29:19,016 线程ID:[36] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 17:30:48,306 线程ID:[33] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 20:06:04,828 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 20:07:00,932 线程ID:[27] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 20:09:03,173 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 20:09:44,477 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 20:11:47,554 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 20:12:28,266 线程ID:[14] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 20:16:42,203 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-11-18 20:17:42,813 线程ID:[23] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：用户"sa"登录
+记录时间：2013-11-18 20:18:13,426 线程ID:[23] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsMtlRequisitionMain)
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select ascmwmsmtl0_.id as id86_, ascmwmsmtl0_.organizationId as organiza2_86_, ascmwmsmtl0_.createUser as createUser86_, ascmwmsmtl0_.createTime as createTime86_, ascmwmsmtl0_.modifyUser as modifyUser86_, ascmwmsmtl0_.modifyTime as modifyTime86_, ascmwmsmtl0_.docNumber as docNumber86_, ascmwmsmtl0_.manualDocNumber as manualDo8_86_, ascmwmsmtl0_.wipEntityId as wipEntit9_86_, ascmwmsmtl0_.description as descrip10_86_, ascmwmsmtl0_.status as status86_, ascmwmsmtl0_.workerId as workerId86_, ascmwmsmtl0_.checkout as checkout86_, ascmwmsmtl0_.checkOutNo as checkOutNo86_, ascmwmsmtl0_.checkTime as checkTime86_ from Ascm_Wms_Mtl_Req_Main ascmwmsmtl0_ where ascmwmsmtl0_.createTime>='2013-11-18 00:00:00' and ascmwmsmtl0_.createTime<'2013-11-19 00:00:00' and times>0 order by ascmwmsmtl0_.id ]
+[SQL: select ascmwmsmtl0_.id as id86_, ascmwmsmtl0_.organizationId as organiza2_86_, ascmwmsmtl0_.createUser as createUser86_, ascmwmsmtl0_.createTime as createTime86_, ascmwmsmtl0_.modifyUser as modifyUser86_, ascmwmsmtl0_.modifyTime as modifyTime86_, ascmwmsmtl0_.docNumber as docNumber86_, ascmwmsmtl0_.manualDocNumber as manualDo8_86_, ascmwmsmtl0_.wipEntityId as wipEntit9_86_, ascmwmsmtl0_.description as descrip10_86_, ascmwmsmtl0_.status as status86_, ascmwmsmtl0_.workerId as workerId86_, ascmwmsmtl0_.checkout as checkout86_, ascmwmsmtl0_.checkOutNo as checkOutNo86_, ascmwmsmtl0_.checkTime as checkTime86_ from Ascm_Wms_Mtl_Req_Main ascmwmsmtl0_ where ascmwmsmtl0_.createTime>='2013-11-18 00:00:00' and ascmwmsmtl0_.createTime<'2013-11-19 00:00:00' and times>0 order by ascmwmsmtl0_.id] ---> Oracle.DataAccess.Client.OracleException: ORA-00904: "TIMES": 标识符无效
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Find[T](String queryString, String sessionKey)
+   在 MideaAscm.Services.Warehouse.AscmWmsMtlRequisitionMainService.GetList(YnPage ynPage, String sortName, String sortOrder, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\Warehouse\AscmWmsMtlRequisitionMainService.cs:行号 92

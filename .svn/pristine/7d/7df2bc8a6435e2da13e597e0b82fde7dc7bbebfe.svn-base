@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsStockTransMain" table="Ascm_Wms_Stock_Trans_Main" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="transType" column="transType" length="80"/>
+    <property name="reasonId">
+      <column name="reasonId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="fromWarehouseId" column="fromWarehouseId" length="20"/>
+    <property name="toWarehouseId" column="toWarehouseId" length="20"/>
+    <property name="memo" column="memo" length="240"/>
+    <property name="manualDocNumber" column="manualDocNumber" length="20"/>
+    <property name="responsiblePerson" column="responsiblePerson" length="20"/>
+    <property name="reference" column="reference" length="240"/>
+  </class>
+</hibernate-mapping> 

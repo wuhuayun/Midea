@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsIncManAccDetail" table="Ascm_Wms_Inc_Man_Acc_Detail" batch-size="50">
+    <id name="incManAccDetailId" column="incManAccDetailId">
+      <generator class="assigned" />
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="incManAccMainId">
+      <column name="incManAccMainId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="materialId">
+      <column name="materialId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="requestDeliveryDate" column="requestDeliveryDate" length="20"/>
+    <property name="deliveryQuantity">
+      <column name="deliveryQuantity" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="receivedQuantity">
+      <column name="receivedQuantity" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="warelocationId">
+      <column name="warelocationId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping> 

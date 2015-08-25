@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Base.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmMaterialItem" table="Ascm_Material_Item" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="name" column="name" length="50"/>
+    <property name="description" column="description" length="240"/>
+    <property name="unit" column="unit" length="20"/>
+    <property name="buyerId">
+      <column name="buyerId" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="zMtlCategoryStatus" column="zMtlCategoryStatus" length="20"/>
+    <property name="dMtlCategoryStatus" column="dMtlCategoryStatus" length="20"/>
+    <property name="wipSupplyType">
+      <column name="wipSupplyType" sql-type="NUMBER(10,0)"/>
+    </property>
+    <property name="subCategoryId">
+      <column name="subCategoryId" sql-type="NUMBER(10,0)"/>
+    </property>
+    <property name="isFlag">
+      <column name="isFlag" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="wMtlCategoryStatus" column="wMtlCategoryStatus" length="20"/>
+  </class>
+</hibernate-mapping>

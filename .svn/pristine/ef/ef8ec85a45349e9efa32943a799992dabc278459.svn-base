@@ -1,0 +1,248 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+using MideaAscm.Dal.FromErp.Entities;
+using MideaAscm.Dal.Vehicle.Entities;
+
+namespace MideaAscm.Dal.SupplierPreparation.Entities
+{
+    ///<summary>批送货合单</summary>
+    public class AscmDeliBatSumMain
+    {
+        ///<summary>标识</summary>
+        public virtual int id { get; set; }
+        ///<summary>合单号</summary>
+        public virtual string docNumber { get; set; }
+        ///<summary>库存组织ID</summary>
+        public virtual int organizationId { get; set; }
+        ///<summary>创建人</summary>
+        public virtual string createUser { get; set; }
+        ///<summary>创建时间</summary>
+        public virtual string createTime { get; set; }
+        ///<summary>最后更新人</summary>
+        public virtual string modifyUser { get; set; }
+        ///<summary>最后更新时间</summary>
+        public virtual string modifyTime { get; set; }
+        ///<summary>供应商Id</summary>
+        public virtual int supplierId { get; set; }
+        ///<summary>司机Id</summary>
+        public virtual int driverId { get; set; }
+        ///<summary>状态</summary>
+        public virtual string status { get; set; }
+        ///<summary>预约开始时间</summary>
+        public virtual string appointmentStartTime { get; set; }
+        ///<summary>预约最后时间</summary>
+        public virtual string appointmentEndTime { get; set; }
+        ///<summary>确认人</summary>
+        public virtual string confirmor { get; set; }
+        ///<summary>确认时间</summary>
+        public virtual string confirmTime { get; set; }
+        ///<summary>到厂时间</summary>
+        public virtual string toPlantTime { get; set; }
+        ///<summary>接收人</summary>
+        public virtual string receiver { get; set; }
+        ///<summary>接收时间</summary>
+        public virtual string acceptTime { get; set; }
+        ///<summary>条码号</summary>
+        public virtual string barcode { get; set; }
+        ///<summary>仓库</summary>
+        public virtual string warehouseId { get; set; }
+        ///<summary>分配出口</summary>
+        public virtual string allocateOutDoor { get; set; }
+		/// <summary>上传返回代码</summary>
+		public virtual string returnCode { get; set; }
+		/// <summary>上传返回消息</summary>
+		public virtual string returnMessage { get; set; }
+
+		//上传状态
+		public string uploadStatusCn
+		{
+			get
+			{
+				if (string.IsNullOrEmpty(returnCode)) return "";
+				if (returnCode == "0") return "成功！";
+
+				return "失败！";
+			}
+		}
+
+		/// <summary>上传日期</summary>
+		public virtual string uploadTime { get; set; }
+
+		//上传日期
+		public string uploadTimeShow
+		{
+			get
+			{
+				if (YnBaseClass2.Helper.DateHelper.GetDateTime(uploadTime) != null)
+					return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(uploadTime)).ToString("yyyy-MM-dd");
+				return "";
+			}
+		}
+
+        public AscmDeliBatSumMain() { }
+        public void GetOwner(AscmDeliBatSumMain ascmDeliBatSumMain)
+        {
+            this.id = ascmDeliBatSumMain.id;
+            this.docNumber = ascmDeliBatSumMain.docNumber;
+            this.organizationId = ascmDeliBatSumMain.organizationId;
+            this.createUser = ascmDeliBatSumMain.createUser;
+            this.createTime = ascmDeliBatSumMain.createTime;
+            this.modifyUser = ascmDeliBatSumMain.modifyUser;
+            this.modifyTime = ascmDeliBatSumMain.modifyTime;
+            this.supplierId = ascmDeliBatSumMain.supplierId;
+            this.driverId = ascmDeliBatSumMain.driverId;
+            this.status = ascmDeliBatSumMain.status;
+            this.appointmentStartTime = ascmDeliBatSumMain.appointmentStartTime;
+            this.appointmentEndTime = ascmDeliBatSumMain.appointmentEndTime;
+            this.confirmor = ascmDeliBatSumMain.confirmor;
+            this.confirmTime = ascmDeliBatSumMain.confirmTime;
+            this.toPlantTime = ascmDeliBatSumMain.toPlantTime;
+            this.receiver = ascmDeliBatSumMain.receiver;
+            this.acceptTime = ascmDeliBatSumMain.acceptTime;
+            this.warehouseId = ascmDeliBatSumMain.warehouseId;
+        }
+        public AscmDeliBatSumMain(AscmDeliBatSumMain ascmDeliBatSumMain, string supplierDocNumber, string supplierName, string driverSn)
+        {
+            GetOwner(ascmDeliBatSumMain);
+
+            this.supplierDocNumberCn = supplierDocNumber;
+            this.supplierNameCn = supplierName;
+            this.driverSnCn = driverSn;
+        }
+        public AscmDeliBatSumMain(AscmDeliBatSumMain ascmDeliBatSumMain, decimal totalNumber, decimal inWarehouseContainerBindNumber, decimal containerBindNumber, decimal palletBindNumber, decimal driverBindNumber, long containerNumber, long inWarehouseContainerNumber, long deliBatNumber)
+        {
+            GetOwner(ascmDeliBatSumMain);
+
+            this.totalNumber = totalNumber;
+            this.inWarehouseContainerBindNumber = inWarehouseContainerBindNumber;
+            this.containerBindNumber = containerBindNumber;
+            this.palletBindNumber = palletBindNumber;
+            this.driverBindNumber = driverBindNumber;
+            this.containerNumber = containerNumber;
+            this.inWarehouseContainerNumber = inWarehouseContainerNumber;
+            this.deliBatNumber = deliBatNumber;
+        }
+        public AscmDeliBatSumMain(AscmDeliBatSumMain ascmDeliBatSumMain, string supplierDocNumber, string supplierName, Int64 containerQuantity, Int64 checkContainerQuantity, decimal totalQuantity, decimal checkQuantity, decimal containerBindQuantity)
+        {
+            GetOwner(ascmDeliBatSumMain);
+
+            this.supplierDocNumberCn = supplierDocNumber;
+            this.supplierNameCn = supplierName;
+            this.containerQuantity = containerQuantity;
+            this.checkContainerQuantity = checkContainerQuantity;
+            this.totalQuantity = totalQuantity;
+            this.checkQuantity = checkQuantity;
+            this.containerBindQuantity = containerBindQuantity;
+        }
+        public AscmDeliBatSumMain(int id, string docNumber, string supplierShortName)
+        {
+            this.id = id;
+            this.docNumber = docNumber;
+            this.supplierNameCn = supplierShortName;
+        }
+
+        //辅助信息
+        public string _createTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(createTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(createTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string _modifyTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string statusCn { get { return StatusDefine.DisplayText(status); } }
+        public string appointmentStartTimeShow { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentStartTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentStartTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string appointmentEndTimeShow { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentEndTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentEndTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public AscmSupplier ascmSupplier { get; set; }
+        public string supplierName { get { if (ascmSupplier != null && ascmSupplier.name != null) return ascmSupplier.name.Trim(); return ""; } }
+        public string supplierDocNumber { get { if (ascmSupplier != null && ascmSupplier.docNumber != null) return ascmSupplier.docNumber.Trim(); return ""; } }
+        public AscmDriver ascmDriver { get; set; }
+        public string driverSn { get { if (ascmDriver != null) return ascmDriver.sn; return ""; } }
+        public string driverPlateNumber { get { if (ascmDriver != null) return ascmDriver.plateNumber; return ""; } }
+        public string _appointmentStartTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentStartTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentStartTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string _appointmentEndTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentEndTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(appointmentEndTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string _confirmTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(confirmTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(confirmTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string _toPlantTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(toPlantTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(toPlantTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+        public string _acceptTime { get { if (YnBaseClass2.Helper.DateHelper.GetDateTime(acceptTime) != null) return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(acceptTime)).ToString("yyyy-MM-dd HH:mm"); return ""; } }
+
+
+        public class StatusDefine
+        {
+            /// <summary>未确认</summary>
+            public static readonly string unConfirm = "unConfirm";
+            /// <summary>已确认</summary>
+            public static readonly string confirm = "confirm";
+            /// <summary>入厂</summary>
+            public static readonly string inPlant = "inPlant";
+            /// <summary>出厂</summary>
+            public static readonly string outPlant = "outPlant";
+            /// <summary>未入场</summary>
+            public static readonly string unEntrance = "unEntrance";
+
+            public static string DisplayText(string status)
+            {
+                switch (status)
+                {
+                    case "unConfirm": return "未确认";
+                    case "confirm": return "已确认";
+                    case "inPlant": return "入厂";
+                    case "outPlant": return "出厂";
+                    case "unEntrance": return "未入场";
+                    default: return status;
+                }
+            }
+            public static List<string> GetList()
+            {
+                List<string> list = new List<string>();
+                list.Add(unConfirm);
+                list.Add(confirm);
+                list.Add(inPlant);
+                list.Add(outPlant);
+                list.Add(unEntrance);
+                return list;
+            }
+        }
+
+        public virtual decimal totalNumber { get; set; }
+        public virtual decimal inWarehouseContainerBindNumber { get; set; }
+        public virtual decimal containerBindNumber { get; set; }
+        public virtual decimal palletBindNumber { get; set; }
+        public virtual decimal driverBindNumber { get; set; }
+        public virtual long containerNumber { get; set; }
+        public virtual long inWarehouseContainerNumber { get; set; }
+        public virtual long deliBatNumber { get; set; }
+
+        //仓库到货接收
+        /// <summary>供方编码</summary>
+        public string supplierDocNumberCn { get; set; }
+        /// <summary>供方名称</summary>
+        public string supplierNameCn { get; set; }
+        /// <summary>容器数</summary>
+        public Int64 containerQuantity { get; set; }
+        /// <summary>入库容器数(读写器校验容器数)</summary>
+        public Int64 checkContainerQuantity { get; set; }
+        /// <summary>总数</summary>
+        public decimal totalQuantity { get; set; }
+        /// <summary>入库数(读写器校验数)</summary>
+        public decimal checkQuantity { get; set; }
+        /// <summary>容器绑定数</summary>
+        public decimal containerBindQuantity { get; set; }
+        /// <summary>司机编号</summary>
+        public string driverSnCn { get; set; }
+
+        //供应商车辆入厂LED显示
+        /// <summary>是否在规定时间内入厂</summary>
+        public bool isOnTime { get; set; }
+        /// <summary>预约卸货点名称</summary>
+        public string unloadingPointName { get; set; }
+        /// <summary>卸货点列表</summary>
+        public List<AscmUnloadingPoint> listUnloadingPoint { get; set; }
+    }
+
+    public class AscmDeliBatSumAllDetail
+    {
+        public int sumMainId { get; set; }
+        public List<AscmDeliBatSumDetail> listAscmDeliBatSumDetail { get; set; }
+        public List<AscmContainerDelivery> listAscmContainerDelivery { get; set; }
+        public List<AscmPalletDelivery> listAscmPalletDelivery { get; set; }
+        public List<AscmDeliveryOrderBatch> listAscmDeliveryOrderBatch { get; set; }
+        public List<AscmMaterialItem> listAscmMaterialItem { get; set; }
+    }
+}

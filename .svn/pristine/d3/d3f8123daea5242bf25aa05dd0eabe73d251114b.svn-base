@@ -1,0 +1,236 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/YnPublic/Views/Shared/Module.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	子库存转移查询
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <div region="center" title="" border="true" style="padding:0px;overflow:auto;">
+        <table id="dataGridWmsStockTrans" title="子库存转移查询" style="" border="false" fit="true" singleSelect="true"
+			idField="id" sortName="sortNo" sortOrder="asc" striped="true" toolbar="#tb1">
+		</table>
+        <div id="tb1">
+            单号：<input id="docNumber" type="text" style="width:100px;" />
+            更新时间：<input class="easyui-datebox" id="queryStartModifyTime" type="text" style="width:100px;" value="<%=ViewData["dtStart"] %>" />-<input class="easyui-datebox" id="queryEndModifyTime" type="text" style="width:100px;" value="<%=ViewData["dtEnd"] %>" />
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-search" onclick="Query();">查询</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-print" onclick="Print();">打印</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-undo" onclick="Undo();">驳回</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-ok" onclick="Review();">审核</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-ok" onclick="Check();">确认</a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-cancel" onclick="Delete();">删除</a>
+        </div>
+        <!--进度条-->           
+        <div id="wProgressbar" class="easyui-window" title="完成确认......" style="padding: 10px;width:440px;height:80px;"
+            data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,modal:true,shadow:true,closed:true">
+            <div id="p" class="easyui-progressbar" style="width:400px;"></div>
+        </div>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentScriptAndCss" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <script type="text/javascript">
+        $(function () {
+            $('#dataGridWmsStockTrans').datagrid({
+                rownumbers: true,
+                pagination: true,
+                singleSelect : true,
+                checkOnSelect: false,
+                selectOnCheck: false,
+                pageSize: 50,
+                loadMsg: '更新数据......',
+                frozenColumns: [[
+                    { field: 'id', title: 'ID', width: 20, align: 'center', hidden: 'true' },
+                    { field: 'ck',checkbox:true},
+                    { field: 'docNumber', title: '转移单号', width: 150, align: 'center' },
+                    { field: 'manualDocNumber', title: '手工单号', width: 150, align: 'center' }
+                ]],
+                columns: [[
+                    { field: 'fromWarehouseId', title: '来源仓库', width: 120, align: 'center' },
+                    { field: 'toWarehouseId', title: '目标仓库', width: 120, align: 'center' },
+                    { field: 'transType', title: '事务类型', width: 150, align: 'center' },
+//                    { field: 'createTime', title: '创建时间', width: 150, align: 'center' },
+                    { field: 'modifyTime', title: '修改时间', width: 150, align: 'center' },
+//                    { field: 'responsiblePerson', title: '责任人', width: 100, align: 'center' },
+                    { field: 'status', title: '状态英文', width: 60, align: 'center' },
+                    { field: 'statusCn', title: '状态', width: 60, align: 'center' },
+                    { field: 'fromWarehouseUser', title: '来源子库仓管员', width: 100, align: 'center' },
+                    { field: 'toWarehouseUser', title: '目标子库组长', width: 100, align: 'center' },
+                    { field: 'meno', title: '备注', width: 300, align: 'center' },
+                ]],
+                onSelect: function (rowIndex, rowData) {
+                    currentId = rowData.id;
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    WmsStockTransMainView();
+                },
+                onLoadSuccess: function () {
+                    $(this).datagrid('clearSelections');
+                    $(this).datagrid('clearChecked');
+                    if (currentId) {
+                        $(this).datagrid('selectRecord', currentId);
+                    }
+                }
+            });
+        });
+
+        function Query() {
+            var options = $('#dataGridWmsStockTrans').datagrid('options');
+            options.url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsStockTransMainList';
+            options.queryParams.queryWord = $('#docNumber').val();
+            options.queryParams.startPlanTime = $('#queryStartModifyTime').datebox('getText');
+            options.queryParams.endPlanTime = $('#queryEndModifyTime').datebox('getText');
+            $('#dataGridWmsStockTrans').datagrid('reload');
+        }
+        var currentId = null;
+        function WmsStockTransMainView() {
+            var selectRow = $('#dataGridWmsStockTrans').datagrid('getSelected');
+            if (selectRow) {
+                var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsStockTransMainView/' + selectRow.id+"?mi=<%=Request["mi"].ToString() %>";
+                parent.openTab('库存转移单_' + selectRow.docNumber, url);
+            } else {
+                $.messager.alert('提示', '请选择库存转移单！', 'info');
+            }
+        }
+        var statusOption = "";
+        function Review(){
+            var selectRow = $('#dataGridWmsStockTrans').datagrid('getSelected');
+            statusOption = "review";//状态改为已审核
+            if (selectRow.status == "draft") {
+                $.messager.confirm("确认", "是否审核？", function (result) {
+                if (result) {
+                     $.ajax({
+                            url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsStockTransUpdate',
+                            type: "post",
+                            dataType: "json",
+                            data: { "id": selectRow.id, "statusOption": statusOption },
+                            success: function (r) {
+                                if (r.result) {
+                                    $('#dataGridWmsStockTrans').datagrid('reload');
+                                }else {
+                                    $.messager.alert('错误', '提交失败:' + r.message, 'error');
+                                }
+                            }
+                        });
+                    }
+                });     
+            } else {
+                $.messager.alert('提示', '审核的库存转移单必须是草稿！', 'info');
+            }
+        }
+        function Undo(){
+            var selectRow = $('#dataGridWmsStockTrans').datagrid('getSelected');
+            statusOption = "draft";//状态改为草稿
+            if (selectRow.status == "review") {
+                $.messager.confirm("确认", "是否驳回？", function (result) {
+                if (result) {
+                     $.ajax({
+                            url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsStockTransUpdate',
+                            type: "post",
+                            dataType: "json",
+                            data: { "id": selectRow.id, "statusOption": statusOption },
+                            success: function (r) {
+                                if (r.result) {
+                                    $('#dataGridWmsStockTrans').datagrid('reload');
+                                }else {
+                                    $.messager.alert('错误', '提交失败:' + r.message, 'error');
+                                }
+                            }
+                        });
+                    }
+                });    
+            } else {
+                $.messager.alert('提示', '驳回的库存转移单必须是已审核！', 'info');
+            }
+        }
+        function Check(){
+            var selectRow = $('#dataGridWmsStockTrans').datagrid('getSelected');
+            if (selectRow.status == "review") {
+                $.messager.confirm("确认", "是否确认？", function (result) {
+                if (result) {
+                     $.ajax({
+                            url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsStockTransCheck',
+                            type: "post",
+                            dataType: "json",
+                            data: { "id": selectRow.id },
+                            beforeSend: function () {
+                                $('#wProgressbar').window('open');
+                                $('#p').progressbar('setValue', 0);
+                                setInterval(updateProgress, 200);
+                                return true;
+                            },
+                            success: function (r) {
+                                    $('#p').progressbar('setValue', 100);
+                                    $('#wProgressbar').window('close');
+
+                                if (r.result) {
+                                    $.messager.alert('提示', '提交成功!', 'info');
+                                    $('#dataGridWmsStockTrans').datagrid('reload');
+                                }else {
+                                    $.messager.alert('错误', '提交失败:' + r.message, 'error');
+                                }
+                            }
+                        });
+                    }
+                });    
+            } else {
+                $.messager.alert('提示', '确认的库存转移单必须是已审核！', 'info');
+            }
+        }
+        function updateProgress() {
+            var value = $('#p').progressbar('getValue');
+            if (value < 99) {
+                $('#p').progressbar('setValue', value + 1);
+            }
+        }
+        function Delete(){
+            var selectRows = $('#dataGridWmsStockTrans').datagrid('getChecked');
+            if (selectRows.length == 0) {
+                $.messager.alert('提示', '请勾择要删除的转移单', 'info');
+                return;
+            }
+            for(var i = 0;i < selectRows.length; i++){
+                if(selectRows[i].status != "draft"){
+                    $.messager.alert('提示', '删除的转移单必须是草稿！', 'info');
+                    return;
+                }
+            }
+            var docNumbers = "";
+            var mainIds = "";
+            for (var i = 0; i < selectRows.length; i++) {
+                 if (docNumbers) {
+                    docNumbers += ",</br>";
+                    mainIds += ",";
+                }
+                docNumbers +=encodeURIComponent(selectRows[i].docNumber);
+                mainIds +=encodeURIComponent(selectRows[i].id);
+            }
+            $.messager.confirm('确认', '确认删除转移单[<font color="red">' + docNumbers + '</font>]？', function (result) {
+                if (result) {
+                    var sUrl = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsStockTransDelete/';
+                    $.ajax({
+                        url: sUrl,
+                        type: "post",
+                        dataType: "json",
+                        data: { mainIds: mainIds },
+                        success: function (r) {
+                            if (r.result) {
+                                $('#dataGridWmsStockTrans').datagrid('reload');
+                            } else {
+                                $.messager.alert('确认', '删除失败:' + r.message, 'error');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        function Print() {
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/Ascm/ReportViewer/WmsStockTransPrint.aspx';
+            url += "?docNumber=" + $('#docNumber').val();
+            url += "&startModifyTime=" + $("#queryStartModifyTime").datebox('getText');
+            url += "&endModifyTime=" + $("#queryEndModifyTime").datebox('getText');
+            parent.openTab('子库存转移日志打印', url);
+        }
+    </script>
+</asp:Content>

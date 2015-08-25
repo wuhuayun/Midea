@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Base.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmEmployeeCar" table="Ascm_Employee_Car" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="plateNumber" column="plateNumber" length="30"/>
+    <property name="spec" column="spec" length="50"/>
+    <property name="color" column="color" length="10"/>
+    <property name="seatCount">
+      <column name="seatCount" sql-type="int default 5"/>
+    </property>
+    <property name="rfid" column="rfid" length="50"/>
+    <property name="memo" column="memo" length="50"/>
+    <property name="status" column="status" length="20"/>
+    <property name="exemption" column="exemption"/>
+
+    <property name="employeeId">
+      <column name="employeeId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="employeeDocNumber" column="employeeDocNumber" length="30"/>
+    <property name="employeeName" column="employeeName" length="50"/>
+    <property name="employeeSex" column="employeeSex" length="4"/>
+    <property name="employeeIdNumber" column="employeeIdNumber" length="20"/>
+    <property name="employeeOfficeTel" column="employeeOfficeTel" length="20"/>
+    <property name="employeeMobileTel" column="employeeMobileTel" length="20"/>
+    <property name="employeeLevel" column="employeeLevel" length="20"/>
+  </class>
+</hibernate-mapping> 

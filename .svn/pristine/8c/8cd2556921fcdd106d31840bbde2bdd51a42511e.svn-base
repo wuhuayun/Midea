@@ -1,0 +1,205 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/YnPublic/Views/Shared/Module.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	作业退料生成
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+   <div region="center" title="" border="true" style="padding:0px 0px 0px 0px;">
+        <table id="dgWmsMtlReturnDetail" title="作业退料查找" class="easyui-datagrid" style="" border="false"
+            data-options="fit: true,
+                          rownumbers: true,
+                          singleSelect : true,
+                          checkOnSelect: false,
+                          selectOnCheck: false,
+                          idField: 'id',
+                          sortName: 'id',
+                          sortOrder: 'asc',
+                          striped: true,
+                          toolbar: '#tb',
+                          loadMsg: '更新数据......',
+                          onSelect: function(rowIndex, rowRec){
+                          },
+                          onClickRow:function(rowIndex,rowRec){
+                              
+                          },
+                          onDblClickRow: function(rowIndex, rowRec){
+                              
+                          },
+                          onLoadSuccess: function(){
+                              $(this).datagrid('clearSelections');
+                              $(this).datagrid('clearChecked');
+                          }">
+            <thead data-options="frozen:true">
+                <tr>
+                    <th data-options="field:'id',hidden:true"></th>
+                    <%--<th data-options="checkbox:true"></th>--%>
+                    <th data-options="field:'materialDocNumber',width:100,align:'center'">物料编码</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th data-options="field:'materialDescription',width:320,align:'left'">物料描述</th>
+                    <th data-options="field:'materialUnit',width:60,align:'center'">单位</th>
+                    <%--<th data-options="field:'warelocationId',width:100,align:'center',
+                    formatter:function(value,row){
+                        return row.locationDocNumber;
+                    },
+                    editor:{
+                        type:'combobox',
+                        options:
+                        {
+                            valueField:'id',
+                            textField:'docNumber',
+                            multiple:false,
+                            mode:'remote'
+                        }
+                    }">货位编码</th>--%>
+                    <%--<th data-options="field:'quantity',width:80,align:'center',editor: { type: 'numberbox', options: { min: 0, validType: 'checkQuantity'}}">退料数量</th>--%>
+                    <th data-options="field:'warehouseIdName',width:120,align:'center'">供应子库</th>
+                    <th data-options="field:'requiredQuantity',width:80,align:'center'">需求数量</th>
+                    <th data-options="field:'quantityIssued',width:80,align:'center'">发料数量</th>
+                    <th data-options="field:'quantityDifference',width:80,align:'center'">差异数量</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="tb" style="padding:5px;height:auto;">
+            <div style="margin-bottom:5px;">
+                <span>作业日期：</span>
+                <input class="easyui-datebox" id="startScheduledStartDate" type="text" style="width:150px;" value="" data-options="validType:'checkDate'"/>-<input class="easyui-datebox" id="endScheduledStartDate" type="text" style="width:150px;" value="" data-options="validType:'checkDate'"/>
+
+                <span> &nbsp;作&nbsp;业&nbsp;号：</span>
+                <%Html.RenderPartial("~/Areas/Ascm/Views/Warehouse/WipEntitySelectCombo.ascx", new MideaAscm.Code.SelectCombo { id = "queryWipEntityId", width = "150px", panelWidth = 500, queryParams = "'filterWipEntityStatus':true" });%>
+            </div>
+            <div style="margin-bottom:5px;">
+                <span>供应子库：</span>
+                <%Html.RenderPartial("~/Areas/Ascm/Views/Warehouse/WarehouseSelectCombo.ascx", new MideaAscm.Code.SelectCombo { id = "queryWarehouseId", width = "150px" });%>
+                <span>供应类型：</span>
+                <select id="queryWipSupplyType">
+                    <option value="pushType">推式</option>
+                    <option value="pullType">拉式</option>
+                </select>
+            </div>
+            <div style="margin-bottom:5px;">
+                <span>物料编码：</span>
+                <input class="easyui-validatebox" id="queryStartMaterialDocNumber" type="text" style="width:145px;" />-<input class="easyui-validatebox" id="queryEndMaterialDocNumber" type="text" style="width:145px;" />
+                <span>&nbsp;计&nbsp;划&nbsp;组：</span>
+                <%Html.RenderPartial("~/Areas/Ascm/Views/Warehouse/WipScheduleGroupSelectCombo.ascx", new MideaAscm.Code.SelectCombo { id = "startScheduleGroup", width = "150px", onChange = "scheduleGroup_Change", queryParams = "fromMonitor:true" });%>
+                <%Html.RenderPartial("~/Areas/Ascm/Views/Warehouse/WipScheduleGroupSelectCombo.ascx", new MideaAscm.Code.SelectCombo { id = "endScheduleGroup", width = "150px", onChange = "scheduleGroup_Change", queryParams = "fromMonitor:true" });%>
+                
+                <a class="easyui-linkbutton" iconCls="icon-search" href="javascript:void(0)" onclick="Query()">查询</a>
+                <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="CreateWmsPreparation()">退料管理</a>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentScriptAndCss" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <script type="text/javascript">
+        var queryWipEntityId = null;
+        var queryWipEntityName = null;
+        var queryWarehouseId = null;
+        var queryWipSupplyType = null;
+        var queryStartMaterialDocNumber = null;
+        var queryEndMaterialDocNumber = null;
+        var startScheduledStartDate = "", endScheduledStartDate = "";
+        var startScheduleGroupName = "", endScheduleGroupName = "";
+
+        $(function () {
+            $('#queryWipSupplyType').change(function () {
+                Query()
+            });
+        });
+        function GetValue()
+        {
+            queryWipEntityId = $('#queryWipEntityId').combobox('getValue');
+            queryWarehouseId = $('#queryWarehouseId').combobox('getText');
+            queryWipSupplyType = $('#queryWipSupplyType').find("option:selected").val();
+            queryStartMaterialDocNumber = $('#queryStartMaterialDocNumber').val();
+            queryEndMaterialDocNumber = $('#queryEndMaterialDocNumber').val();
+
+            startScheduledStartDate = $('#startScheduledStartDate').datebox('getValue');
+            endScheduledStartDate = $('#endScheduledStartDate').datebox('getValue');
+        }
+        //变更"计划组"，刷新作业
+        function scheduleGroup_Change(newValue, oldValue) {
+            startScheduleGroupName = getScheduleGroupName("startScheduleGroup");
+            endScheduleGroupName = getScheduleGroupName("endScheduleGroup");
+        }
+
+        //获取计划组名称，大小写通用
+        function getScheduleGroupName(cboId) {
+            var scheduleGroupName = $('#' + cboId).combobox('getValue');
+            var g = $('#' + cboId).combogrid('grid');
+            var rows = g.datagrid('getRows');
+            for (var i = 0; i < rows.length; i++) {
+                if (rows[i].scheduleGroupId == scheduleGroupName || rows[i].scheduleGroupName.toUpperCase() == scheduleGroupName.toUpperCase()) {
+                    scheduleGroupName = rows[i].scheduleGroupName;
+                    break;
+                }
+            }
+            return scheduleGroupName;
+        }
+
+        function Query() {
+//            queryWipEntityId = $('#queryWipEntityId').combobox('getValue');
+//            queryWarehouseId = $('#queryWarehouseId').combobox('getText');
+//            queryWipSupplyType = $('#queryWipSupplyType').find("option:selected").val();
+//            queryStartMaterialDocNumber = $('#queryStartMaterialDocNumber').val();
+//            queryEndMaterialDocNumber = $('#queryEndMaterialDocNumber').val();
+            GetValue();
+            if (queryWipEntityId == null || queryWipEntityId == "" || queryWipEntityId == "0") {
+                $.messager.alert('提示', '请选择作业号！', 'info');
+                return;
+            }
+            $.ajax({
+                url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WipDiscreteJobsToMtlReturnAdd1/',
+                type: "post",
+                dataType: "json",
+                data: 
+                    { "wipEntityId": queryWipEntityId, 
+                      "queryWarehouseId": queryWarehouseId, 
+                      "queryWipSupplyType": queryWipSupplyType, 
+                      "queryStartMaterialDocNumber": queryStartMaterialDocNumber, 
+                      "queryEndMaterialDocNumber": queryEndMaterialDocNumber,
+                      "startScheduledStartDate":startScheduledStartDate,
+                      "endScheduledStartDate":endScheduledStartDate,
+                      "startScheduleGroupName":startScheduleGroupName,
+                      "endScheduleGroupName":endScheduleGroupName
+                     },
+                success: function (r) {
+                    if (r.result) {
+                        $('#dgWmsMtlReturnDetail').datagrid('loadData', r.rows);
+                    } else {
+                        $.messager.alert('确认', '添加失败:' + r.message, 'error'); 
+                    }
+                }
+            });
+        }
+        function CreateWmsPreparation() {
+            var selectRow = $('#dgWmsMtlReturnDetail').datagrid('getRows');
+            queryWipEntityName = $('#queryWipEntityId').combobox('getText');
+            GetValue();
+            if(queryWipEntityName==null||queryWipEntityName=="0"||queryWipEntityName=="")
+            {
+                $.messager.alert('提示', '请选择作业号！', 'info');
+                return;
+            }
+            if(queryWarehouseId==null||queryWarehouseId=="0"||queryWarehouseId=="")
+            {
+                $.messager.alert('提示', '请选择供应子库！', 'info');
+                return;
+            }
+            if (selectRow.length!=0) {
+                var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsJobMtlReturnIndex/?WipEntityName=' + queryWipEntityName + "&WarehouseId=" + queryWarehouseId
+                + "&WipSupplyType=" + queryWipSupplyType + "&StartMaterialDocNumber=" + queryStartMaterialDocNumber + "&EndMaterialDocNumber=" + queryEndMaterialDocNumber+"&mi=<%=Request["mi"].ToString() %>";
+
+                parent.openTab('作业退料管理_' + queryWipEntityName, url);
+            } else {
+                $.messager.alert('提示', '退料明细中无物料，无法进行退料操作！', 'info');
+            }
+        }
+    </script>
+</asp:Content>

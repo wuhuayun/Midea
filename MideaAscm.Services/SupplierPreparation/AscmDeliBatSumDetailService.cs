@@ -1,0 +1,408 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+using MideaAscm.Dal;
+using YnBaseDal;
+using NHibernate;
+using MideaAscm.Dal.SupplierPreparation.Entities;
+using MideaAscm.Dal.FromErp.Entities;
+using MideaAscm.Dal.Warehouse.Entities;
+using MideaAscm.Services.FromErp;
+using MideaAscm.Services.Base;
+using MideaAscm.Services.Warehouse;
+
+namespace MideaAscm.Services.SupplierPreparation
+{
+    public class AscmDeliBatSumDetailService
+    {
+        private static AscmDeliBatSumDetailService ascmDeliBatSumDetailServices;
+        public static AscmDeliBatSumDetailService GetInstance()
+        {
+            if (ascmDeliBatSumDetailServices == null)
+                ascmDeliBatSumDetailServices = new AscmDeliBatSumDetailService();
+            return ascmDeliBatSumDetailServices;
+        }
+
+        public int GetMaxId()
+        {
+            int maxId = 0;
+            try
+            {
+                maxId = YnDaoHelper.GetInstance().nHibernateHelper.GetMaxId("select max(id) from AscmDeliBatSumDetail");
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Get AscmDeliBatSumDetail MaxId)", ex);
+                throw ex;
+            }
+            return maxId;
+        }
+        public AscmDeliBatSumDetail Get(int id)
+        {
+            AscmDeliBatSumDetail ascmDeliBatSumDetail = null;
+            try
+            {
+                ascmDeliBatSumDetail = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmDeliBatSumDetail>(id);
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Get AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+            return ascmDeliBatSumDetail;
+        }
+        public List<AscmDeliBatSumDetail> GetList(string sql)
+        {
+            List<AscmDeliBatSumDetail> list = null;
+            try
+            {
+                IList<AscmDeliBatSumDetail> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmDeliBatSumDetail>(sql);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmDeliBatSumDetail>(ilist);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmDeliBatSumDetail> GetList(string sortName, string sortOrder, int? mainId, string queryWord, string whereOther)
+        {
+            return GetList(null, sortName, sortOrder, mainId, queryWord, whereOther);
+        }
+        public List<AscmDeliBatSumDetail> GetList(YnPage ynPage, string sortName, string sortOrder, int? mainId, string queryWord, string whereOther)
+        {
+            List<AscmDeliBatSumDetail> list = null;
+            try
+            {
+                string sort = " order by id ";
+                if (!string.IsNullOrEmpty(sortName))
+                {
+                    sort = " order by " + sortName.Trim() + " ";
+                    if (!string.IsNullOrEmpty(sortOrder))
+                        sort += sortOrder.Trim();
+                }
+
+                string sql = "from AscmDeliBatSumDetail ";
+                string containerBindNumber = "select sum(quantity) from AscmContainerDelivery where deliveryOrderBatchId=a.batchId and batSumMainId=a.mainId";
+                string checkQuantity = "select sum(quantity) from AscmContainerDelivery where deliveryOrderBatchId=a.batchId and batSumMainId=a.mainId and status='" + AscmContainerDelivery.StatusDefine.inWarehouseDoor + "'";
+                string receivedQuantity = "select sum(receivedQuantity) from AscmDeliBatOrderLink where batchId=a.batchId";
+                string containerNumber = "select count(distinct containerSn) from AscmContainerDelivery where deliveryOrderBatchId=a.batchId and batSumMainId=a.mainId";
+                string sql1 = "select new AscmDeliBatSumDetail(a,(" + containerBindNumber + "),(" + checkQuantity + "),(" + receivedQuantity + "),(" + containerNumber + ")) from AscmDeliBatSumDetail a ";
+
+                string where = "", whereQueryWord = "";
+                if (mainId.HasValue)
+                    where = YnBaseClass2.Helper.StringHelper.SqlWhereAndAdd(where, " mainId=" + mainId);
+                where = YnBaseClass2.Helper.StringHelper.SqlWhereAndAdd(where, whereQueryWord);
+                where = YnBaseClass2.Helper.StringHelper.SqlWhereAndAdd(where, whereOther);
+
+                if (!string.IsNullOrEmpty(where))
+                {
+                    sql += " where " + where;
+                    sql1 += " where " + where;
+                }
+                IList<AscmDeliBatSumDetail> ilist = null;
+                if (ynPage != null)
+                    ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmDeliBatSumDetail>(sql1 + sort, sql, ynPage);
+                else
+                    ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmDeliBatSumDetail>(sql1 + sort);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmDeliBatSumDetail>(ilist);
+                    SetDeliveryOrderBatch(list);
+                    SetMaterial(list);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmDeliBatSumDetail> GetListByMainId(int mainId, string whereOther = null)
+        {
+            return GetList("", "", mainId, "", whereOther);
+        }
+        public AscmDeliBatSumDetail GetByBatchId(int batchId)
+        {
+            AscmDeliBatSumDetail ascmDeliBatSumDetail = null;
+            try
+            {
+                string containerBindNumber = "select sum(quantity) from AscmContainerDelivery where deliveryOrderBatchId=a.batchId";
+                string palletBindNumber = "select sum(quantity) from AscmPalletDelivery where deliveryOrderBatchId=a.batchId";
+                string driverBindNumber = "select sum(quantity) from AscmDriverDelivery where deliveryOrderBatchId=a.batchId";
+                string receivedQuantity = "select sum(receivedQuantity) from AscmDeliBatOrderLink where batchId=a.batchId";
+                string sql = "select new AscmDeliBatSumDetail(a,(" + containerBindNumber + "),(" + palletBindNumber + "),(" + driverBindNumber + "),(" + receivedQuantity + ")) from AscmDeliBatSumDetail a ";
+                sql += " where batchId=" + batchId;
+
+                IList<AscmDeliBatSumDetail> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmDeliBatSumDetail>(sql);
+                if (ilist != null && ilist.Count > 0)
+                {
+                    ascmDeliBatSumDetail = ilist.First();
+                    AscmDeliveryOrderBatch ascmDeliveryOrderBatch = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmDeliveryOrderBatch>(batchId);
+                    ascmDeliBatSumDetail.ascmDeliveryOrderBatch = ascmDeliveryOrderBatch;
+                    AscmMaterialItem ascmMaterialItem = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmMaterialItem>(ascmDeliBatSumDetail.materialId);
+                    ascmDeliBatSumDetail.ascmMaterialItem = ascmMaterialItem;
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+            return ascmDeliBatSumDetail;
+        }
+
+        public void Save(List<AscmDeliBatSumDetail> listAscmDeliBatSumDetail)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.SaveList(listAscmDeliBatSumDetail);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+        }
+        public void Save(AscmDeliBatSumDetail ascmDeliBatSumDetail)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Save(ascmDeliBatSumDetail);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+        }
+        public void Update(AscmDeliBatSumDetail ascmDeliBatSumDetail)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmDeliBatSumDetail>(ascmDeliBatSumDetail);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmDeliBatSumDetail)", ex);
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Save AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+        }
+
+		public void Update(List<AscmDeliBatSumDetail> listAscmDeliBatSumDetail)
+		{
+			try
+			{
+				using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+				{
+					try
+					{
+						YnDaoHelper.GetInstance().nHibernateHelper.UpdateList(listAscmDeliBatSumDetail);
+						tx.Commit();//正确执行提交
+					}
+					catch (Exception ex)
+					{
+						tx.Rollback();//回滚
+						throw ex;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmDeliBatSumDetail)", ex);
+				throw ex;
+			}
+		}
+
+        public void Delete(int id)
+        {
+            try
+            {
+                AscmDeliBatSumDetail ascmDeliBatSumDetail = Get(id);
+                Delete(ascmDeliBatSumDetail);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Delete(AscmDeliBatSumDetail ascmDeliBatSumDetail)
+        {
+            try
+            {
+                YnDaoHelper.GetInstance().nHibernateHelper.Delete<AscmDeliBatSumDetail>(ascmDeliBatSumDetail);
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("删除失败(Delete AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+        }
+        public void Delete(List<AscmDeliBatSumDetail> listAscmDeliBatSumDetail)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.DeleteList(listAscmDeliBatSumDetail);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("删除失败(Delete AscmDeliBatSumDetail)", ex);
+                throw ex;
+            }
+        }
+
+        public void SetDeliveryOrderBatch(List<AscmDeliBatSumDetail> list, bool setComments = false)
+        {
+            if (list != null && list.Count > 0)
+            {
+                List<AscmDeliveryOrderBatch> listDeliveryOrderBatch = new List<AscmDeliveryOrderBatch>();
+                var batchIds = list.Select(P => P.batchId).Distinct();
+                var count = batchIds.Count();
+                string ids = string.Empty;
+                for (int i = 0; i < count; i++)
+                {
+                    if (!string.IsNullOrEmpty(ids))
+                        ids += ",";
+                    ids += batchIds.ElementAt(i);
+                    if ((i + 1) % 500 == 0 || (i + 1) == count)
+                    {
+                        if (!string.IsNullOrEmpty(ids))
+                        {
+                            string hql = "from AscmDeliveryOrderBatch where id in (" + ids + ")";
+                            if (setComments)
+                                hql = string.Format("select new AscmDeliveryOrderBatch(adob,({0})) from AscmDeliveryOrderBatch adob where id in (" + ids + ")", "select comments from AscmDeliveryOrderMain where batchId=adob.id and comments is not null and rownum=1");
+                            List<AscmDeliveryOrderBatch> _listDeliveryOrderBatch = AscmDeliveryOrderBatchService.GetInstance().GetList(hql);
+                            if (_listDeliveryOrderBatch != null)
+                                listDeliveryOrderBatch.AddRange(_listDeliveryOrderBatch);
+                        }
+                        ids = string.Empty;
+                    }
+                }
+                if (listDeliveryOrderBatch.Count > 0)
+                    list.ForEach(P => P.ascmDeliveryOrderBatch = listDeliveryOrderBatch.Find(T => T.id == P.batchId));
+            }
+        }
+        public void SetMaterial(List<AscmDeliBatSumDetail> list)
+        {
+            if (list != null && list.Count > 0)
+            {
+                List<AscmMaterialItem> listMaterialItem = new List<AscmMaterialItem>();
+                var materialIds = list.Select(P => P.materialId).Distinct();
+                var count = materialIds.Count();
+                string ids = string.Empty;
+                for (int i = 0; i < count; i++)
+                {
+                    if (!string.IsNullOrEmpty(ids))
+                        ids += ",";
+                    ids += materialIds.ElementAt(i);
+                    if ((i + 1) % 500 == 0 || (i + 1) == count)
+                    {
+                        if (!string.IsNullOrEmpty(ids))
+                        {
+                            string hql = "from AscmMaterialItem where id in (" + ids + ")";
+                            List<AscmMaterialItem> _listMaterialItem = AscmMaterialItemService.GetInstance().GetList(hql);
+                            if (_listMaterialItem != null)
+                                listMaterialItem.AddRange(_listMaterialItem);
+                        }
+                        ids = string.Empty;
+                    }
+                }
+                if (listMaterialItem.Count > 0)
+                    list.ForEach(P => P.ascmMaterialItem = listMaterialItem.Find(T => T.id == P.materialId));
+            }
+        }
+        public void SetWipEntityName(List<AscmDeliBatSumDetail> list)
+        {
+            if (list != null && list.Count > 0)
+            {
+                List<AscmDeliveryOrderMain> listDeliveryOrderMain = new List<AscmDeliveryOrderMain>();
+                var batchIds = list.Select(P => P.batchId).Distinct();
+                var count = batchIds.Count();
+                string ids = string.Empty;
+                for (int i = 0; i < count; i++)
+                {
+                    if (!string.IsNullOrEmpty(ids))
+                        ids += ",";
+                    ids += batchIds.ElementAt(i);
+                    if ((i + 1) % 500 == 0 || (i + 1) == count)
+                    {
+                        if (!string.IsNullOrEmpty(ids))
+                        {
+                            string wipEntityName = "select name from AscmWipEntities where wipEntityId=adom.wipEntityId";
+                            string totalNumber = "select sum(deliveryQuantity) from AscmDeliveryOrderDetail where mainId=adom.id";
+                            string hql = string.Format("select new AscmDeliveryOrderMain(adom,({0}),({1})) from AscmDeliveryOrderMain adom where adom.batchId in (" + ids + ")", wipEntityName, totalNumber);
+                            List<AscmDeliveryOrderMain> _listDeliveryOrderMain = AscmDeliveryOrderMainService.GetInstance().GetList(hql);
+                            if (_listDeliveryOrderMain != null)
+                                listDeliveryOrderMain.AddRange(_listDeliveryOrderMain);
+                        }
+                        ids = string.Empty;
+                    }
+                }
+                if (listDeliveryOrderMain.Count > 0)
+                { 
+                    foreach (AscmDeliBatSumDetail deliBatSumDetail in list)
+                    {
+                        string wipEntityNames = string.Join(";", listDeliveryOrderMain.FindAll(T => T.batchId == deliBatSumDetail.batchId && !string.IsNullOrEmpty(T.wipEntity)).Select(T => T.wipEntity + "[" + T.totalNumber + "]"));
+                        deliBatSumDetail.wipEntityNames = wipEntityNames;
+                    }
+                }
+            }
+        }
+    }
+}

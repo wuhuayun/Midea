@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmDeliveryNotifyMain" table="Ascm_Delivery_Notify_Main" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="supplierId" column="supplierId"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="materialId" column="materialId"/>
+    <property name="releasedQuantity">
+      <column name="releasedQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="promisedQuantity">
+      <column name="promisedQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="deliveryQuantity">
+      <column name="deliveryQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="cancelQuantity">
+      <column name="cancelQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="status" column="status" length="20"/>
+    <property name="releasedTime" column="releasedTime" length="20"/>
+    <property name="needTime" column="needTime" length="20"/>
+    <property name="promisedTime" column="promisedTime" length="20"/>
+    <property name="confirmTime" column="confirmTime" length="20"/>
+    <property name="comments" column="comments" length="240"/>
+    <property name="purchasingAgentId">
+      <column name="purchasingAgentId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="departmentId">
+      <column name="departmentId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="locationId">
+      <column name="locationId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="fdSourceType" column="fdSourceType" length="30"/>
+    <property name="appointmentStartTime" column="appointmentStartTime" length="20"/>
+    <property name="appointmentEndTime" column="appointmentEndTime" length="20"/>
+    <property name="appointmentStatus" column="appointmentStatus" length="20"/>
+    <property name="totalReceiveQuantity">
+      <column name="totalReceiveQuantity" sql-type="NUMBER default 0"/>
+    </property>
+  </class>
+</hibernate-mapping> 

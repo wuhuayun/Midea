@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+This template was written to work with NHibernate.Test.
+Copy the template to your NHibernate.Test project folder and rename it in hibernate.cfg.xml and change it 
+for your own use before compile tests in VisualStudio.
+-->
+<!-- This is the System.Data.dll provider for SQL Server -->
+<hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <session-factory name="NHibernate.Test">
+    <property name='proxyfactory.factory_class'>NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
+    <!--方式一，必须安装客户端 -->
+    <!--<property name="connection.driver_class">NHibernate.Driver.OracleClientDriver</property>--><!--此方式是调用微软驱动，效率比较低下-->
+    <!--引用Oracle.DataAccess.dll，此是oracle自带的驱动-->
+    <property name="connection.driver_class">NHibernate.Driver.OracleDataClientDriver</property>
+    <property name="connection.connection_string">
+      <!--Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl)));User Id=mideaascm;Password=123;-->
+      Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.16.17.77)(PORT=1601))(CONNECT_DATA=(SERVICE_NAME=md_ascm)));User Id=ascm;Password=Ascm32@;
+      <!--Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.16.9.191)(PORT=1522))(CONNECT_DATA=(SERVICE_NAME=md_ascm)));User Id=ascm;Password=AScm1240#;-->
+      <!--Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=219.138.226.175)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl)));User Id=MideaAscm;Password=123;-->
+    </property> 
+    <!--方式二，不用安装客户端 引用：NHibernate.OracleDriver.dll  TDTek.Oracle.dll 但好像不能生成表结构
+    <property name="connection.driver_class">NHibernate.OracleDriver.Driver.OracleDDTekClientDriver,NHibernate.OracleDriver</property>
+    <property name="connection.connection_string">
+      Host=localhost;Port=1521;User ID=mideaascm;Password=123;SID=xe
+    </property>-->
+    <property name="adonet.batch_size">10</property>
+    <property name="show_sql">false</property>
+    <property name="dialect">NHibernate.Dialect.Oracle10gDialect</property>
+    <property name="command_timeout">60</property>
+    <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+    <property name="hbm2ddl.auto">update</property>
+    <!--用OracleDataClientDriver会有点问题，请下下面一行，注意Oracle.DataAccess.dll的属性要复制本地-->
+    <property name="hbm2ddl.keywords">none</property>
+    <!--<mapping assembly="YnFrame.Dal"/>
+    <mapping assembly="MideaAscm.Dal"/>-->
+  </session-factory>
+</hibernate-configuration>

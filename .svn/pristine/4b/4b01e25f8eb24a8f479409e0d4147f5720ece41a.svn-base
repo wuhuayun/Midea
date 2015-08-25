@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWipRequirementOperations" table="Ascm_Wip_Require_Operat" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="inventoryItemId">
+      <column name="inventoryItemId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="operationSeqNum">
+      <column name="operationSeqNum" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="requiredQuantity">
+      <column name="requiredQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="quantityIssued">
+      <column name="quantityIssued" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="quantityPerAssembly">
+      <column name="quantityPerAssembly" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="supplySubinventory" column="supplySubinventory" length="20"/>
+    <property name="mpsRequiredQuantity">
+      <column name="mpsRequiredQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="mpsDateRequired" column="mpsDateRequired" length="20"/>
+    <property name="wipSupplyType">
+      <column name="wipSupplyType" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="taskId">
+      <column name="taskId" sql-type="NUMBER(10,0)"/>
+    </property>
+    <property name="tip" column="tip" length="200"/>
+    <property name="dateRequired" column="dateRequired" length="20"/>
+    <property name="getMaterialString" column="getMaterialString" length="400"/>
+    <property name="getMaterialQuantity">
+      <column name="getMaterialQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="wmsPreparationString" column="wmsPreparationString" length="400"/>
+    <property name="wmsPreparationQuantity">
+      <column name="wmsPreparationQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="ascmIssuedQuantity">
+      <column name="ascmIssuedQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="ascmPreparedQuantity">
+      <column name="ascmPreparedQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="wmsPreparationWarehouse" column="wmsPreparationWarehouse" length="20"/>
+  </class>
+</hibernate-mapping> 

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE2636D8-2BD7-4505-8721-B640BB350513}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MideaAscm.Services</RootNamespace>
+    <AssemblyName>MideaAscm.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\Dll\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YnBaseClass2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnBaseClass2.dll</HintPath>
+    </Reference>
+    <Reference Include="YnBaseDal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnBaseDal.dll</HintPath>
+    </Reference>
+    <Reference Include="YnFrame.Dal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnFrame.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="YnFrame.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Yn\YnFrame.Services.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AscmForkliftContainerLogService.cs" />
+    <Compile Include="Base\AscmReadingHeadLogService.cs" />
+    <Compile Include="Base\AscmMaterialItemService.cs" />
+    <Compile Include="Base\AscmReadLogService.cs" />
+    <Compile Include="GetMaterialManage\AscmGenerateTaskRuleService.cs" />
+    <Compile Include="SupplierPreparation\AscmContainerUnitQuantityService.cs" />
+    <Compile Include="Warehouse\AscmWhTeamService.cs" />
+    <Compile Include="Warehouse\AscmWhTeamUserService.cs" />
+    <Compile Include="Base\AscmSupplierAddressService.cs" />
+    <Compile Include="Base\AscmSupplierMaterialLinkService.cs" />
+    <Compile Include="Base\AscmSupplierService.cs" />
+    <Compile Include="Base\AscmWarehouseService.cs" />
+    <Compile Include="Base\AscmEmployeeService.cs" />
+    <Compile Include="Base\AscmEmployeeCarService.cs" />
+    <Compile Include="Base\AscmRfidService.cs" />
+    <Compile Include="Base\AscmUserInfoService.cs" />
+    <Compile Include="ContainerManage\AscmCheckWarnService.cs" />
+    <Compile Include="ContainerManage\AscmContaierCheckService.cs" />
+    <Compile Include="ContainerManage\AscmContainerInfoService.cs" />
+    <Compile Include="ContainerManage\AscmStoreInOutService.cs" />
+    <Compile Include="ContainerManage\AscmTagLogService.cs" />
+    <Compile Include="ContainerManage\AscmTagManageService.cs" />
+    <Compile Include="FromErp\AscmCuxWipReleaseHeadersService.cs" />
+    <Compile Include="FromErp\AscmCuxWipReleaseLinesService.cs" />
+    <Compile Include="FromErp\AscmMtlOnhandQuantitiesDetailService.cs" />
+    <Compile Include="FromErp\AscmMtlTransactionReasonsService.cs" />
+    <Compile Include="FromErp\AscmWipDiscreteJobsService.cs" />
+    <Compile Include="FromErp\AscmWipEntitiesService.cs" />
+    <Compile Include="FromErp\AscmWipRequirementOperationsService.cs" />
+    <Compile Include="FromErp\AscmWipScheduleGroupsService.cs" />
+    <Compile Include="GetMaterialManage\AscmAllocateRuleService.cs" />
+    <Compile Include="GetMaterialManage\AscmCommonHelperService.cs" />
+    <Compile Include="GetMaterialManage\AscmDiscreteJobsService.cs" />
+    <Compile Include="GetMaterialManage\AscmForkliftService.cs" />
+    <Compile Include="GetMaterialManage\AscmGetMaterialTaskService.cs" />
+    <Compile Include="GetMaterialManage\AscmLogisticsClassInfoService.cs" />
+    <Compile Include="GetMaterialManage\AscmMarkTaskLogService.cs" />
+    <Compile Include="GetMaterialManage\AscmMaterialCategoryService.cs" />
+    <Compile Include="GetMaterialManage\AscmMaterialSubCategoryService.cs" />
+    <Compile Include="GetMaterialManage\AscmMonitoringService.cs" />
+    <Compile Include="IEntity\WmsAndLogisticsService.cs" />
+    <Compile Include="MesInterface\AscmMesService.cs" />
+    <Compile Include="SupplierPreparation\AscmAppointmentDistributionService.cs" />
+    <Compile Include="SupplierPreparation\AscmContainerService.cs" />
+    <Compile Include="SupplierPreparation\AscmContainerSpecService.cs" />
+    <Compile Include="SupplierPreparation\AscmContainerDeliveryService.cs" />
+    <Compile Include="SupplierPreparation\AscmDeliBatOrderLinkService.cs" />
+    <Compile Include="SupplierPreparation\AscmDeliBatSumDetailService.cs" />
+    <Compile Include="SupplierPreparation\AscmDeliBatSumMainService.cs" />
+    <Compile Include="SupplierPreparation\AscmDriverService.cs" />
+    <Compile Include="SupplierPreparation\AscmPalletService.cs" />
+    <Compile Include="SupplierPreparation\AscmPalletDeliveryService.cs" />
+    <Compile Include="SupplierPreparation\AscmDriverDeliveryService.cs" />
+    <Compile Include="Vehicle\AscmTruckSwipeLogService.cs" />
+    <Compile Include="Vehicle\AscmUnloadingPointService.cs" />
+    <Compile Include="Vehicle\AscmEmpCarSwipeLogService.cs" />
+    <Compile Include="Base\AscmReadingHeadService.cs" />
+    <Compile Include="Base\AscmDoorService.cs" />
+    <Compile Include="FromErp\AscmDeliveryNotifyMainService.cs" />
+    <Compile Include="FromErp\AscmDeliveryNotifyDetailService.cs" />
+    <Compile Include="FromErp\AscmDeliveryOrderMainService.cs" />
+    <Compile Include="FromErp\AscmDeliveryOrderDetailService.cs" />
+    <Compile Include="FromErp\AscmDeliveryOrderBatchService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicle\AscmUnloadingPointMapService.cs" />
+    <Compile Include="Vehicle\AscmUnloadingPointMapLinkService.cs" />
+    <Compile Include="Vehicle\AscmUnloadingPointLogService.cs" />
+    <Compile Include="Vehicle\AscmUnloadingPointControllerService.cs" />
+    <Compile Include="Warehouse\AscmBuildingWarehouseLinkService.cs" />
+    <Compile Include="Warehouse\AscmLocationMaterialLinkLogService.cs" />
+    <Compile Include="Warehouse\AscmMesInteractiveLogService.cs" />
+    <Compile Include="Warehouse\AscmMesTransStyleService.cs" />
+    <Compile Include="Warehouse\AscmWmsContainerDeliveryService.cs" />
+    <Compile Include="Warehouse\AscmWmsBackInvoiceMainService.cs" />
+    <Compile Include="Warehouse\AscmWmsBackInvoiceDetailService.cs" />
+    <Compile Include="Warehouse\AscmWmsIncAccCheckoutService.cs" />
+    <Compile Include="Warehouse\AscmWmsIncManAccDetailService.cs" />
+    <Compile Include="Warehouse\AscmWmsIncManAccMainService.cs" />
+    <Compile Include="Warehouse\AscmWmsMtlRequisitionMainService.cs" />
+    <Compile Include="Warehouse\AscmWorkshopBuildingService.cs" />
+    <Compile Include="Warehouse\AscmWareloactionService.cs" />
+    <Compile Include="Warehouse\AscmAssignWarelocationService.cs" />
+    <Compile Include="Warehouse\AscmLocationMaterialLinkService.cs" />
+    <Compile Include="Warehouse\AscmWmsStockTransMainService.cs" />
+    <Compile Include="Warehouse\AscmWmsStockTransDetailService.cs" />
+    <Compile Include="Warehouse\AscmWmsPreparationMainService.cs" />
+    <Compile Include="Warehouse\AscmWmsPreparationDetailService.cs" />
+    <Compile Include="Warehouse\AscmWmsMtlReturnMainService.cs" />
+    <Compile Include="Warehouse\AscmWmsMtlReturnDetailService.cs" />
+    <Compile Include="Warehouse\AscmWmsLocationTransferService.cs" />
+    <Compile Include="Warehouse\AscmWmsBackInvoiceLinkService.cs" />
+    <Compile Include="Warehouse\AscmWmsMtlRequisitionDetailService.cs" />
+    <Compile Include="Warehouse\AscmWmsLogisticsMainLogService.cs" />
+    <Compile Include="Warehouse\AscmWmsMaterialLabelService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MideaAscm.Dal\MideaAscm.Dal.csproj">
+      <Project>{DFDD71A2-7DE8-4209-B723-4F65E0122CCD}</Project>
+      <Name>MideaAscm.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

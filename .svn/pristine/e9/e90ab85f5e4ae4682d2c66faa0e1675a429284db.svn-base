@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmDiscreteJobs" table="Ascm_Discrete_Jobs" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/>
+    </id>
+    <property name="identificationId">
+      <column name="identificationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="jobId" column="jobId" length="20"/>
+    <property name="jobDate" column="jobDate" length="20"/>
+    <property name="jobInfoId" column="jobInfoId" length="20"/>
+    <property name="jobDesc" column="jobDesc" length="200"/>
+    <property name="count">
+      <column name="count" sql-type="int default 0"/>
+    </property>
+    <property name="productLine" column="productLine" length="20"/>
+    <property name="sequence" column="sequence" length="20"/>
+    <property name="tip" column="tip" length="200"/>
+    <property name="onlineTime" column="onlineTime" length="20"/>
+    <property name="which">
+      <column name="which" sql-type="int default 0"/>
+    </property>
+    <property name="time" column="time" length="20"/>
+    <property name="workerId" column="workerId" length="20"/>
+    <property name="status" column="status" length="20"/>
+    <property name="tip1" column="tip1" length="200"/>
+    <property name="tip2" column="tip2" length="200"/>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER default 0"/>
+    </property>
+  </class>
+</hibernate-mapping>

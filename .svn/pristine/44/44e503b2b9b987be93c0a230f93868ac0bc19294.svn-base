@@ -1,0 +1,2716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hostIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encryptTicket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserAuthenticationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encryptTicket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCountResult" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMaxIdResult" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjectResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBaseInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBaseInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserBaseInfoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynPage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="whereOther" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAdministrator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAdministratorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAdministratorResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserListNotInModuleFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="whereOther" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserListNotInModuleFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserListNotInModuleFunctionResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRoleLinkListByRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRoleLinkListByRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserRoleLinkListByRoleIdResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRoleLinkListByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRoleLinkListByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserRoleLinkListByUserIdResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleListNotInModuleFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleListNotInModuleFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleListNotInModuleFunctionResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveRoleResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRoleResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleListInUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleListInUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleListInUserResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPositionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynPage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="whereOther" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPositionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPositionListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynPosition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SavePositionResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynPosition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePositionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="positionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynDepartment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveDepartmentResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynDepartment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDepartmentResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departmentId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentPositionLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departmentId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="positionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentPositionLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentPositionLinkResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDepartmentPositionLinkList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnDepartmentPositionLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDepartmentPositionLinkListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDepartmentPositionLinkList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnDepartmentPositionLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDepartmentPositionLinkListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormMainMenuList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormMainMenuListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormMainMenuListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormSubMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="subMenuId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormSubMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormSubMenuResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormSubMenuList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormSubMenuListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormSubMenuListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormMainMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynFormMainMenu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormMainMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFormMainMenuResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormMainMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynFormMainMenu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormMainMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFormMainMenuResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormMainMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="menuId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormMainMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormSubMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynFormSubMenu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormSubMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFormSubMenuResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormSubMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynFormSubMenu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormSubMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFormSubMenuResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormSubMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="menuId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormSubMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionListNotInYnUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionListNotInYnUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionListNotInYnUserResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionListNotInYnRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionListNotInYnRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionListNotInYnRoleResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionUserLinkListByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionUserLinkListByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionUserLinkListByUserIdResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionRoleLinkListByRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionRoleLinkListByRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionRoleLinkListByRoleIdResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionUserLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="uerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionUserLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionUserLinkResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionRoleLinkByModuleFunctionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionRoleLinkByModuleFunctionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionRoleLinkByModuleFunctionIdResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionUserLinkByModuleFunctionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormModuleFunctionUserLinkByModuleFunctionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormModuleFunctionUserLinkByModuleFunctionIdResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormModuleFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="functionId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormModuleFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormModuleFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynFormModuleFunction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormModuleFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFormModuleFunctionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormModuleFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ynFormModuleFunction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormModuleFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFormModuleFunctionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormModuleFunctionUserLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnFormModuleFunctionUserLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormModuleFunctionUserLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFormModuleFunctionUserLinkResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormModuleFunctionUserLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnFormModuleFunctionUserLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormModuleFunctionUserLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFormModuleFunctionUserLinkResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormModuleFunctionUserLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnFormModuleFunctionUserLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormModuleFunctionUserLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFormModuleFunctionUserLinkResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormModuleFunctionRoleLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnFormModuleFunctionRoleLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFormModuleFunctionRoleLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFormModuleFunctionRoleLinkResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormModuleFunctionRoleLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnFormModuleFunctionRoleLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFormModuleFunctionRoleLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFormModuleFunctionRoleLinkResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormModuleFunctionRoleLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_listYnFormModuleFunctionRoleLink" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFormModuleFunctionRoleLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFormModuleFunctionRoleLinkResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCount" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxId" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObject" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBaseInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserBaseInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBaseInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserBaseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAdministratorSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAdministrator" />
+  </wsdl:message>
+  <wsdl:message name="IsAdministratorSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAdministratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListNotInModuleFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserListNotInModuleFunction" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListNotInModuleFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserListNotInModuleFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRoleLinkListByRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserRoleLinkListByRoleId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRoleLinkListByRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserRoleLinkListByRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRoleLinkListByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserRoleLinkListByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRoleLinkListByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserRoleLinkListByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleListNotInModuleFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleListNotInModuleFunction" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleListNotInModuleFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleListNotInModuleFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleList" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRole" />
+  </wsdl:message>
+  <wsdl:message name="SaveRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRole" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleListInUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleListInUser" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleListInUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleListInUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPositionList" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPositionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePositionSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePosition" />
+  </wsdl:message>
+  <wsdl:message name="SavePositionSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePositionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePosition" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePositionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePositionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePosition" />
+  </wsdl:message>
+  <wsdl:message name="DeletePositionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentList" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDepartment" />
+  </wsdl:message>
+  <wsdl:message name="SaveDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDepartment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDepartment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentPositionLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentPositionLink" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentPositionLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentPositionLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDepartmentPositionLinkListSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDepartmentPositionLinkList" />
+  </wsdl:message>
+  <wsdl:message name="SaveDepartmentPositionLinkListSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDepartmentPositionLinkListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentPositionLinkListSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentPositionLinkList" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentPositionLinkListSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentPositionLinkListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormMainMenuListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormMainMenuList" />
+  </wsdl:message>
+  <wsdl:message name="GetFormMainMenuListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormMainMenuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormSubMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormSubMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetFormSubMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormSubMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormSubMenuListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormSubMenuList" />
+  </wsdl:message>
+  <wsdl:message name="GetFormSubMenuListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormSubMenuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormMainMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFormMainMenu" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormMainMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFormMainMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormMainMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFormMainMenu" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormMainMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFormMainMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormMainMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFormMainMenu" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormMainMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFormMainMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormSubMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFormSubMenu" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormSubMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFormSubMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormSubMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFormSubMenu" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormSubMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFormSubMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormSubMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFormSubMenu" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormSubMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFormSubMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunction" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionList" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionListNotInYnUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionListNotInYnUser" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionListNotInYnUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionListNotInYnUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionListNotInYnRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionListNotInYnRole" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionListNotInYnRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionListNotInYnRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionUserLinkListByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionUserLinkListByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionUserLinkListByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionUserLinkListByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionRoleLinkListByRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionRoleLinkListByRoleId" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionRoleLinkListByRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionRoleLinkListByRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionUserLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionUserLink" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionUserLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionUserLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionRoleLinkByModuleFunctionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionRoleLinkByModuleFunctionId" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionRoleLinkByModuleFunctionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionRoleLinkByModuleFunctionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionUserLinkByModuleFunctionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionUserLinkByModuleFunctionId" />
+  </wsdl:message>
+  <wsdl:message name="GetFormModuleFunctionUserLinkByModuleFunctionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormModuleFunctionUserLinkByModuleFunctionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormModuleFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFormModuleFunction" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormModuleFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFormModuleFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormModuleFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFormModuleFunction" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormModuleFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFormModuleFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormModuleFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFormModuleFunction" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormModuleFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFormModuleFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormModuleFunctionUserLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFormModuleFunctionUserLink" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormModuleFunctionUserLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFormModuleFunctionUserLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormModuleFunctionUserLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFormModuleFunctionUserLink" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormModuleFunctionUserLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFormModuleFunctionUserLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormModuleFunctionUserLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFormModuleFunctionUserLink" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormModuleFunctionUserLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFormModuleFunctionUserLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormModuleFunctionRoleLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFormModuleFunctionRoleLink" />
+  </wsdl:message>
+  <wsdl:message name="SaveFormModuleFunctionRoleLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFormModuleFunctionRoleLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormModuleFunctionRoleLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFormModuleFunctionRoleLink" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFormModuleFunctionRoleLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFormModuleFunctionRoleLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormModuleFunctionRoleLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFormModuleFunctionRoleLink" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFormModuleFunctionRoleLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFormModuleFunctionRoleLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="YnWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthentication">
+      <wsdl:input message="tns:UserAuthenticationSoapIn" />
+      <wsdl:output message="tns:UserAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCount">
+      <wsdl:input message="tns:GetCountSoapIn" />
+      <wsdl:output message="tns:GetCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxId">
+      <wsdl:input message="tns:GetMaxIdSoapIn" />
+      <wsdl:output message="tns:GetMaxIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObject">
+      <wsdl:input message="tns:GetObjectSoapIn" />
+      <wsdl:output message="tns:GetObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBaseInfo">
+      <wsdl:input message="tns:GetUserBaseInfoSoapIn" />
+      <wsdl:output message="tns:GetUserBaseInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input message="tns:GetUserSoapIn" />
+      <wsdl:output message="tns:GetUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListSoapIn" />
+      <wsdl:output message="tns:GetUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input message="tns:SaveUserSoapIn" />
+      <wsdl:output message="tns:SaveUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input message="tns:UpdateUserSoapIn" />
+      <wsdl:output message="tns:UpdateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input message="tns:DeleteUserSoapIn" />
+      <wsdl:output message="tns:DeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAdministrator">
+      <wsdl:input message="tns:IsAdministratorSoapIn" />
+      <wsdl:output message="tns:IsAdministratorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserListNotInModuleFunction">
+      <wsdl:input message="tns:GetUserListNotInModuleFunctionSoapIn" />
+      <wsdl:output message="tns:GetUserListNotInModuleFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleLinkListByRoleId">
+      <wsdl:input message="tns:GetUserRoleLinkListByRoleIdSoapIn" />
+      <wsdl:output message="tns:GetUserRoleLinkListByRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleLinkListByUserId">
+      <wsdl:input message="tns:GetUserRoleLinkListByUserIdSoapIn" />
+      <wsdl:output message="tns:GetUserRoleLinkListByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleListNotInModuleFunction">
+      <wsdl:input message="tns:GetRoleListNotInModuleFunctionSoapIn" />
+      <wsdl:output message="tns:GetRoleListNotInModuleFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleList">
+      <wsdl:input message="tns:GetRoleListSoapIn" />
+      <wsdl:output message="tns:GetRoleListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRole">
+      <wsdl:input message="tns:SaveRoleSoapIn" />
+      <wsdl:output message="tns:SaveRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <wsdl:input message="tns:UpdateRoleSoapIn" />
+      <wsdl:output message="tns:UpdateRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input message="tns:DeleteRoleSoapIn" />
+      <wsdl:output message="tns:DeleteRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleListInUser">
+      <wsdl:input message="tns:GetRoleListInUserSoapIn" />
+      <wsdl:output message="tns:GetRoleListInUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPositionList">
+      <wsdl:input message="tns:GetPositionListSoapIn" />
+      <wsdl:output message="tns:GetPositionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePosition">
+      <wsdl:input message="tns:SavePositionSoapIn" />
+      <wsdl:output message="tns:SavePositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosition">
+      <wsdl:input message="tns:UpdatePositionSoapIn" />
+      <wsdl:output message="tns:UpdatePositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePosition">
+      <wsdl:input message="tns:DeletePositionSoapIn" />
+      <wsdl:output message="tns:DeletePositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentList">
+      <wsdl:input message="tns:GetDepartmentListSoapIn" />
+      <wsdl:output message="tns:GetDepartmentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDepartment">
+      <wsdl:input message="tns:SaveDepartmentSoapIn" />
+      <wsdl:output message="tns:SaveDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <wsdl:input message="tns:UpdateDepartmentSoapIn" />
+      <wsdl:output message="tns:UpdateDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <wsdl:input message="tns:DeleteDepartmentSoapIn" />
+      <wsdl:output message="tns:DeleteDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPositionLink">
+      <wsdl:input message="tns:GetDepartmentPositionLinkSoapIn" />
+      <wsdl:output message="tns:GetDepartmentPositionLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDepartmentPositionLinkList">
+      <wsdl:input message="tns:SaveDepartmentPositionLinkListSoapIn" />
+      <wsdl:output message="tns:SaveDepartmentPositionLinkListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartmentPositionLinkList">
+      <wsdl:input message="tns:DeleteDepartmentPositionLinkListSoapIn" />
+      <wsdl:output message="tns:DeleteDepartmentPositionLinkListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormMainMenuList">
+      <wsdl:input message="tns:GetFormMainMenuListSoapIn" />
+      <wsdl:output message="tns:GetFormMainMenuListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSubMenu">
+      <wsdl:input message="tns:GetFormSubMenuSoapIn" />
+      <wsdl:output message="tns:GetFormSubMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSubMenuList">
+      <wsdl:input message="tns:GetFormSubMenuListSoapIn" />
+      <wsdl:output message="tns:GetFormSubMenuListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormMainMenu">
+      <wsdl:input message="tns:SaveFormMainMenuSoapIn" />
+      <wsdl:output message="tns:SaveFormMainMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormMainMenu">
+      <wsdl:input message="tns:UpdateFormMainMenuSoapIn" />
+      <wsdl:output message="tns:UpdateFormMainMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormMainMenu">
+      <wsdl:input message="tns:DeleteFormMainMenuSoapIn" />
+      <wsdl:output message="tns:DeleteFormMainMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormSubMenu">
+      <wsdl:input message="tns:SaveFormSubMenuSoapIn" />
+      <wsdl:output message="tns:SaveFormSubMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormSubMenu">
+      <wsdl:input message="tns:UpdateFormSubMenuSoapIn" />
+      <wsdl:output message="tns:UpdateFormSubMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormSubMenu">
+      <wsdl:input message="tns:DeleteFormSubMenuSoapIn" />
+      <wsdl:output message="tns:DeleteFormSubMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunction">
+      <wsdl:input message="tns:GetFormModuleFunctionSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionList">
+      <wsdl:input message="tns:GetFormModuleFunctionListSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionListNotInYnUser">
+      <wsdl:input message="tns:GetFormModuleFunctionListNotInYnUserSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionListNotInYnUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionListNotInYnRole">
+      <wsdl:input message="tns:GetFormModuleFunctionListNotInYnRoleSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionListNotInYnRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLinkListByUserId">
+      <wsdl:input message="tns:GetFormModuleFunctionUserLinkListByUserIdSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionUserLinkListByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionRoleLinkListByRoleId">
+      <wsdl:input message="tns:GetFormModuleFunctionRoleLinkListByRoleIdSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionRoleLinkListByRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLink">
+      <wsdl:input message="tns:GetFormModuleFunctionUserLinkSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionUserLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionRoleLinkByModuleFunctionId">
+      <wsdl:input message="tns:GetFormModuleFunctionRoleLinkByModuleFunctionIdSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionRoleLinkByModuleFunctionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLinkByModuleFunctionId">
+      <wsdl:input message="tns:GetFormModuleFunctionUserLinkByModuleFunctionIdSoapIn" />
+      <wsdl:output message="tns:GetFormModuleFunctionUserLinkByModuleFunctionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunction">
+      <wsdl:input message="tns:DeleteFormModuleFunctionSoapIn" />
+      <wsdl:output message="tns:DeleteFormModuleFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunction">
+      <wsdl:input message="tns:SaveFormModuleFunctionSoapIn" />
+      <wsdl:output message="tns:SaveFormModuleFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunction">
+      <wsdl:input message="tns:UpdateFormModuleFunctionSoapIn" />
+      <wsdl:output message="tns:UpdateFormModuleFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunctionUserLink">
+      <wsdl:input message="tns:SaveFormModuleFunctionUserLinkSoapIn" />
+      <wsdl:output message="tns:SaveFormModuleFunctionUserLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunctionUserLink">
+      <wsdl:input message="tns:DeleteFormModuleFunctionUserLinkSoapIn" />
+      <wsdl:output message="tns:DeleteFormModuleFunctionUserLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunctionUserLink">
+      <wsdl:input message="tns:UpdateFormModuleFunctionUserLinkSoapIn" />
+      <wsdl:output message="tns:UpdateFormModuleFunctionUserLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunctionRoleLink">
+      <wsdl:input message="tns:SaveFormModuleFunctionRoleLinkSoapIn" />
+      <wsdl:output message="tns:SaveFormModuleFunctionRoleLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunctionRoleLink">
+      <wsdl:input message="tns:DeleteFormModuleFunctionRoleLinkSoapIn" />
+      <wsdl:output message="tns:DeleteFormModuleFunctionRoleLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunctionRoleLink">
+      <wsdl:input message="tns:UpdateFormModuleFunctionRoleLinkSoapIn" />
+      <wsdl:output message="tns:UpdateFormModuleFunctionRoleLinkSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="YnWebServiceHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="YnWebServiceHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="YnWebServiceSoap" type="tns:YnWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthentication">
+      <soap:operation soapAction="http://tempuri.org/UserAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCount">
+      <soap:operation soapAction="http://tempuri.org/GetCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxId">
+      <soap:operation soapAction="http://tempuri.org/GetMaxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObject">
+      <soap:operation soapAction="http://tempuri.org/GetObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBaseInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserBaseInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap:operation soapAction="http://tempuri.org/GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAdministrator">
+      <soap:operation soapAction="http://tempuri.org/IsAdministrator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserListNotInModuleFunction">
+      <soap:operation soapAction="http://tempuri.org/GetUserListNotInModuleFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleLinkListByRoleId">
+      <soap:operation soapAction="http://tempuri.org/GetUserRoleLinkListByRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleLinkListByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetUserRoleLinkListByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleListNotInModuleFunction">
+      <soap:operation soapAction="http://tempuri.org/GetRoleListNotInModuleFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleList">
+      <soap:operation soapAction="http://tempuri.org/GetRoleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRole">
+      <soap:operation soapAction="http://tempuri.org/SaveRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <soap:operation soapAction="http://tempuri.org/UpdateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap:operation soapAction="http://tempuri.org/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleListInUser">
+      <soap:operation soapAction="http://tempuri.org/GetRoleListInUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPositionList">
+      <soap:operation soapAction="http://tempuri.org/GetPositionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePosition">
+      <soap:operation soapAction="http://tempuri.org/SavePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosition">
+      <soap:operation soapAction="http://tempuri.org/UpdatePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePosition">
+      <soap:operation soapAction="http://tempuri.org/DeletePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentList">
+      <soap:operation soapAction="http://tempuri.org/GetDepartmentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDepartment">
+      <soap:operation soapAction="http://tempuri.org/SaveDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <soap:operation soapAction="http://tempuri.org/UpdateDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <soap:operation soapAction="http://tempuri.org/DeleteDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPositionLink">
+      <soap:operation soapAction="http://tempuri.org/GetDepartmentPositionLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDepartmentPositionLinkList">
+      <soap:operation soapAction="http://tempuri.org/SaveDepartmentPositionLinkList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartmentPositionLinkList">
+      <soap:operation soapAction="http://tempuri.org/DeleteDepartmentPositionLinkList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormMainMenuList">
+      <soap:operation soapAction="http://tempuri.org/GetFormMainMenuList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSubMenu">
+      <soap:operation soapAction="http://tempuri.org/GetFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSubMenuList">
+      <soap:operation soapAction="http://tempuri.org/GetFormSubMenuList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormMainMenu">
+      <soap:operation soapAction="http://tempuri.org/SaveFormMainMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormMainMenu">
+      <soap:operation soapAction="http://tempuri.org/UpdateFormMainMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormMainMenu">
+      <soap:operation soapAction="http://tempuri.org/DeleteFormMainMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormSubMenu">
+      <soap:operation soapAction="http://tempuri.org/SaveFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormSubMenu">
+      <soap:operation soapAction="http://tempuri.org/UpdateFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormSubMenu">
+      <soap:operation soapAction="http://tempuri.org/DeleteFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunction">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionList">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionListNotInYnUser">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionListNotInYnUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionListNotInYnRole">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionListNotInYnRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLinkListByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionUserLinkListByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionRoleLinkListByRoleId">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionRoleLinkListByRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLink">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionRoleLinkByModuleFunctionId">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionRoleLinkByModuleFunctionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLinkByModuleFunctionId">
+      <soap:operation soapAction="http://tempuri.org/GetFormModuleFunctionUserLinkByModuleFunctionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunction">
+      <soap:operation soapAction="http://tempuri.org/DeleteFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunction">
+      <soap:operation soapAction="http://tempuri.org/SaveFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunction">
+      <soap:operation soapAction="http://tempuri.org/UpdateFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunctionUserLink">
+      <soap:operation soapAction="http://tempuri.org/SaveFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunctionUserLink">
+      <soap:operation soapAction="http://tempuri.org/DeleteFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunctionUserLink">
+      <soap:operation soapAction="http://tempuri.org/UpdateFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunctionRoleLink">
+      <soap:operation soapAction="http://tempuri.org/SaveFormModuleFunctionRoleLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunctionRoleLink">
+      <soap:operation soapAction="http://tempuri.org/DeleteFormModuleFunctionRoleLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunctionRoleLink">
+      <soap:operation soapAction="http://tempuri.org/UpdateFormModuleFunctionRoleLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YnWebServiceSoap12" type="tns:YnWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthentication">
+      <soap12:operation soapAction="http://tempuri.org/UserAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCount">
+      <soap12:operation soapAction="http://tempuri.org/GetCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxId">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObject">
+      <soap12:operation soapAction="http://tempuri.org/GetObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBaseInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserBaseInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap12:operation soapAction="http://tempuri.org/GetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap12:operation soapAction="http://tempuri.org/GetUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap12:operation soapAction="http://tempuri.org/SaveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAdministrator">
+      <soap12:operation soapAction="http://tempuri.org/IsAdministrator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserListNotInModuleFunction">
+      <soap12:operation soapAction="http://tempuri.org/GetUserListNotInModuleFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleLinkListByRoleId">
+      <soap12:operation soapAction="http://tempuri.org/GetUserRoleLinkListByRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleLinkListByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetUserRoleLinkListByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleListNotInModuleFunction">
+      <soap12:operation soapAction="http://tempuri.org/GetRoleListNotInModuleFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleList">
+      <soap12:operation soapAction="http://tempuri.org/GetRoleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRole">
+      <soap12:operation soapAction="http://tempuri.org/SaveRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleListInUser">
+      <soap12:operation soapAction="http://tempuri.org/GetRoleListInUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPositionList">
+      <soap12:operation soapAction="http://tempuri.org/GetPositionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePosition">
+      <soap12:operation soapAction="http://tempuri.org/SavePosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosition">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePosition">
+      <soap12:operation soapAction="http://tempuri.org/DeletePosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentList">
+      <soap12:operation soapAction="http://tempuri.org/GetDepartmentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDepartment">
+      <soap12:operation soapAction="http://tempuri.org/SaveDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPositionLink">
+      <soap12:operation soapAction="http://tempuri.org/GetDepartmentPositionLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDepartmentPositionLinkList">
+      <soap12:operation soapAction="http://tempuri.org/SaveDepartmentPositionLinkList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartmentPositionLinkList">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDepartmentPositionLinkList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormMainMenuList">
+      <soap12:operation soapAction="http://tempuri.org/GetFormMainMenuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSubMenu">
+      <soap12:operation soapAction="http://tempuri.org/GetFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSubMenuList">
+      <soap12:operation soapAction="http://tempuri.org/GetFormSubMenuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormMainMenu">
+      <soap12:operation soapAction="http://tempuri.org/SaveFormMainMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormMainMenu">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFormMainMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormMainMenu">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFormMainMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormSubMenu">
+      <soap12:operation soapAction="http://tempuri.org/SaveFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormSubMenu">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormSubMenu">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFormSubMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunction">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionList">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionListNotInYnUser">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionListNotInYnUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionListNotInYnRole">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionListNotInYnRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLinkListByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionUserLinkListByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionRoleLinkListByRoleId">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionRoleLinkListByRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLink">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionRoleLinkByModuleFunctionId">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionRoleLinkByModuleFunctionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormModuleFunctionUserLinkByModuleFunctionId">
+      <soap12:operation soapAction="http://tempuri.org/GetFormModuleFunctionUserLinkByModuleFunctionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunction">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunction">
+      <soap12:operation soapAction="http://tempuri.org/SaveFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunction">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFormModuleFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunctionUserLink">
+      <soap12:operation soapAction="http://tempuri.org/SaveFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunctionUserLink">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunctionUserLink">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFormModuleFunctionUserLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormModuleFunctionRoleLink">
+      <soap12:operation soapAction="http://tempuri.org/SaveFormModuleFunctionRoleLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormModuleFunctionRoleLink">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFormModuleFunctionRoleLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormModuleFunctionRoleLink">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFormModuleFunctionRoleLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YnWebServiceHttpGet" type="tns:YnWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YnWebServiceHttpPost" type="tns:YnWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YnWebService">
+    <wsdl:port name="YnWebServiceSoap" binding="tns:YnWebServiceSoap">
+      <soap:address location="http://localhost:23784/YnWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YnWebServiceSoap12" binding="tns:YnWebServiceSoap12">
+      <soap12:address location="http://localhost:23784/YnWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YnWebServiceHttpGet" binding="tns:YnWebServiceHttpGet">
+      <http:address location="http://localhost:23784/YnWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YnWebServiceHttpPost" binding="tns:YnWebServiceHttpPost">
+      <http:address location="http://localhost:23784/YnWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

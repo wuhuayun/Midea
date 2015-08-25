@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsBackInvoiceLink" table="Ascm_Wms_Back_Invoice_Link" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="detailId">
+      <column name="detailId" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+    <property name="batchId">
+      <column name="batchId" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+    <property name="deliOrderMainId">
+      <column name="deliOrderMainId" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+    <property name="barCode" column="barCode" length="30"/>
+    <property name="deliOrderDetailId">
+      <column name="deliOrderDetailId" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="materialId">
+      <column name="materialId" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+    <property name="materialDocNumber" column="materialDocNumber" length="20"/>
+    <property name="deliveryQuantity">
+      <column name="deliveryQuantity" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+    <property name="rejectQuantity">
+      <column name="rejectQuantity" sql-type="NUMBER default 0" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping> 

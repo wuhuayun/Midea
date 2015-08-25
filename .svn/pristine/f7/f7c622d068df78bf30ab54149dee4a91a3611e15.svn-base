@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmGenerateTaskRule" table="Ascm_Generate_Task_Rule" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/>
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="identificationId">
+      <column name="identificationId" sql-type="int default 0"/>
+    </property>
+    <property name="ruleType" column="ruleType" length="20"/>
+    <property name="ruleCode" column="ruleCode" length="200"/>
+    <property name="generateMode" column="generateMode" length="200"/>
+    <property name="isEnable" column="isEnable" length="20"/>
+    <property name="relatedRanker" column="relatedRanker" length="20"/>
+    <property name="description" column="description" length="200"/>
+    <property name="others" column="others" length="100"/>
+    <property name="tip" column="tip" length="200"/>
+    <property name="priority">
+      <column name="priority" sql-type="int default 0"/>
+    </property>
+  </class>
+</hibernate-mapping>

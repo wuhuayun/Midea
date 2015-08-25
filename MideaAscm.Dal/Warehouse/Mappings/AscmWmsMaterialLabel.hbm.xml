@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsMaterialLabel" table="Ascm_Wms_Material_Label" batch-size="50">
+    <id name="labelNo" column="labelNo" length="20">
+      <generator class="assigned" />
+    </id>
+    <property name="title" column="title" length="50"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="wipEntityDate" column="wipEntityDate" length="20"/>
+    <property name="wipEntityName" column="wipEntityName" length="100"/>
+    <property name="wipEntityQuantity">
+      <column name="wipEntityQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="supplierId">
+      <column name="supplierId" sql-type="NUMBER(10)"/>
+    </property>
+    <property name="supplierShortName" column="supplierShortName" length="50"/>
+    <property name="quantity">
+      <column name="quantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="enterWarehouseDate" column="enterWarehouseDate" length="20"/>
+    <property name="materialId">
+      <column name="materialId" sql-type="NUMBER(10)"/>
+    </property>
+    <property name="materialDocNumber" column="materialDocNumber" length="20"/>
+    <property name="materialDescription" column="materialDescription" length="240"/>
+    <property name="checkResult" column="checkResult" length="50"/>
+    <property name="printType" column="printType" length="20"/>
+  </class>
+</hibernate-mapping> 

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmMesInteractiveLog" table="Ascm_Mes_Interactive_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="billId">
+      <column name="billId" sql-type="NUMBER(10) default 0"/>
+    </property>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="billType" column="billType" length="30"/>
+    <property name="returnCode" column="returnCode" length="2000"/>
+    <property name="returnMessage" column="returnMessage"  length="2000"/>
+  </class>
+</hibernate-mapping> 

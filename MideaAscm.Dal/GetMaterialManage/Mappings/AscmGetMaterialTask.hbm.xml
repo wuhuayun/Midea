@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmGetMaterialTask" table="Ascm_GetMaterial_Task" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/>
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="taskId" column="taskId" length="20"/>
+    <property name="productLine" column="productLine" length="20"/>
+    <property name="warehouserId" column="warehouserId" length="20"/>
+    <property name="mtlCategoryStatus" column="mtlCategoryStatus" length="20"/>
+    <property name="rankerId" column="rankerId" length="20"/>
+    <property name="workerId" column="workerId" length="20"/>
+    <property name="starTime" column="starTime" length="20"/>
+    <property name="endTime" column="endTime" length="20"/>
+    <property name="status" column="status" length="20"/>
+    <property name="tip" column="tip" length="200"/>
+    <property name="IdentificationId">
+      <column name="IdentificationId" sql-type="int"/>
+    </property>
+    <property name="materialType">
+      <column name="materialType" sql-type="int"/>
+    </property>
+    <property name="materialDocNumber" column="materialDocNumber" length="20"/>
+    <property name="uploadDate" column="uploadDate" length="20"/>
+    <property name="taskTime" column="taskTime" length="20"/>
+    <property name="warehouserPlace" column="warehouserPlace" length="200"/>
+    <property name="errorTime" column="errorTime" length="1000" />
+    <property name="relatedMark" column="relatedMark" length="1000" />
+    <property name="which">
+      <column name="which" sql-type="int"/>
+    </property>
+    <property name="logisticsClass" column="logisticsClass" length="20" />
+    <property name="dateReleased" column="dateReleased" length="20" />
+  </class>
+</hibernate-mapping>

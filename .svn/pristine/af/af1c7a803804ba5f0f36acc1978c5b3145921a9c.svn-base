@@ -1,0 +1,105 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/YnPublic/Views/Shared/Module.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+	供应商退货查询
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <div region="center" title="" border="true" style="padding:0px;overflow:auto;">
+        <table id="dataGridWmsBackInvoice" title="供应商退货查询" style="" border="false" fit="true" singleSelect="true"
+			idField="id" sortName="sortNo" sortOrder="asc" striped="true" toolbar="#tb1">
+		</table>
+		<div id="tb1">
+			<div style="margin-bottom:5px;">
+				退货单号：<input id="docNumber" type="text" style="width:130px;" />
+				供方编号：<input id="supplierDoc" type="text" style="width:130px;" />
+				<a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-search" onclick="Query();">查询</a>
+				<a href="javascript:void(0);" class="easyui-linkbutton" plain="true" icon="icon-print" onclick="Print();">打印</a>
+			</div>
+			<div style="margin-bottom:5px;">
+				<span>更新时间：</span>
+				<input class="easyui-datebox" id="queryStartModifyTime" type="text" style="width:100px;" value="<%=ViewData["dtStart"] %>" />-<input class="easyui-datebox" id="queryEndModifyTime" type="text" style="width:100px;" value="<%=ViewData["dtEnd"] %>" />
+				
+				<span> 上传状态： </span>
+			    <select id="queryReturnCode" name="queryReturnCode" style="width:80px;">
+					<option value="" selected="selected">所有</option>
+                    <option value="0" >正常</option>
+					<option value="-1" >异常</option>
+                </select>
+			</div>
+			
+        </div>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentScriptAndCss" runat="server">
+    <% YnFrame.Code.YnWebRight ynWebRight = YnFrame.Code.YnPermission.GetInstance().GetYnWebRight(); %>
+    <script type="text/javascript">
+        $(function () {
+            $('#dataGridWmsBackInvoice').datagrid({
+                rownumbers: true,
+                pagination: true,
+                pageSize: 50,
+                loadMsg: '更新数据......',
+                frozenColumns: [[
+                    { field: 'id', title: 'ID', width: 20, align: 'center', hidden: 'true' },
+                    { field: 'docNumber', title: '退货单号', width: 150, align: 'center' },
+                    { field: 'manualDocNumber', title: '手工单号', width: 150, align: 'center' }
+                ]],
+                columns: [[
+                    { field: 'warehouseId', title: '默认仓库', width: 115, align: 'center' },
+                    { field: 'supplierDocNumber', title: '供应商编号', width: 100, align: 'center' },
+                    { field: 'supplierName', title: '供应商', width: 250, align: 'left' },
+//                    { field: 'toWarehouseId', title: '目标仓库', width: 115, align: 'center' },
+//                    { field: 'createTime', title: '创建时间', width: 150, align: 'center' },
+                    { field: 'modifyTime', title: '修改时间', width: 150, align: 'center' },
+//                    { field: 'responsiblePerson', title: '责任人', width: 100, align: 'center' },
+                    { field: 'meno', title: '备注', width: 300, align: 'center' },
+					{ field: 'uploadStatusCn', title: '上传状态', width: 100, align: 'center' },
+					{ field: 'uploadTimeShow', title: '上传日期', width: 100, align: 'center' }
+                ]],
+                onSelect: function (rowIndex, rowData) {
+                    currentId = rowData.id;
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    WmsBackInvoiceMainView();
+                },
+                onLoadSuccess: function () {
+                    $(this).datagrid('clearSelections');
+                    if (currentId) {
+                        $(this).datagrid('selectRecord', currentId);
+                    }
+                }
+            });
+        });
+        function Query() {
+            var options = $('#dataGridWmsBackInvoice').datagrid('options');
+            options.url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsBackInvoiceMainList';
+            options.queryParams.queryWord = $('#docNumber').val();
+            options.queryParams.supplierDoc = $('#supplierDoc').val();
+            options.queryParams.startPlanTime = $('#queryStartModifyTime').datebox('getText');
+            options.queryParams.endPlanTime = $('#queryEndModifyTime').datebox('getText');
+			options.queryParams.returnCode = $('#queryReturnCode').val();
+            $('#dataGridWmsBackInvoice').datagrid('reload');
+        }
+        var currentId = null;
+        function WmsBackInvoiceMainView() {
+            var selectRow = $('#dataGridWmsBackInvoice').datagrid('getSelected');
+            if (selectRow) {
+                var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Ascm/Warehouse/WmsBackInvoiceMainView/' + selectRow.id+"?mi=<%=Request["mi"].ToString() %>";
+                parent.openTab('供应商退货单_' + selectRow.docNumber, url);
+            } else {
+                $.messager.alert('提示', '请选择供应商退货单！', 'info');
+            }
+        }
+        function Print() {
+            var url = '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/Ascm/ReportViewer/WmsBackInvoicePrint.aspx';
+            url += "?docNumber=" + $('#docNumber').val();
+            url += "&supplierDoc=" + $('#supplierDoc').val();
+            url += "&queryStartModifyTime=" + $("#queryStartModifyTime").datebox('getText');
+            url += "&queryEndModifyTime=" + $("#queryEndModifyTime").datebox('getText');
+            parent.openTab('供应商退货查询打印', url);
+        }
+    </script>
+</asp:Content>

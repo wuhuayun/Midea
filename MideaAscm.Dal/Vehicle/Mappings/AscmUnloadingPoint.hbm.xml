@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Vehicle.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmUnloadingPoint" table="Ascm_Unloading_Point" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="name" column="name" length="50"/>
+    <property name="sn" column="sn" length="20"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="direction" column="direction" length="20"/>
+    <property name="description" column="description" length="240"/>
+    <property name="location" column="location" length="20"/>
+    <property name="status" column="status" length="20"/>
+    <property name="ip" column="ip" length="20"/>
+    <property name="enabled" column="enabled"/>
+    <property name="memo" column="memo" length="240"/>
+    <property name="controllerId">
+      <column name="controllerId" sql-type="int default 0"/>
+    </property>
+    <property name="controllerAddress">
+      <column name="controllerAddress" sql-type="NUMBER(10)"/>
+    </property>
+  </class>
+</hibernate-mapping>

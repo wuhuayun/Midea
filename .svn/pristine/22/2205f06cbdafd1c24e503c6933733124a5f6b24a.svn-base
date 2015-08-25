@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Vehicle.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmUnloadingPointMapLink" table="Ascm_Unloading_Point_Map_Link" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="mapId">
+      <column name="mapId" sql-type="NUMBER(10)" not-null="true"/>
+    </property>
+    <property name="pointId">
+      <column name="pointId" sql-type="NUMBER(10)" not-null="true"/>
+    </property>
+    <property name="x">
+      <column name="x" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="y">
+      <column name="y" sql-type="NUMBER(10,0) default 0"/>
+    </property>
+    <property name="memo" column="memo" length="240"/>
+  </class>
+</hibernate-mapping>

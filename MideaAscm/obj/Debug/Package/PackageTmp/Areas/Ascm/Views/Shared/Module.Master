@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/jquery/jquery.json-2.2.min.js"></script>
+    <script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/jquery/jquery.form.js"></script>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/locale/easyui-lang-zh_CN.js"></script>
+	<link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+	<link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+	<link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/themes/ynicon.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $.extend($.fn.combobox.methods, {
+            selectedIndex: function (jq, index) {
+                if (!index)
+                    index = 0; 
+                var data = $(jq).combobox('getData');
+                if (data != null && data.length > 0) {
+                    var vf = $(jq).combobox('options').valueField;
+                    $(jq).combobox('setValue', eval('data[index].' + vf));
+                }
+            }
+        });
+    </script>
+    <script language="javascript" type="text/javascript">
+        $.ajaxSetup({
+            cache: false //close AJAX cache
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="ContentScriptAndCss" runat="server" />
+</head>
+<body class="easyui-layout">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

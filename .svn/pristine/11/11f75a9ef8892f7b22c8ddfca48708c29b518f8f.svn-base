@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99BB2072-A2D2-4A4E-B7F7-83737A88E0B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MideaAscm.Pad</RootNamespace>
+    <AssemblyName>MideaAscm.Pad</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.5.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Pad\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YnBaseClass2">
+      <HintPath>..\Dll\Yn\YnBaseClass2.dll</HintPath>
+    </Reference>
+    <Reference Include="YnBaseDal">
+      <HintPath>..\Dll\Yn\YnBaseDal.dll</HintPath>
+    </Reference>
+    <Reference Include="YnFrame">
+      <HintPath>..\Dll\Yn\YnFrame.dll</HintPath>
+    </Reference>
+    <Reference Include="YnFrame.Dal">
+      <HintPath>..\Dll\Yn\YnFrame.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="YnFrame.Services">
+      <HintPath>..\Dll\Yn\YnFrame.Services.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomClass\CommonHelper.cs" />
+    <Compile Include="CustomControl\ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\ColorPicker.Designer.cs">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\PagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\PagerControl.Designer.cs">
+      <DependentUpon>PagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTaskForm.Designer.cs">
+      <DependentUpon>frmAddTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiscreteJobsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscreteJobsDialog.Designer.cs">
+      <DependentUpon>frmDiscreteJobsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiscreteJobsSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscreteJobsSearchView.Designer.cs">
+      <DependentUpon>frmDiscreteJobsSearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginView.Designer.cs">
+      <DependentUpon>frmLoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogisticsMonitoringView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogisticsMonitoringView.Designer.cs">
+      <DependentUpon>frmLogisticsMonitoringView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainView.Designer.cs">
+      <DependentUpon>frmMainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialListDialog.Designer.cs">
+      <DependentUpon>frmMaterialListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectSignMaterialDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectSignMaterialDialog.Designer.cs">
+      <DependentUpon>frmSelectSignMaterialDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSumMaterialListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSumMaterialListDialog.Designer.cs">
+      <DependentUpon>frmSumMaterialListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaskManagementView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskManagementView.Designer.cs">
+      <DependentUpon>frmTaskManagementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewTaskDetailsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewTaskDetailsDialog.Designer.cs">
+      <DependentUpon>frmViewTaskDetailsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWareHouseSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWareHouseSearchView.Designer.cs">
+      <DependentUpon>frmWareHouseSearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskbarNotifier.Designer.cs">
+      <DependentUpon>TaskbarNotifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AscmWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\YnWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomControl\ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\PagerControl.resx">
+      <DependentUpon>PagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTaskForm.resx">
+      <DependentUpon>frmAddTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscreteJobsDialog.resx">
+      <DependentUpon>frmDiscreteJobsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscreteJobsSearchView.resx">
+      <DependentUpon>frmDiscreteJobsSearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginView.resx">
+      <DependentUpon>frmLoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogisticsMonitoringView.resx">
+      <DependentUpon>frmLogisticsMonitoringView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainView.resx">
+      <DependentUpon>frmMainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialListDialog.resx">
+      <DependentUpon>frmMaterialListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectSignMaterialDialog.resx">
+      <DependentUpon>frmSelectSignMaterialDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSumMaterialListDialog.resx">
+      <DependentUpon>frmSumMaterialListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskManagementView.resx">
+      <DependentUpon>frmTaskManagementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewTaskDetailsDialog.resx">
+      <DependentUpon>frmViewTaskDetailsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWareHouseSearchView.resx">
+      <DependentUpon>frmWareHouseSearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\MideaAscm.Pad.vshost.exe.config" />
+    <None Include="bin\Debug\MideaAscm.Pad.vshost.exe.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\AscmWebService\AscmWebService.wsdl" />
+    <None Include="Web References\AscmWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\YnWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\YnWebService\YnWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\win.png" />
+    <EmbeddedResource Include="bg_message.jpg" />
+    <Content Include="bin\Debug\MideaAscm.Pad.vshost.exe" />
+    <EmbeddedResource Include="close.bmp" />
+    <Content Include="ICON.ico" />
+    <None Include="Image\close.bmp" />
+    <None Include="Image\bg_message.png" />
+    <None Include="Image\cancel.png" />
+    <None Include="Image\edit.gif" />
+    <None Include="Image\edit_add.png" />
+    <None Include="Image\expand.gif" />
+    <None Include="Image\find.png" />
+    <None Include="Image\feed_link.png" />
+    <None Include="Image\folder_link.png" />
+    <None Include="Image\house_link.png" />
+    <Content Include="Image\ICON.ico" />
+    <None Include="Image\ok.png" />
+    <None Include="Image\pencil.png" />
+    <None Include="Image\image_link.png" />
+    <None Include="Image\link.png" />
+    <Content Include="Image\separator.jpg" />
+    <None Include="Web References\YnWebService\YnWebService.disco" />
+    <None Include="Web References\AscmWebService\AscmWebService.disco" />
+    <None Include="Image\ynstop.png" />
+    <None Include="Image\ynrun.png" />
+    <None Include="Image\ynextract.gif" />
+    <None Include="Image\wait.gif" />
+    <None Include="Image\tip.png" />
+    <None Include="Image\sum.png" />
+    <None Include="Image\sort.gif" />
+    <None Include="Image\search.png" />
+    <None Include="Image\reload.png" />
+    <None Include="Image\pin_red.png" />
+    <None Include="Image\pin_blue.png" />
+    <None Include="Image\lightning.png" />
+    <None Include="Image\flag_white.png" />
+    <None Include="Image\flag_blue.png" />
+    <None Include="Image\filesave.png" />
+    <None Include="Image\102[1].gif" />
+    <None Include="Image\079[1].gif" />
+    <None Include="Image\078[1].gif" />
+    <None Include="Image\069[1].gif" />
+    <None Include="Image\067[1].gif" />
+    <None Include="Image\046[1].gif" />
+    <None Include="Image\040[1].gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:23784/AscmWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AscmWebService\</RelPath>
+      <UpdateFromURL>http://localhost:23784/AscmWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MideaAscm_Pad_AscmWebService_AscmWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:23784/YnWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\YnWebService\</RelPath>
+      <UpdateFromURL>http://localhost:23784/YnWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>MideaAscm_Pad_YnWebService_YnWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MideaAscm.Dal\MideaAscm.Dal.csproj">
+      <Project>{DFDD71A2-7DE8-4209-B723-4F65E0122CCD}</Project>
+      <Name>MideaAscm.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

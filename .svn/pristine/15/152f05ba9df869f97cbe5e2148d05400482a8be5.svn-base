@@ -1,0 +1,238 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+using MideaAscm.Dal.FromErp.Entities;
+
+namespace MideaAscm.Dal.Warehouse.Entities
+{
+    /// <summary>仓库备料主表</summary>
+    public class AscmWmsPreparationMain
+    {
+        /// <summary>ID</summary>
+        public virtual int id { get; set; }
+        /// <summary>库存组织ID</summary>
+        public virtual int organizationId { get; set; }
+        /// <summary>创建人</summary>
+        public virtual string createUser { get; set; }
+        /// <summary>创建时间</summary>
+        public virtual string createTime { get; set; }
+        /// <summary>最后更新人</summary>
+        public virtual string modifyUser { get; set; }
+        /// <summary>最后更新时间</summary>
+        public virtual string modifyTime { get; set; }
+        /// <summary>备料单号</summary>
+        public virtual string docNumber { get; set; }
+        /// <summary>状态</summary>
+        public virtual string status { get; set; }
+        /// <summary>描述</summary>
+        public virtual string description { get; set; }
+        /// <summary>备料形式：作业备料、需求备料</summary>
+        public virtual string pattern { get; set; }
+        /// <summary>作业备料时记录</summary>
+        public virtual int wipEntityId { get; set; }
+        /// <summary>锁定</summary>
+        public virtual int locked { get; set; }
+
+        public AscmWmsPreparationMain() { }
+        public void GetOwner(AscmWmsPreparationMain preparationMain)
+        {
+            this.id = preparationMain.id;
+            this.organizationId = preparationMain.organizationId;
+            this.createUser = preparationMain.createUser;
+            this.createTime = preparationMain.createTime;
+            this.modifyUser = preparationMain.modifyUser;
+            this.modifyTime = preparationMain.modifyTime;
+            this.docNumber = preparationMain.docNumber;
+            this.status = preparationMain.status;
+            this.description = preparationMain.description;
+            this.pattern = preparationMain.pattern;
+            this.wipEntityId = preparationMain.wipEntityId;
+            this.locked = preparationMain.locked;
+        }
+        public AscmWmsPreparationMain(AscmWmsPreparationMain preparationMain, string wipEntityName)
+        {
+            GetOwner(preparationMain);
+            this.wipEntityName = wipEntityName;
+        }
+        public AscmWmsPreparationMain(AscmWmsPreparationMain preparationMain, decimal totalNumber, decimal containerBindNumber)
+        {
+            GetOwner(preparationMain);
+            this.totalNumber = totalNumber;
+            this.containerBindNumber = containerBindNumber;
+        }
+        
+
+        //辅助信息
+        public string createTimeShow
+        {
+            get
+            {
+                if (YnBaseClass2.Helper.DateHelper.GetDateTime(createTime) != null)
+                    return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(createTime)).ToString("yyyy-MM-dd HH:mm");
+                return "";
+            }
+        }
+        public string modifyTimeShow
+        {
+            get
+            {
+                if (YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime) != null)
+                    return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime)).ToString("yyyy-MM-dd HH:mm");
+                return "";
+            }
+        }
+        public string statusCn { get { return StatusDefine.DisplayText(status); } }
+        public string patternCn { get { return PatternDefine.DisplayText(pattern); } }
+        public string wipEntityName { get; set; }
+        public virtual string createUserName { get; set; }
+
+        public string ascmDate { get; set; }
+        public byte[] ascmBarcode { get; set; }
+        ///<summary>供应子库起-止</summary>
+        public string warehouseIdStart { get; set; }
+        public string warehouseIdEnd { get; set; }
+        ///<summary>打印人</summary>
+        public string printer { get; set; }
+        ///<summary>供应类型</summary>
+        public string wipSupplyTypeCn { get; set; }
+
+        /* 作业备料显示 */
+        public AscmWipDiscreteJobs ascmWipDiscreteJobs { get; set; }
+        /// <summary>作业计划开始时间</summary>
+        public string jobScheduledStartDate
+        {
+            get
+            {
+                if (ascmWipDiscreteJobs != null)
+                {
+                    object objDate = YnBaseClass2.Helper.DateHelper.GetDateTime(ascmWipDiscreteJobs.scheduledStartDate);
+                    if (objDate != null)
+                        return ((DateTime)objDate).ToString("yyyy-MM-dd HH:mm");
+                }
+                return string.Empty;
+            }
+        }
+        /// <summary>产线</summary>
+        public string jobProductionLine { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.productionLine; return string.Empty; } }
+        /// <summary>是否排产</summary>
+        public bool jobIsScheduled { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.isScheduled; return false; } }
+        /// <summary>作业号</summary>
+        public string jobWipEntityName { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmWipEntities_Name; return string.Empty; } }
+        /// <summary>装配件编码</summary>
+        public string jobPrimaryItemDoc { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmMaterialItem_DocNumber; return string.Empty; } }
+        /// <summary>装配件描述</summary>
+        public string jobPrimaryItemDes { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmMaterialItem_Description; return string.Empty; } }
+        /// <summary>计划组</summary>
+        public string jobScheduleGroupsName { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.ascmWipScheduleGroupsName; return string.Empty; } }
+        /// <summary>作业数量</summary>
+        public decimal jobQuantity { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.netQuantity; return decimal.Zero; } }
+        /// <summary>子库段</summary>
+        public string jobWarehouseSegment { get; set; }
+        /// <summary>物料大类段</summary>
+        public string jobMtlCategorySegment { get; set; }
+        /// <summary>缺料情况</summary>
+        public string jobLackOfMaterial { get; set; }
+        /// <summary>已配料人员</summary>
+        public string jobCompoundedPerson { get; set; }
+        /// <summary>作业描述</summary>
+        public string jobDescription { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.description; return string.Empty; } }
+        /// <summary>作业状态</summary>
+        public string jobStatusTypeCn { get { if (ascmWipDiscreteJobs != null) return ascmWipDiscreteJobs.statusTypeCn; return string.Empty; } }
+        /* 需求备料显示 */
+        /// <summary>作业段</summary>
+        public string requireWipEntitySegment { get; set; }
+        /// <summary>作业计划开始时间段</summary>
+        public string requireScheduledDateSegment { get; set; }
+        /// <summary>计划组</summary>
+        public string requireScheduleGroupsName { get; set; }
+        /// <summary>产线</summary>
+        public string requireProductionLine { get; set; }
+        
+        public virtual decimal totalNumber { get; set; }
+        public virtual decimal containerBindNumber { get; set; }
+ 
+        /* 导出 */
+        public string billNoStart { get; set; }
+        public string billNoEnd { get; set; }
+        public string materialDocNumberStart { get; set; }
+        public string materialDocNumberEnd { get; set; }
+        public string jobScheduleGroupsStart { get; set; }
+        public string jobScheduleGroupsEnd { get; set; }
+        public string jobProductionLineStart { get; set; }
+        public string jobProductionLineEnd { get; set; }
+        public string scheduledStartDateStart { get; set; }
+        public string scheduledStartDateEnd { get; set; }
+
+        public class StatusDefine
+        {
+            /// <summary>待备料</summary>
+            public const string unPrepare = "unPrepare";
+            /// <summary>备料中_未确认</summary>
+            public const string preparingUnConfirm = "preparingUnConfirm";
+            /// <summary>备料中_已确认</summary>
+            public const string preparing = "preparing";
+            /// <summary>已备齐</summary>
+            public const string prepared = "prepared";
+            /// <summary>备料中_待领料</summary>
+            public const string preparingUnPick = "preparingUnPick";
+            /// <summary>已备齐_待领料</summary>
+            public const string preparedUnPick = "preparedUnPick";
+            /// <summary>已领料</summary>
+            public const string picked = "picked";
+
+            public static string DisplayText(string status)
+            {
+                switch (status)
+                {
+                    case unPrepare: return "待备料";
+                    case preparingUnConfirm: return "备料中_未确认";
+                    case preparing: return "备料中_已确认";
+                    case prepared: return "已备齐";
+                    case preparingUnPick: return "备料中_待领料";
+                    case preparedUnPick: return "已备齐_待领料";
+                    case picked: return "已领料";
+                    default: return status;
+                }
+            }
+            public static List<string> GetList()
+            {
+                List<string> list = new List<string>();
+                list.Add(unPrepare);
+                list.Add(preparingUnConfirm);
+                list.Add(preparing);
+                list.Add(prepared);
+                list.Add(preparingUnPick);
+                list.Add(preparedUnPick);
+                list.Add(picked);
+                return list;
+            }
+        }
+        public class PatternDefine
+        {
+            /// <summary>作业备料</summary>
+            public const string wipJob = "wipJob";
+            /// <summary>需求备料</summary>
+            public const string wipRequire = "wipRequire";
+
+            public static string DisplayText(string mode)
+            {
+                switch (mode)
+                {
+                    case wipJob: return "作业备料";
+                    case wipRequire: return "需求备料";
+                    default: return mode;
+                }
+            }
+            public static List<string> GetList()
+            {
+                List<string> list = new List<string>();
+                list.Add(wipJob);
+                list.Add(wipRequire);
+                return list;
+            }
+        }
+        public List<AscmWmsPreparationDetail> listDetail { get; set; }
+    }
+}

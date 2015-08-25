@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmAssignWarelocation" table="Ascm_Assign_Warelocation" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="batchId">
+      <column name="batchId" sql-type="NUMBER(10)" not-null="true"/>
+    </property>
+    <property name="batchBarCode" column="batchBarCode" length="30"/>
+    <property name="batchDocNumber" column="batchDocNumber" length="20"/>
+    <property name="warelocationId">
+      <column name="warelocationId" sql-type="NUMBER(10)"/>
+    </property>
+    <property name="assignQuantity">
+      <column name="assignQuantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="materialId">
+      <column name="materialId" sql-type="NUMBER(10)"/>
+    </property>
+  </class>
+</hibernate-mapping> 

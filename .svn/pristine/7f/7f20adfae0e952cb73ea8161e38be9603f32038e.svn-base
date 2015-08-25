@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmBuildingWarehouseLink" table="Ascm_Building_Warehouse_Link" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="warehouseCode" column="warehouseCode" length="20"/>
+    <property name="buildingId">
+      <column name="buildingId" sql-type="NUMBER(10)" not-null="true"/>
+    </property>
+    <property name="warehouseId" column="warehouseId" length="20" not-null="true"/>
+    <property name="buildingArea" column="buildingArea" length="10"/>
+  </class>
+</hibernate-mapping> 

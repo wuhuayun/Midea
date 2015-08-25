@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmMesTransStyle" table="Ascm_Mes_Trans_Style" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="code" column="code" length="80"/>
+    <property name="name" column="name" length="80"/>
+    <property name="description" column="description" length="240"/>
+  </class>
+</hibernate-mapping> 

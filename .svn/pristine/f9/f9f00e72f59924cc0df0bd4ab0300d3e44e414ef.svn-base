@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmGetMaterialLog" table="Ascm_GetMaterial_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/>
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="materialId">
+      <column name="materialId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="quantity">
+      <column name="quantity" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="preparationString" column="preparationString" length="20"/>
+    <property name="workerId" column="workerId" length="20"/>
+    <property name="status">
+      <column name="status" sql-type="int default 0"/>
+    </property>
+    <property name="tip" column="tip" length="200"/>
+  </class>
+</hibernate-mapping>

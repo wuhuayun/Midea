@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Vehicle.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmEmpCarSwipeLog" table="Ascm_Emp_Car_Swipe_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="sequence">
+        <!-- Oracle Sequence的名字 -->
+        <param name="sequence">Ascm_Emp_Car_Swipe_Log_id</param>
+      </generator>
+    </id>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="doorId">
+      <column name="doorId" sql-type="int default 0"/>
+    </property>
+    <property name="readingHeadId">
+      <column name="readingHeadId" sql-type="int default 0"/>
+    </property>
+    <property name="rfid" column="rfid" length="20"/>
+    <property name="employeeName" column="employeeName" length="50"/>
+    <property name="plateNumber" column="plateNumber" length="30"/>
+    <property name="status">
+      <column name="status" sql-type="int default 0"/>
+    </property>
+    <property name="pass" column="pass"/>
+    <property name="description" column="description" length="50"/>
+    <property name="readingHead" column="readingHead" length="20"/>
+    <property name="direction" column="direction" length="10"/>
+  </class>
+</hibernate-mapping> 

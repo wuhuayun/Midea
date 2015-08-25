@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.SupplierPreparation.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmAppointmentDistribution" table="Ascm_Appointment_Distribution" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="distributionDate" column="distributionDate" length="20"/>
+    <property name="timeId">
+      <column name="timeId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="startTime" column="startTime" length="20"/>
+    <property name="endTime" column="endTime" length="20"/>
+    <property name="count">
+      <column name="count"  sql-type="int default 4"/>
+    </property>
+  </class>
+</hibernate-mapping>

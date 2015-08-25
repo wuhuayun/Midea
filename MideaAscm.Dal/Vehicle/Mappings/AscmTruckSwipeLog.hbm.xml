@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Vehicle.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmTruckSwipeLog" table="Ascm_Truck_Swipe_Log" batch-size="50">
+    <id name="id" column="id">
+      <generator class="sequence">
+        <!-- Oracle Sequence的名字 -->
+        <param name="sequence">Ascm_Truck_Swipe_Log_id</param>
+      </generator>
+    </id>
+    <property name="doorId">
+      <column name="doorId" sql-type="int default 0"/>
+    </property>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="readingHeadId">
+      <column name="readingHeadId" sql-type="int default 0"/>
+    </property>
+    <property name="rfid" column="rfid" length="20"/>
+    <property name="supplierId">
+      <column name="supplierId" sql-type="int default 0"/>
+    </property>
+    <property name="driverId">
+      <column name="driverId" sql-type="int default 0"/>
+    </property>
+    <property name="supplierName" column="supplierName" length="100"/>
+    <property name="driverName" column="driverName" length="50"/>
+    <property name="plateNumber" column="plateNumber" length="30"/>
+    <property name="status">
+      <column name="status" sql-type="int default 0"/>
+    </property>
+    <property name="pass" column="pass"/>
+    <property name="description" column="description" length="50"/>
+    <property name="readingHead" column="readingHead" length="20"/>
+    <property name="direction" column="direction" length="10"/>
+    <property name="batSumMainId">
+      <column name="batSumMainId" sql-type="int default 0"/>
+    </property>
+    <property name="batSumDocNumber" column="batSumDocNumber" length="20"/>
+    <property name="onTime" column="onTime"/>
+    <property name="appointmentStartTime" column="appointmentStartTime" length="20"/>
+    <property name="appointmentEndTime" column="appointmentEndTime" length="20"/>
+  </class>
+</hibernate-mapping> 

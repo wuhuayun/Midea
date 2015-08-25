@@ -1,0 +1,2329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LoadProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadProfileResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OutputWebMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="_isSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="_errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_errorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="_effectRowCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ds">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="_domainObject" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="_extendData" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EffectRowCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSet">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="DomainObject" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtendData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DownloadTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadTransferResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryTransferResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScanCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plankNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="liveQty" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ScanCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScanCodeResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BtnDelHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="rCard" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="num" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BtnDelHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BtnDelHandleResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="rCard" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="iflag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmTransferResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPDownloadTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordOrgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPDownloadTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERPDownloadTransferResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPQueryTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordOrgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPQueryTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERPQueryTransferResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPScanCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plankNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="liveQty" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordOrgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPScanCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERPScanCodeResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPBtnDelHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="rCard" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="num" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordOrgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPBtnDelHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERPBtnDelHandleResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPConfirmTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transferNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemCode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="rCard" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="iflag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordOrgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ERPConfirmTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERPConfirmTransferResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallWebMethod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="args" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallWebMethodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallWebMethodResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransferPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cRacd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransferPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransferPlanResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTransferinfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cRacd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTransferinfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveTransferinfoResult" type="tns:OutputWebMessage" />
+            <s:element minOccurs="0" maxOccurs="1" name="remainQty" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransferScaninfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truckNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransferScaninfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransferScaninfoResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferLinkTruckID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionFlag" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferLinkTruckIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransferLinkTruckIDResult" type="tns:OutputWebMessage" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTruckID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransferQueryDetailInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransferQueryDetailInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransferQueryDetailInfoResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProdTransferDeleteHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cRardlst" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProdTransferDeleteHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProdTransferDeleteHandleResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProdTransferCheckTruckNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truckNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProdTransferCheckTruckNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProdTransferCheckTruckNoResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProdTransferDeleteMutiHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProdTransferDeleteMutiHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProdTransferDeleteMutiHandleResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orgid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBoxPrefixResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxPrefixinfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orgid" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="sonumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxPrefixinfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBoxPrefixinfoResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="do_post_boxLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrgId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="soNumber" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="boxBarcode" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="boxPrefix" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="usercode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="do_post_boxLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="do_post_boxLoadResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserLoginResult" type="tns:OutputWebMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckNeedBusinessDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="funcCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckNeedBusinessDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNeedBusinessDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSysDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSysDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSysDateResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutputWebMessage" nillable="true" type="tns:OutputWebMessage" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="dateTime" type="s:dateTime" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadProfile" />
+  </wsdl:message>
+  <wsdl:message name="LoadProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadTransfer" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryTransfer" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScanCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ScanCode" />
+  </wsdl:message>
+  <wsdl:message name="ScanCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ScanCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BtnDelHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:BtnDelHandle" />
+  </wsdl:message>
+  <wsdl:message name="BtnDelHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:BtnDelHandleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERPDownloadTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:ERPDownloadTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ERPDownloadTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:ERPDownloadTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERPQueryTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:ERPQueryTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ERPQueryTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:ERPQueryTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERPScanCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ERPScanCode" />
+  </wsdl:message>
+  <wsdl:message name="ERPScanCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ERPScanCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERPBtnDelHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:ERPBtnDelHandle" />
+  </wsdl:message>
+  <wsdl:message name="ERPBtnDelHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:ERPBtnDelHandleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERPConfirmTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:ERPConfirmTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ERPConfirmTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:ERPConfirmTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallWebMethodSoapIn">
+    <wsdl:part name="parameters" element="tns:CallWebMethod" />
+  </wsdl:message>
+  <wsdl:message name="CallWebMethodSoapOut">
+    <wsdl:part name="parameters" element="tns:CallWebMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransferPlan" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransferPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTransferinfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTransferinfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveTransferinfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTransferinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferScaninfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransferScaninfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferScaninfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransferScaninfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferLinkTruckIDSoapIn">
+    <wsdl:part name="parameters" element="tns:TransferLinkTruckID" />
+  </wsdl:message>
+  <wsdl:message name="TransferLinkTruckIDSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferLinkTruckIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferQueryDetailInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransferQueryDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferQueryDetailInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransferQueryDetailInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:ProdTransferDeleteHandle" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:ProdTransferDeleteHandleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferCheckTruckNoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProdTransferCheckTruckNo" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferCheckTruckNoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProdTransferCheckTruckNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteMutiHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:ProdTransferDeleteMutiHandle" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteMutiHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:ProdTransferDeleteMutiHandleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxPrefix" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixinfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxPrefixinfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixinfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxPrefixinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="do_post_boxLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:do_post_boxLoad" />
+  </wsdl:message>
+  <wsdl:message name="do_post_boxLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:do_post_boxLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckNeedBusinessDateSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckNeedBusinessDate" />
+  </wsdl:message>
+  <wsdl:message name="CheckNeedBusinessDateSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckNeedBusinessDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSysDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSysDate" />
+  </wsdl:message>
+  <wsdl:message name="GetSysDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSysDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadProfileHttpGetIn">
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransferHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransferHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ScanCodeHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="rCard" type="s:string" />
+    <wsdl:part name="plankNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="liveQty" type="s1:StringArray" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ScanCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="BtnDelHandleHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="num" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BtnDelHandleHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmTransferHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="iflag" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPDownloadTransferHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPDownloadTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPQueryTransferHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPQueryTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPScanCodeHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="rCard" type="s:string" />
+    <wsdl:part name="plankNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="liveQty" type="s1:StringArray" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPScanCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPBtnDelHandleHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="num" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPBtnDelHandleHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPConfirmTransferHttpGetIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="iflag" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPConfirmTransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferPlanHttpGetIn">
+    <wsdl:part name="cRacd" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferPlanHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferScaninfoHttpGetIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferScaninfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferQueryDetailInfoHttpGetIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="itemName" type="s:string" />
+    <wsdl:part name="orderNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferQueryDetailInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteHandleHttpGetIn">
+    <wsdl:part name="cRardlst" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="actionFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteHandleHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferCheckTruckNoHttpGetIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="actionFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferCheckTruckNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteMutiHandleHttpGetIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="itemName" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="actionFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteMutiHandleHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixHttpGetIn">
+    <wsdl:part name="orgid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixinfoHttpGetIn">
+    <wsdl:part name="orgid" type="s:string" />
+    <wsdl:part name="sonumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixinfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="do_post_boxLoadHttpGetIn">
+    <wsdl:part name="OrgId" type="s:string" />
+    <wsdl:part name="soNumber" type="s1:StringArray" />
+    <wsdl:part name="boxBarcode" type="s1:StringArray" />
+    <wsdl:part name="boxPrefix" type="s1:StringArray" />
+    <wsdl:part name="usercode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="do_post_boxLoadHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userPwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="CheckNeedBusinessDateHttpGetIn">
+    <wsdl:part name="orgId" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="invCode" type="s:string" />
+    <wsdl:part name="funcCode" type="s:string" />
+    <wsdl:part name="itemList" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckNeedBusinessDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSysDateHttpGetIn">
+    <wsdl:part name="orgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSysDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadProfileHttpPostIn">
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransferHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransferHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ScanCodeHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="rCard" type="s:string" />
+    <wsdl:part name="plankNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="liveQty" type="s1:StringArray" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ScanCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="BtnDelHandleHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="num" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BtnDelHandleHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmTransferHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="iflag" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPDownloadTransferHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPDownloadTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPQueryTransferHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPQueryTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPScanCodeHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="rCard" type="s:string" />
+    <wsdl:part name="plankNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="liveQty" type="s1:StringArray" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPScanCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPBtnDelHandleHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="num" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPBtnDelHandleHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ERPConfirmTransferHttpPostIn">
+    <wsdl:part name="transferNo" type="s:string" />
+    <wsdl:part name="itemCode" type="s1:StringArray" />
+    <wsdl:part name="rCard" type="s1:StringArray" />
+    <wsdl:part name="iflag" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="ordOrgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ERPConfirmTransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferPlanHttpPostIn">
+    <wsdl:part name="cRacd" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferPlanHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferScaninfoHttpPostIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferScaninfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferQueryDetailInfoHttpPostIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="itemName" type="s:string" />
+    <wsdl:part name="orderNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferQueryDetailInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteHandleHttpPostIn">
+    <wsdl:part name="cRardlst" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="actionFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteHandleHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferCheckTruckNoHttpPostIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="actionFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferCheckTruckNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteMutiHandleHttpPostIn">
+    <wsdl:part name="truckNo" type="s:string" />
+    <wsdl:part name="itemName" type="s:string" />
+    <wsdl:part name="orgID" type="s:string" />
+    <wsdl:part name="actionFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProdTransferDeleteMutiHandleHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixHttpPostIn">
+    <wsdl:part name="orgid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixinfoHttpPostIn">
+    <wsdl:part name="orgid" type="s:string" />
+    <wsdl:part name="sonumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxPrefixinfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="do_post_boxLoadHttpPostIn">
+    <wsdl:part name="OrgId" type="s:string" />
+    <wsdl:part name="soNumber" type="s1:StringArray" />
+    <wsdl:part name="boxBarcode" type="s1:StringArray" />
+    <wsdl:part name="boxPrefix" type="s1:StringArray" />
+    <wsdl:part name="usercode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="do_post_boxLoadHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userPwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:OutputWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="CheckNeedBusinessDateHttpPostIn">
+    <wsdl:part name="orgId" type="s:string" />
+    <wsdl:part name="userCode" type="s:string" />
+    <wsdl:part name="invCode" type="s:string" />
+    <wsdl:part name="funcCode" type="s:string" />
+    <wsdl:part name="itemList" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckNeedBusinessDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSysDateHttpPostIn">
+    <wsdl:part name="orgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSysDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TransferServiceSoap">
+    <wsdl:operation name="LoadProfile">
+      <wsdl:input message="tns:LoadProfileSoapIn" />
+      <wsdl:output message="tns:LoadProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <wsdl:input message="tns:DownloadTransferSoapIn" />
+      <wsdl:output message="tns:DownloadTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <wsdl:input message="tns:QueryTransferSoapIn" />
+      <wsdl:output message="tns:QueryTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <wsdl:input message="tns:ScanCodeSoapIn" />
+      <wsdl:output message="tns:ScanCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <wsdl:input message="tns:BtnDelHandleSoapIn" />
+      <wsdl:output message="tns:BtnDelHandleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <wsdl:input message="tns:ConfirmTransferSoapIn" />
+      <wsdl:output message="tns:ConfirmTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <wsdl:input message="tns:ERPDownloadTransferSoapIn" />
+      <wsdl:output message="tns:ERPDownloadTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <wsdl:input message="tns:ERPQueryTransferSoapIn" />
+      <wsdl:output message="tns:ERPQueryTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <wsdl:input message="tns:ERPScanCodeSoapIn" />
+      <wsdl:output message="tns:ERPScanCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <wsdl:input message="tns:ERPBtnDelHandleSoapIn" />
+      <wsdl:output message="tns:ERPBtnDelHandleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <wsdl:input message="tns:ERPConfirmTransferSoapIn" />
+      <wsdl:output message="tns:ERPConfirmTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallWebMethod">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">实现接口</wsdl:documentation>
+      <wsdl:input message="tns:CallWebMethodSoapIn" />
+      <wsdl:output message="tns:CallWebMethodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <wsdl:input message="tns:GetTransferPlanSoapIn" />
+      <wsdl:output message="tns:GetTransferPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTransferinfo">
+      <wsdl:input message="tns:SaveTransferinfoSoapIn" />
+      <wsdl:output message="tns:SaveTransferinfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <wsdl:input message="tns:GetTransferScaninfoSoapIn" />
+      <wsdl:output message="tns:GetTransferScaninfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferLinkTruckID">
+      <wsdl:input message="tns:TransferLinkTruckIDSoapIn" />
+      <wsdl:output message="tns:TransferLinkTruckIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <wsdl:input message="tns:GetTransferQueryDetailInfoSoapIn" />
+      <wsdl:output message="tns:GetTransferQueryDetailInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <wsdl:input message="tns:ProdTransferDeleteHandleSoapIn" />
+      <wsdl:output message="tns:ProdTransferDeleteHandleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <wsdl:input message="tns:ProdTransferCheckTruckNoSoapIn" />
+      <wsdl:output message="tns:ProdTransferCheckTruckNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <wsdl:input message="tns:ProdTransferDeleteMutiHandleSoapIn" />
+      <wsdl:output message="tns:ProdTransferDeleteMutiHandleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <wsdl:input message="tns:GetBoxPrefixSoapIn" />
+      <wsdl:output message="tns:GetBoxPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <wsdl:input message="tns:GetBoxPrefixinfoSoapIn" />
+      <wsdl:output message="tns:GetBoxPrefixinfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <wsdl:input message="tns:do_post_boxLoadSoapIn" />
+      <wsdl:output message="tns:do_post_boxLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginSoapIn" />
+      <wsdl:output message="tns:UserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <wsdl:input message="tns:CheckNeedBusinessDateSoapIn" />
+      <wsdl:output message="tns:CheckNeedBusinessDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <wsdl:input message="tns:GetSysDateSoapIn" />
+      <wsdl:output message="tns:GetSysDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransferServiceHttpGet">
+    <wsdl:operation name="LoadProfile">
+      <wsdl:input message="tns:LoadProfileHttpGetIn" />
+      <wsdl:output message="tns:LoadProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <wsdl:input message="tns:DownloadTransferHttpGetIn" />
+      <wsdl:output message="tns:DownloadTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <wsdl:input message="tns:QueryTransferHttpGetIn" />
+      <wsdl:output message="tns:QueryTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <wsdl:input message="tns:ScanCodeHttpGetIn" />
+      <wsdl:output message="tns:ScanCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <wsdl:input message="tns:BtnDelHandleHttpGetIn" />
+      <wsdl:output message="tns:BtnDelHandleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <wsdl:input message="tns:ConfirmTransferHttpGetIn" />
+      <wsdl:output message="tns:ConfirmTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <wsdl:input message="tns:ERPDownloadTransferHttpGetIn" />
+      <wsdl:output message="tns:ERPDownloadTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <wsdl:input message="tns:ERPQueryTransferHttpGetIn" />
+      <wsdl:output message="tns:ERPQueryTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <wsdl:input message="tns:ERPScanCodeHttpGetIn" />
+      <wsdl:output message="tns:ERPScanCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <wsdl:input message="tns:ERPBtnDelHandleHttpGetIn" />
+      <wsdl:output message="tns:ERPBtnDelHandleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <wsdl:input message="tns:ERPConfirmTransferHttpGetIn" />
+      <wsdl:output message="tns:ERPConfirmTransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <wsdl:input message="tns:GetTransferPlanHttpGetIn" />
+      <wsdl:output message="tns:GetTransferPlanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <wsdl:input message="tns:GetTransferScaninfoHttpGetIn" />
+      <wsdl:output message="tns:GetTransferScaninfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <wsdl:input message="tns:GetTransferQueryDetailInfoHttpGetIn" />
+      <wsdl:output message="tns:GetTransferQueryDetailInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <wsdl:input message="tns:ProdTransferDeleteHandleHttpGetIn" />
+      <wsdl:output message="tns:ProdTransferDeleteHandleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <wsdl:input message="tns:ProdTransferCheckTruckNoHttpGetIn" />
+      <wsdl:output message="tns:ProdTransferCheckTruckNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <wsdl:input message="tns:ProdTransferDeleteMutiHandleHttpGetIn" />
+      <wsdl:output message="tns:ProdTransferDeleteMutiHandleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <wsdl:input message="tns:GetBoxPrefixHttpGetIn" />
+      <wsdl:output message="tns:GetBoxPrefixHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <wsdl:input message="tns:GetBoxPrefixinfoHttpGetIn" />
+      <wsdl:output message="tns:GetBoxPrefixinfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <wsdl:input message="tns:do_post_boxLoadHttpGetIn" />
+      <wsdl:output message="tns:do_post_boxLoadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginHttpGetIn" />
+      <wsdl:output message="tns:UserLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <wsdl:input message="tns:CheckNeedBusinessDateHttpGetIn" />
+      <wsdl:output message="tns:CheckNeedBusinessDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <wsdl:input message="tns:GetSysDateHttpGetIn" />
+      <wsdl:output message="tns:GetSysDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransferServiceHttpPost">
+    <wsdl:operation name="LoadProfile">
+      <wsdl:input message="tns:LoadProfileHttpPostIn" />
+      <wsdl:output message="tns:LoadProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <wsdl:input message="tns:DownloadTransferHttpPostIn" />
+      <wsdl:output message="tns:DownloadTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <wsdl:input message="tns:QueryTransferHttpPostIn" />
+      <wsdl:output message="tns:QueryTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <wsdl:input message="tns:ScanCodeHttpPostIn" />
+      <wsdl:output message="tns:ScanCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <wsdl:input message="tns:BtnDelHandleHttpPostIn" />
+      <wsdl:output message="tns:BtnDelHandleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <wsdl:input message="tns:ConfirmTransferHttpPostIn" />
+      <wsdl:output message="tns:ConfirmTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <wsdl:input message="tns:ERPDownloadTransferHttpPostIn" />
+      <wsdl:output message="tns:ERPDownloadTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <wsdl:input message="tns:ERPQueryTransferHttpPostIn" />
+      <wsdl:output message="tns:ERPQueryTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <wsdl:input message="tns:ERPScanCodeHttpPostIn" />
+      <wsdl:output message="tns:ERPScanCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <wsdl:input message="tns:ERPBtnDelHandleHttpPostIn" />
+      <wsdl:output message="tns:ERPBtnDelHandleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <wsdl:input message="tns:ERPConfirmTransferHttpPostIn" />
+      <wsdl:output message="tns:ERPConfirmTransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <wsdl:input message="tns:GetTransferPlanHttpPostIn" />
+      <wsdl:output message="tns:GetTransferPlanHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <wsdl:input message="tns:GetTransferScaninfoHttpPostIn" />
+      <wsdl:output message="tns:GetTransferScaninfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <wsdl:input message="tns:GetTransferQueryDetailInfoHttpPostIn" />
+      <wsdl:output message="tns:GetTransferQueryDetailInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <wsdl:input message="tns:ProdTransferDeleteHandleHttpPostIn" />
+      <wsdl:output message="tns:ProdTransferDeleteHandleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <wsdl:input message="tns:ProdTransferCheckTruckNoHttpPostIn" />
+      <wsdl:output message="tns:ProdTransferCheckTruckNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <wsdl:input message="tns:ProdTransferDeleteMutiHandleHttpPostIn" />
+      <wsdl:output message="tns:ProdTransferDeleteMutiHandleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <wsdl:input message="tns:GetBoxPrefixHttpPostIn" />
+      <wsdl:output message="tns:GetBoxPrefixHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <wsdl:input message="tns:GetBoxPrefixinfoHttpPostIn" />
+      <wsdl:output message="tns:GetBoxPrefixinfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <wsdl:input message="tns:do_post_boxLoadHttpPostIn" />
+      <wsdl:output message="tns:do_post_boxLoadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginHttpPostIn" />
+      <wsdl:output message="tns:UserLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <wsdl:input message="tns:CheckNeedBusinessDateHttpPostIn" />
+      <wsdl:output message="tns:CheckNeedBusinessDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <wsdl:input message="tns:GetSysDateHttpPostIn" />
+      <wsdl:output message="tns:GetSysDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransferServiceSoap" type="tns:TransferServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadProfile">
+      <soap:operation soapAction="http://tempuri.org/LoadProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <soap:operation soapAction="http://tempuri.org/DownloadTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <soap:operation soapAction="http://tempuri.org/QueryTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <soap:operation soapAction="http://tempuri.org/ScanCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <soap:operation soapAction="http://tempuri.org/BtnDelHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <soap:operation soapAction="http://tempuri.org/ConfirmTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <soap:operation soapAction="http://tempuri.org/ERPDownloadTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <soap:operation soapAction="http://tempuri.org/ERPQueryTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <soap:operation soapAction="http://tempuri.org/ERPScanCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <soap:operation soapAction="http://tempuri.org/ERPBtnDelHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <soap:operation soapAction="http://tempuri.org/ERPConfirmTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallWebMethod">
+      <soap:operation soapAction="http://tempuri.org/CallWebMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <soap:operation soapAction="http://tempuri.org/GetTransferPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTransferinfo">
+      <soap:operation soapAction="http://tempuri.org/SaveTransferinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <soap:operation soapAction="http://tempuri.org/GetTransferScaninfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferLinkTruckID">
+      <soap:operation soapAction="http://tempuri.org/TransferLinkTruckID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTransferQueryDetailInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <soap:operation soapAction="http://tempuri.org/ProdTransferDeleteHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <soap:operation soapAction="http://tempuri.org/ProdTransferCheckTruckNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <soap:operation soapAction="http://tempuri.org/ProdTransferDeleteMutiHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <soap:operation soapAction="http://tempuri.org/GetBoxPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <soap:operation soapAction="http://tempuri.org/GetBoxPrefixinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <soap:operation soapAction="http://tempuri.org/do_post_boxLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <soap:operation soapAction="http://tempuri.org/CheckNeedBusinessDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <soap:operation soapAction="http://tempuri.org/GetSysDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransferServiceSoap12" type="tns:TransferServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadProfile">
+      <soap12:operation soapAction="http://tempuri.org/LoadProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <soap12:operation soapAction="http://tempuri.org/DownloadTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <soap12:operation soapAction="http://tempuri.org/QueryTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <soap12:operation soapAction="http://tempuri.org/ScanCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <soap12:operation soapAction="http://tempuri.org/BtnDelHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <soap12:operation soapAction="http://tempuri.org/ERPDownloadTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <soap12:operation soapAction="http://tempuri.org/ERPQueryTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <soap12:operation soapAction="http://tempuri.org/ERPScanCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <soap12:operation soapAction="http://tempuri.org/ERPBtnDelHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <soap12:operation soapAction="http://tempuri.org/ERPConfirmTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallWebMethod">
+      <soap12:operation soapAction="http://tempuri.org/CallWebMethod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <soap12:operation soapAction="http://tempuri.org/GetTransferPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTransferinfo">
+      <soap12:operation soapAction="http://tempuri.org/SaveTransferinfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTransferScaninfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferLinkTruckID">
+      <soap12:operation soapAction="http://tempuri.org/TransferLinkTruckID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTransferQueryDetailInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <soap12:operation soapAction="http://tempuri.org/ProdTransferDeleteHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <soap12:operation soapAction="http://tempuri.org/ProdTransferCheckTruckNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <soap12:operation soapAction="http://tempuri.org/ProdTransferDeleteMutiHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <soap12:operation soapAction="http://tempuri.org/GetBoxPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <soap12:operation soapAction="http://tempuri.org/GetBoxPrefixinfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <soap12:operation soapAction="http://tempuri.org/do_post_boxLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap12:operation soapAction="http://tempuri.org/UserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <soap12:operation soapAction="http://tempuri.org/CheckNeedBusinessDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <soap12:operation soapAction="http://tempuri.org/GetSysDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransferServiceHttpGet" type="tns:TransferServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="LoadProfile">
+      <http:operation location="/LoadProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <http:operation location="/DownloadTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <http:operation location="/QueryTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <http:operation location="/ScanCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <http:operation location="/BtnDelHandle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <http:operation location="/ConfirmTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <http:operation location="/ERPDownloadTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <http:operation location="/ERPQueryTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <http:operation location="/ERPScanCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <http:operation location="/ERPBtnDelHandle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <http:operation location="/ERPConfirmTransfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <http:operation location="/GetTransferPlan" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <http:operation location="/GetTransferScaninfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <http:operation location="/GetTransferQueryDetailInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <http:operation location="/ProdTransferDeleteHandle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <http:operation location="/ProdTransferCheckTruckNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <http:operation location="/ProdTransferDeleteMutiHandle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <http:operation location="/GetBoxPrefix" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <http:operation location="/GetBoxPrefixinfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <http:operation location="/do_post_boxLoad" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <http:operation location="/UserLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <http:operation location="/CheckNeedBusinessDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <http:operation location="/GetSysDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransferServiceHttpPost" type="tns:TransferServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="LoadProfile">
+      <http:operation location="/LoadProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransfer">
+      <http:operation location="/DownloadTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransfer">
+      <http:operation location="/QueryTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScanCode">
+      <http:operation location="/ScanCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BtnDelHandle">
+      <http:operation location="/BtnDelHandle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <http:operation location="/ConfirmTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPDownloadTransfer">
+      <http:operation location="/ERPDownloadTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPQueryTransfer">
+      <http:operation location="/ERPQueryTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPScanCode">
+      <http:operation location="/ERPScanCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPBtnDelHandle">
+      <http:operation location="/ERPBtnDelHandle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERPConfirmTransfer">
+      <http:operation location="/ERPConfirmTransfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferPlan">
+      <http:operation location="/GetTransferPlan" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferScaninfo">
+      <http:operation location="/GetTransferScaninfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferQueryDetailInfo">
+      <http:operation location="/GetTransferQueryDetailInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteHandle">
+      <http:operation location="/ProdTransferDeleteHandle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferCheckTruckNo">
+      <http:operation location="/ProdTransferCheckTruckNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProdTransferDeleteMutiHandle">
+      <http:operation location="/ProdTransferDeleteMutiHandle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefix">
+      <http:operation location="/GetBoxPrefix" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxPrefixinfo">
+      <http:operation location="/GetBoxPrefixinfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="do_post_boxLoad">
+      <http:operation location="/do_post_boxLoad" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <http:operation location="/UserLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNeedBusinessDate">
+      <http:operation location="/CheckNeedBusinessDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDate">
+      <http:operation location="/GetSysDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransferService">
+    <wsdl:port name="TransferServiceSoap" binding="tns:TransferServiceSoap">
+      <soap:address location="http://mespda.midea.com.cn/ThinWebService/TransferService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransferServiceSoap12" binding="tns:TransferServiceSoap12">
+      <soap12:address location="http://mespda.midea.com.cn/ThinWebService/TransferService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransferServiceHttpGet" binding="tns:TransferServiceHttpGet">
+      <http:address location="http://mespda.midea.com.cn/ThinWebService/TransferService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransferServiceHttpPost" binding="tns:TransferServiceHttpPost">
+      <http:address location="http://mespda.midea.com.cn/ThinWebService/TransferService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

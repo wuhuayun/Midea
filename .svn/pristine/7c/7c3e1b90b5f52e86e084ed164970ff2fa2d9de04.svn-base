@@ -1,0 +1,589 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+using MideaAscm.Dal;
+using YnBaseDal;
+using NHibernate;
+using MideaAscm.Dal.SupplierPreparation.Entities;
+using MideaAscm.Services.FromErp;
+
+namespace MideaAscm.Services.SupplierPreparation
+{
+    public class AscmContainerDeliveryService
+    {
+        private static AscmContainerDeliveryService ascmContainerDeliveryServices;
+        public static AscmContainerDeliveryService GetInstance()
+        {
+            if (ascmContainerDeliveryServices == null)
+                ascmContainerDeliveryServices = new AscmContainerDeliveryService();
+            return ascmContainerDeliveryServices;
+        }
+        #region base
+        public AscmContainerDelivery Get(int id)
+        {
+            AscmContainerDelivery ascmContainerDelivery = null;
+            try
+            {
+                ascmContainerDelivery = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmContainerDelivery>(id);
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Get AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return ascmContainerDelivery;
+        }     
+        public AscmContainerDelivery GetCurrent(string warehouseId)
+        {
+            AscmContainerDelivery ascmContainerDelivery = null;
+            try
+            {
+                YnPage ynPage = new YnPage();
+                ynPage.SetPageSize(1);
+                ynPage.SetCurrentPage(1);
+                string sort = " order by modifyTime desc ";
+                string sql = "from AscmContainerDelivery where status='" + AscmContainerDelivery.StatusDefine.inWarehouseDoor + "' and  batSumMainId in (select id from AscmDeliBatSumMain where warehouseId='" + warehouseId + "') and modifyTime is not null";
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql + sort, sql, ynPage);
+                if (ilist != null && ilist.Count>0)
+                {
+                    return ilist[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return ascmContainerDelivery;
+        }
+        public List<AscmContainerDelivery> GetList(string sql)
+        {
+            List<AscmContainerDelivery> list = null;
+            try
+            {
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmContainerDelivery> GetList(string containerSn,int batSumMainId, bool isSetMaterial = true)
+        {
+            List<AscmContainerDelivery> list = null;
+            try
+            {
+                //string sort = " order by sn ";
+                string sql = "from AscmContainerDelivery where containerSn='" + containerSn + "' and batSumMainId=" + batSumMainId;
+
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                    if (isSetMaterial)
+                        SetMaterial(list);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmContainerDelivery> GetList(string containerSn, int batSumMainId, string sessionKey)
+        {
+            List<AscmContainerDelivery> list = null;
+            try
+            {
+                //string sort = " order by sn ";
+                string sql = "from AscmContainerDelivery where containerSn='" + containerSn + "' and batSumMainId=" + batSumMainId;
+
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql, sessionKey);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmContainerDelivery> GetCurrentList(string containerSn)
+        {
+            List<AscmContainerDelivery> list = null;
+            try
+            {
+                string sort = " order by id desc ";
+
+                string sql = "from AscmContainerDelivery where containerSn='" + containerSn + "'";
+
+                //IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql);
+                YnPage ynPage = new YnPage();
+                ynPage.SetPageSize(1);
+                ynPage.SetCurrentPage(1);
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql + sort, sql, ynPage);
+                if (ilist != null && ilist.Count>0)
+                {
+                    foreach (AscmContainerDelivery ascmContainerDelivery in ilist)
+                    {
+                        ascmContainerDelivery.ascmDeliBatSumMain = AscmDeliBatSumMainService.GetInstance().Get(ascmContainerDelivery.batSumMainId);
+                        ascmContainerDelivery.ascmDeliveryOrderBatch = AscmDeliveryOrderBatchService.GetInstance().Get(ascmContainerDelivery.deliveryOrderBatchId);
+                    }
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                    //AscmDeliBatSumMain ascmDeliBatSumMain = AscmDeliBatSumMainService.GetInstance().Get(ilist[0].batSumMainId);
+                    //if (ascmDeliBatSumMain != null &&( ascmDeliBatSumMain.status == AscmDeliBatSumMain.StatusDefine.outPlant||ascmDeliBatSumMain.status == AscmDeliBatSumMain.StatusDefine.confirm))
+                    //{
+                    //    sql = "from AscmContainerDelivery where batSumMainId =" + ilist[0].batSumMainId + "  and containerSn='" + containerSn + "'";
+                    //    ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql);
+                    //    if (ilist != null)
+                    //    {
+                    //        list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                    //    }
+                    //}
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmContainerDelivery> GetCurrentList(string containerSn, string sessionKey)
+        {
+            List<AscmContainerDelivery> list = null;
+            try
+            {
+                string sort = " order by id desc ";
+
+                string sql = "from AscmContainerDelivery where containerSn='" + containerSn + "'";
+
+                //IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql);
+                YnPage ynPage = new YnPage();
+                ynPage.SetPageSize(1);
+                ynPage.SetCurrentPage(1);
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql + sort, sql, ynPage, sessionKey);
+                //IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql, sessionKey);
+                if (ilist != null && ilist.Count > 0)
+                {
+                    foreach (AscmContainerDelivery ascmContainerDelivery in ilist)
+                    {
+                        ascmContainerDelivery.ascmDeliBatSumMain = AscmDeliBatSumMainService.GetInstance().Get(ascmContainerDelivery.batSumMainId, sessionKey);
+                        ascmContainerDelivery.ascmDeliveryOrderBatch = AscmDeliveryOrderBatchService.GetInstance().Get(ascmContainerDelivery.deliveryOrderBatchId, sessionKey);
+                    }
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                    //AscmDeliBatSumMain ascmDeliBatSumMain = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmDeliBatSumMain>(ilist[0].batSumMainId, sessionKey);
+                    //if (ascmDeliBatSumMain != null && (ascmDeliBatSumMain.status == AscmDeliBatSumMain.StatusDefine.outPlant || ascmDeliBatSumMain.status == AscmDeliBatSumMain.StatusDefine.confirm))
+                    //{
+                    //    sql = "from AscmContainerDelivery where batSumMainId =" + ilist[0].batSumMainId + "  and containerSn='" + containerSn + "'";
+                    //    ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql, sessionKey);
+                    //    if (ilist != null)
+                    //    {
+                    //        list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                    //    }
+                    //}
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public List<AscmContainerDelivery> GetListByDeliverySumMainId(int mainId, bool isSetMaterial = true)
+        {
+            List<AscmContainerDelivery> list = null;
+            try
+            {
+                //string sort = " order by sn ";
+                //string sql = "from AscmContainerDelivery where deliveryOrderBatchId in (select batchId from AscmDeliBatSumDetail where mainId=" + mainId + ")";
+                string sql = "from AscmContainerDelivery where batSumMainId =" + mainId + "";
+                IList<AscmContainerDelivery> ilist = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmContainerDelivery>(sql);
+                if (ilist != null)
+                {
+                    list = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmContainerDelivery>(ilist);
+                    if (isSetMaterial)
+                        SetMaterial(list);
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("查询失败(Find AscmContainerDelivery)", ex);
+                throw ex;
+            }
+            return list;
+        }
+        public void Save(List<AscmContainerDelivery> listAscmContainerDelivery)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.SaveList(listAscmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Save(AscmContainerDelivery ascmContainerDelivery)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Save(ascmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Update(AscmContainerDelivery ascmContainerDelivery)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmContainerDelivery>(ascmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmContainerDelivery)", ex);
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        //public void Delete(int id)
+        //{
+        //    try
+        //    {
+        //        AscmContainerDelivery ascmContainerDelivery = Get(id);
+        //        Delete(ascmContainerDelivery);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        public void Delete(AscmContainerDelivery ascmContainerDelivery)
+        {
+            try
+            {
+                YnDaoHelper.GetInstance().nHibernateHelper.Delete<AscmContainerDelivery>(ascmContainerDelivery);
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("删除失败(Delete AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Delete(List<AscmContainerDelivery> listAscmContainerDelivery)
+        {
+            try
+            {
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.DeleteList(listAscmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("删除失败(Delete AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        private void SetMaterial(List<AscmContainerDelivery> list)
+        {
+            if (list != null && list.Count > 0)
+            {
+                string ids = string.Empty;
+                foreach (AscmContainerDelivery ascmContainerDelivery in list)
+                {
+                    if (!string.IsNullOrEmpty(ids))
+                        ids += ",";
+                    ids += "" + ascmContainerDelivery.materialId + "";
+                }
+                string sql = "from AscmMaterialItem where id in (" + ids + ")";
+                IList<AscmMaterialItem> ilistAscmMaterialItem = YnDaoHelper.GetInstance().nHibernateHelper.Find<AscmMaterialItem>(sql);
+                if (ilistAscmMaterialItem != null && ilistAscmMaterialItem.Count > 0)
+                {
+                    List<AscmMaterialItem> listAscmMaterialItem = YnBaseClass2.Helper.ConvertHelper.ConvertIListToList<AscmMaterialItem>(ilistAscmMaterialItem);
+                    foreach (AscmContainerDelivery ascmContainerDelivery in list)
+                    {
+                        ascmContainerDelivery.ascmMaterialItem = listAscmMaterialItem.Find(e => e.id == ascmContainerDelivery.materialId);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region 应用
+        public AscmContainerDelivery Add(string containerSn, int batSumMainId, int deliveryOrderBatchId, int materialId, decimal quantity)
+        {
+            try
+            {
+                AscmContainerDelivery ascmContainerDelivery = new AscmContainerDelivery();
+                ascmContainerDelivery.organizationId = 0;
+                ascmContainerDelivery.createUser = "";
+                ascmContainerDelivery.createTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                ascmContainerDelivery.modifyUser = "";
+                ascmContainerDelivery.modifyTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                ascmContainerDelivery.containerSn = containerSn;
+                ascmContainerDelivery.batSumMainId = batSumMainId;
+                ascmContainerDelivery.deliveryOrderBatchId = deliveryOrderBatchId;
+                ascmContainerDelivery.deliveryOrderId = 0;
+                ascmContainerDelivery.materialId = materialId;
+                ascmContainerDelivery.quantity = quantity;
+                //ascmContainerDelivery.status = "";
+                ascmContainerDelivery.memo = "";
+
+                int maxId = YnDaoHelper.GetInstance().nHibernateHelper.GetMaxId("select max(id) from AscmContainerDelivery");
+                maxId++;
+                ascmContainerDelivery.id = maxId;
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Save(ascmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+                return ascmContainerDelivery;
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Update(int id, decimal quantity)
+        {
+            try
+            {
+                AscmContainerDelivery ascmContainerDelivery = Get(id);
+                if (ascmContainerDelivery == null)
+                    throw new Exception("编号错误，没有此编号容器!");
+                ascmContainerDelivery.modifyUser = "";
+                ascmContainerDelivery.modifyTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                ascmContainerDelivery.quantity = quantity;
+
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Save(ascmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Delete(int id)
+        {
+            try
+            {
+                AscmContainerDelivery ascmContainerDelivery = Get(id);
+                if (ascmContainerDelivery == null)
+                    throw new Exception("编号错误，没有此编号容器!");
+
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Delete(ascmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Clear(string containerSn,int batSumMainId)
+        {
+            try
+            {
+                List<AscmContainerDelivery> listAscmContainerDelivery = GetList(containerSn, batSumMainId);
+                if (listAscmContainerDelivery == null)
+                    throw new Exception("编号错误，没有此编号容器!");
+
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.DeleteList(listAscmContainerDelivery);
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("保存失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+
+        public void Update(AscmContainerDelivery ascmContainerDelivery, int readingHeadId)
+        {
+            try
+            {
+                AscmContainer ascmContainer = null;
+                if (!string.IsNullOrEmpty(ascmContainerDelivery.containerSn))
+                {
+                    ascmContainer = AscmContainerService.GetInstance().Get(ascmContainerDelivery.containerSn);
+                    if (ascmContainer != null)
+                    {
+                        ascmContainer.place = readingHeadId.ToString();
+                        ascmContainer.storeInTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+                }
+
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession().BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmContainerDelivery>(ascmContainerDelivery);
+
+                        if (ascmContainer != null)
+                            YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmContainer>(ascmContainer);
+
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmContainerDelivery)", ex);
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        public void Update(AscmContainerDelivery ascmContainerDelivery, int readingHeadId, string sessionKey)
+        {
+            try
+            {
+                AscmContainer ascmContainer = null;
+                if (!string.IsNullOrEmpty(ascmContainerDelivery.containerSn))
+                {
+                    ascmContainer = YnDaoHelper.GetInstance().nHibernateHelper.Get<AscmContainer>(ascmContainerDelivery.containerSn, sessionKey);
+                    if (ascmContainer != null)
+                    {
+                        ascmContainer.place = readingHeadId.ToString();
+                        ascmContainer.storeInTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+                }
+
+                using (ITransaction tx = YnDaoHelper.GetInstance().nHibernateHelper.GetCurrentSession(sessionKey).BeginTransaction())
+                {
+                    try
+                    {
+                        YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmContainerDelivery>(ascmContainerDelivery, sessionKey);
+
+                        if (ascmContainer != null)
+                            YnDaoHelper.GetInstance().nHibernateHelper.Update<AscmContainer>(ascmContainer, sessionKey);
+
+                        tx.Commit();//正确执行提交
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();//回滚
+                        YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Update AscmContainerDelivery)", ex);
+                        throw ex;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                YnBaseClass2.Helper.LogHelper.GetLog().Error("修改失败(Save AscmContainerDelivery)", ex);
+                throw ex;
+            }
+        }
+        #endregion
+    }
+}

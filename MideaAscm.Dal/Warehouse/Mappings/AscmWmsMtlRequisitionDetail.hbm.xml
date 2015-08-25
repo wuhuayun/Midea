@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWmsMtlRequisitionDetail" table="Ascm_Wms_Mtl_Req_Detail" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="mainId">
+      <column name="mainId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="materialId">
+      <column name="materialId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="warelocationId">
+      <column name="warelocationId" sql-type="NUMBER  default 0" not-null="true"/>
+    </property>
+    <property name="quantity">
+      <column name="quantity" sql-type="NUMBER  default 0"/>
+    </property>
+    <property name="returnCode">
+      <column name="returnCode" sql-type="NUMBER(10) default 0"/>
+    </property>
+    <property name="returnMessage" column="returnMessage" length="200"/>
+  </class>
+</hibernate-mapping> 

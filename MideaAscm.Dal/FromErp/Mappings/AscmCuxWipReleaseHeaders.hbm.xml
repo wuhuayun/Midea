@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmCuxWipReleaseHeaders" table="Ascm_Cux_Wip_Release_Headers" batch-size="50">
+    <id name="releaseHeaderId" column="releaseHeaderId">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="wipEntityId">
+      <column name="wipEntityId" sql-type="NUMBER default 0"/>
+    </property>
+    <property name="releaseNumber" column="releaseNumber" length="30"/>
+    <property name="releaseType" column="releaseType" length="30"/>
+    <property name="releaseStatus" column="releaseStatus" length="30"/>
+    <property name="releaseDate" column="releaseDate" length="20"/>
+  </class>
+</hibernate-mapping> 

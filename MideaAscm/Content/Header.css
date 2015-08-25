@@ -1,0 +1,25 @@
+﻿.header{
+	background: url(Images/frame_header_bk.jpg) 0px 0px repeat-x;
+	width: 100%;
+	height: 53px;
+	/*float: left;*/
+}
+
+.header .headerLogo 
+{
+	/*position: absolute;
+	left: 0px;
+	top: 0px;*/
+	border: 0px solid blue;
+	background: url(Images/frame_logo.jpg) 0px 0px no-repeat;
+}
+
+.header .headerContent {
+	/*float: left;*/
+	background: url(Images/frame_header_right.jpg) top right no-repeat;	                                           
+}
+
+.header .headerContent .headerBanner {
+	/*float: left;*/
+	background: url(Content/Images/frame_banner.gif) 50px 1px no-repeat;
+}

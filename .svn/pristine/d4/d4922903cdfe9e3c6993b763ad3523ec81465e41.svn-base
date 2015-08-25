@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.FromErp.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmDeliveryOrderBatch" table="Ascm_Delivery_Order_Batch" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="barCode" column="barCode" length="30"/>
+    <property name="supplierId" column="supplierId"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="materialId" column="materialId"/>
+    <property name="status" column="status" length="20"/>
+    <property name="deliveryTime" column="deliveryTime" length="20"/>
+    <property name="scheduleStartTime" column="scheduleStartTime" length="20"/>
+    <property name="comments" column="comments" length="240"/>
+    <property name="supperWarehouse" column="supperWarehouse" length="20"/>
+    <property name="wipLine" column="wipLine" length="30"/>
+    <property name="ascmStatus" column="ascmStatus" length="20"/>
+    <property name="actualWarehouseId" column="actualWarehouseId" length="20"/>
+	  <property name="returnCode" column="returnCode" length="200"/>
+	  <property name="returnMessage" column="returnMessage" length="500"/>
+  </class>
+</hibernate-mapping> 

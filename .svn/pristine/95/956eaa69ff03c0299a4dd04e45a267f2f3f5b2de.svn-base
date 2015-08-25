@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWarelocation" table="Ascm_Warelocation" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="docNumber" column="docNumber" length="20"/>
+    <property name="rfid" column="rfid" length="20"/>
+    <property name="buildingId">
+      <column name="buildingId" sql-type="NUMBER(10)"/>
+    </property>
+    <property name="buildingArea" column="buildingArea" length="10"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="categoryCode" column="categoryCode" length="10"/>
+    <property name="type">
+      <column name="type" sql-type="int default 0"/>
+    </property>
+    <property name="shelfNo" column="shelfNo" length="10"/>
+    <property name="layer">
+      <column name="layer" sql-type="int default 0"/>
+    </property>
+    <property name="No" column="No" length="10"/>
+    <property name="floorRow" column="floorRow" length="10"/>
+    <property name="floorColumn" column="floorColumn" length="10"/>
+    <property name="upperLimit">
+      <column name="upperLimit" sql-type="NUMBER(10)"/>
+    </property>
+    <property name="lowerLimit">
+      <column name="lowerLimit" sql-type="NUMBER(10)"/>
+    </property>
+    <!--<property name="quantity">
+      <column name="quantity" sql-type="NUMBER default 0"/>
+    </property>-->
+    <property name="description" column="description" length="240"/>
+    <property name="warehouseUserId" column="warehouseUserId" length="20"/>
+  </class>
+</hibernate-mapping> 

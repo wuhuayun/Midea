@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.GetMaterialManage.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmRequirementList" table="Ascm_Requirement_List" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned"/>
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="taskId">
+      <column name="taskId" sql-type="int default 0"/>
+    </property>
+    <property name="materialCode" column="materialCode" length="20"/>
+    <property name="materialDesc" column="materialDesc" length="200"/>
+    <property name="unit" column="unit" length="20"/>
+    <property name="rcount">
+      <column name="rcount" sql-type="int default 0"/>
+    </property>
+    <property name="scount">
+      <column name="scount" sql-type="int default 0"/>
+    </property>
+    <property name="ncount">
+      <column name="ncount" sql-type="int default 0"/>
+    </property>
+    <property name="tip" column="tip" length="200"/>
+  </class>
+</hibernate-mapping>

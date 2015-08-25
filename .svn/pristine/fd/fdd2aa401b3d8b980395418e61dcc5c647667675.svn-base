@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using YnFrame.Web;
+
+namespace MideaAscm.Controllers
+{
+    [YnActionFilter(false)]
+    public class SharedController : YnFrame.Controllers.YnBaseController
+    {
+        //
+        // GET: /Shared/
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult FrameHeader()
+        {
+            //框架头
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+            }
+            return PartialView("FrameHeader");
+        }
+       
+    }
+}

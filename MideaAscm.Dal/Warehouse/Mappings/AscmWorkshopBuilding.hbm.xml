@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmWorkshopBuilding" table="Ascm_Workshop_Building" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="sortNo">
+      <column name="sortNo" sql-type="number(10) default 0"/>
+    </property>
+    <property name="name" column="name" length="20"/>
+    <property name="code" column="code" length="20"/>
+    <property name="description" column="description" length="200"/>
+    <property name="horizontal">
+      <column name="horizontal" sql-type="number(10) default 0"/>
+    </property>
+    <property name="vertical" column="vertical" length="10"/>
+  </class>
+</hibernate-mapping> 

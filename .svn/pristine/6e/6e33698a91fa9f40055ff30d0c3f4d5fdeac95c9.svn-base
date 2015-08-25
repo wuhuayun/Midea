@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.Warehouse.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmLocationMaterialLink" table="Ascm_Location_Material_Link" batch-size="50">
+    <composite-id name="pk" class="AscmLocationMaterialLinkPK">
+      <key-property name="warelocationId" column="warelocationId"/>
+      <key-property name="materialId" column="materialId"/>
+    </composite-id>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="quantity">
+      <column name="quantity" sql-type="NUMBER default 0"/>
+    </property>
+  </class>
+</hibernate-mapping> 

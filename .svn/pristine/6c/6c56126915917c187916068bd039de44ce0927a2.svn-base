@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="MideaAscm.Dal.SupplierPreparation.Entities" assembly="MideaAscm.Dal" default-lazy="false">
+  <class name="AscmDeliBatSumMain" table="Ascm_Deli_Bat_Sum_Main" batch-size="50">
+    <id name="id" column="id">
+      <generator class="assigned" />
+    </id>
+    <property name="docNumber" column="docNumber" length="20" not-null="true"/>
+    <property name="organizationId">
+      <column name="organizationId" sql-type="int default 0"/>
+    </property>
+    <property name="createUser" column="createUser" length="20"/>
+    <property name="createTime" column="createTime" length="20"/>
+    <property name="modifyUser" column="modifyUser" length="20"/>
+    <property name="modifyTime" column="modifyTime" length="20"/>
+    <property name="supplierId">
+      <column name="supplierId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="driverId">
+      <column name="driverId" sql-type="int default 0" not-null="true"/>
+    </property>
+    <property name="status" column="status" length="20"/>
+    <property name="appointmentStartTime" column="appointmentStartTime" length="20"/>
+    <property name="appointmentEndTime" column="appointmentEndTime" length="20"/>
+    <property name="confirmor" column="confirmor" length="20"/>
+    <property name="confirmTime" column="confirmTime" length="20"/>
+    <property name="toPlantTime" column="toPlantTime" length="20"/>
+    <property name="receiver" column="receiver" length="20"/>
+    <property name="acceptTime" column="acceptTime" length="20"/>
+    <property name="barcode" column="barcode" length="20"/>
+    <property name="warehouseId" column="warehouseId" length="20"/>
+    <property name="allocateOutDoor" column="allocateOutDoor" length="20"/>
+	  <property name="uploadTime" column="uploadTime" length="20"/>
+	  <property name="returnCode" column="returnCode" length="200"/>
+	  <property name="returnMessage" column="returnMessage" length="500"/>
+  </class>
+</hibernate-mapping>

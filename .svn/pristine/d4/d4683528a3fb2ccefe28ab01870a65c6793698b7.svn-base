@@ -1,0 +1,977 @@
+记录时间：2013-08-19 12:06:31,252 线程ID:[33] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-19 13:48:46,408 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 13:48:46,441 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 14:49:26,541 线程ID:[45] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-19 14:50:04,250 线程ID:[31] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 14:50:04,284 线程ID:[25] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 14:55:17,645 线程ID:[31] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-19 14:55:43,517 线程ID:[45] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 14:55:43,551 线程ID:[26] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 17:14:51,860 线程ID:[44] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-19 17:15:16,964 线程ID:[19] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 17:15:16,998 线程ID:[43] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 23:50:06,818 线程ID:[32] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-19 23:50:30,203 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-19 23:50:30,241 线程ID:[43] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 09:15:26,382 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 09:15:54,289 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 09:15:54,322 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:23:52,151 线程ID:[26] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 11:24:27,814 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:24:27,848 线程ID:[35] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:29:08,934 线程ID:[31] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 11:29:42,745 线程ID:[30] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:29:42,777 线程ID:[31] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:35:40,260 线程ID:[24] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:35:40,312 线程ID:[22] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:36:07,217 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 11:36:34,021 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:36:34,053 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:44:26,774 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 11:44:56,363 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:44:56,396 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:49:02,696 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 11:49:29,036 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 11:49:29,073 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 12:07:03,291 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 12:07:44,690 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 12:07:44,724 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 12:11:37,421 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 12:12:03,213 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 12:12:03,247 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 12:16:03,871 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 12:16:29,470 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 12:16:29,504 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 13:48:03,213 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 13:48:29,578 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 13:48:29,611 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 14:05:21,590 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 14:05:48,031 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 14:05:48,065 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 14:10:14,658 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 14:10:40,040 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 14:10:40,075 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 14:29:12,117 线程ID:[41] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 14:29:37,898 线程ID:[41] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 14:29:37,931 线程ID:[42] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 20:12:07,722 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 20:12:19,496 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmUserInfo)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Base.Entities.AscmUserInfo#sa][SQL: SELECT ascmuserin0_.userId as userId107_0_, ascmuserin0_.organizationId as organiza2_107_0_, ascmuserin0_.userName as userName107_0_, ascmuserin0_.password as password107_0_, ascmuserin0_.sex as sex107_0_, ascmuserin0_.email as email107_0_, ascmuserin0_.officeTel as officeTel107_0_, ascmuserin0_.mobileTel as mobileTel107_0_, ascmuserin0_.sortNo as sortNo107_0_, ascmuserin0_.lastLoginDate as lastLog10_107_0_, ascmuserin0_.lastLoginIp as lastLog11_107_0_, ascmuserin0_.isAccountLocked as isAccou12_107_0_, ascmuserin0_.description as descrip13_107_0_, ascmuserin0_.employeeId as employeeId107_0_, ascmuserin0_.extExpandType as extExpa15_107_0_, ascmuserin0_.extExpandId as extExpa16_107_0_ FROM YnUser ascmuserin0_ WHERE ascmuserin0_.userId=?] ---> Oracle.DataAccess.Client.OracleException: ORA-12541: TNS: 无监听程序
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   在 Oracle.DataAccess.Client.OracleConnection.Open()
+   在 NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   在 NHibernate.AdoNet.ConnectionManager.GetConnection()
+   在 NHibernate.AdoNet.AbstractBatcher.Prepare(IDbCommand cmd)
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id)
+   在 MideaAscm.Services.Base.AscmUserInfoService.TryGet(String id) 位置 E:\CompanyProject\美的ASCM\SVN\MideaAscm.Services\Base\AscmUserInfoService.cs:行号 42
+记录时间：2013-08-20 20:12:37,730 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 20:12:47,635 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmUserInfo)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Base.Entities.AscmUserInfo#sa][SQL: SELECT ascmuserin0_.userId as userId107_0_, ascmuserin0_.organizationId as organiza2_107_0_, ascmuserin0_.userName as userName107_0_, ascmuserin0_.password as password107_0_, ascmuserin0_.sex as sex107_0_, ascmuserin0_.email as email107_0_, ascmuserin0_.officeTel as officeTel107_0_, ascmuserin0_.mobileTel as mobileTel107_0_, ascmuserin0_.sortNo as sortNo107_0_, ascmuserin0_.lastLoginDate as lastLog10_107_0_, ascmuserin0_.lastLoginIp as lastLog11_107_0_, ascmuserin0_.isAccountLocked as isAccou12_107_0_, ascmuserin0_.description as descrip13_107_0_, ascmuserin0_.employeeId as employeeId107_0_, ascmuserin0_.extExpandType as extExpa15_107_0_, ascmuserin0_.extExpandId as extExpa16_107_0_ FROM YnUser ascmuserin0_ WHERE ascmuserin0_.userId=?] ---> Oracle.DataAccess.Client.OracleException: ORA-12541: TNS: 无监听程序
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   在 Oracle.DataAccess.Client.OracleConnection.Open()
+   在 NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   在 NHibernate.AdoNet.ConnectionManager.GetConnection()
+   在 NHibernate.AdoNet.AbstractBatcher.Prepare(IDbCommand cmd)
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id)
+   在 MideaAscm.Services.Base.AscmUserInfoService.TryGet(String id) 位置 E:\CompanyProject\美的ASCM\SVN\MideaAscm.Services\Base\AscmUserInfoService.cs:行号 42
+记录时间：2013-08-20 20:14:44,162 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 20:15:01,906 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 20:15:01,939 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-20 22:28:59,180 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-20 22:29:07,575 线程ID:[25] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 09:29:46,806 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 09:30:02,204 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 09:30:02,238 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 09:33:01,878 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 09:33:27,782 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 09:33:27,818 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 09:56:23,742 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 10:08:28,794 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 10:08:28,829 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 10:38:25,587 线程ID:[39] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 10:38:57,652 线程ID:[40] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 10:38:57,685 线程ID:[37] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 10:58:24,013 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 10:58:50,853 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 10:58:50,888 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:04:30,335 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 11:04:55,723 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:04:55,756 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:09:46,770 线程ID:[26] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:09:46,816 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:12:48,615 线程ID:[16] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 11:13:15,087 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:13:15,121 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:17:01,388 线程ID:[36] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 11:17:27,431 线程ID:[33] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:17:27,465 线程ID:[35] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 11:28:07,044 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 14:28:35,756 线程ID:[45] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 14:29:07,916 线程ID:[27] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 14:29:07,954 线程ID:[22] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 14:40:30,400 线程ID:[60] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 14:40:30,412 线程ID:[59] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 17:32:26,004 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 17:32:26,020 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 23:05:02,228 线程ID:[43] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get YnUser)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [YnFrame.Dal.Entities.YnUser#sa][SQL: SELECT ynuser0_.userId as userId17_0_, ynuser0_.organizationId as organiza2_17_0_, ynuser0_.userName as userName17_0_, ynuser0_.password as password17_0_, ynuser0_.sex as sex17_0_, ynuser0_.email as email17_0_, ynuser0_.officeTel as officeTel17_0_, ynuser0_.mobileTel as mobileTel17_0_, ynuser0_.sortNo as sortNo17_0_, ynuser0_.lastLoginDate as lastLog10_17_0_, ynuser0_.lastLoginIp as lastLog11_17_0_, ynuser0_.isAccountLocked as isAccou12_17_0_, ynuser0_.description as descrip13_17_0_, ynuser0_.employeeId as employeeId17_0_, ynuser0_.extExpandType as extExpa15_17_0_, ynuser0_.extExpandId as extExpa16_17_0_ FROM YnUser ynuser0_ WHERE ynuser0_.userId=?] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: 连接失去联系
+进程 ID: 62521462
+会话 ID: 777 序列号: 64077
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id)
+   在 YnFrame.Services.YnUserService.Get(String userId)
+记录时间：2013-08-21 23:47:41,384 线程ID:[36] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-21 23:48:10,573 线程ID:[31] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-21 23:48:10,608 线程ID:[39] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 08:36:27,294 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 08:36:57,744 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 08:36:57,780 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 09:29:35,535 线程ID:[25] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 09:38:01,178 线程ID:[53] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 09:38:37,244 线程ID:[62] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 09:38:37,277 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 09:46:36,568 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 09:47:02,010 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 09:47:02,044 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 10:03:16,151 线程ID:[33] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 10:03:42,000 线程ID:[30] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 10:03:42,032 线程ID:[32] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 10:53:21,001 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 10:53:46,557 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 10:53:46,590 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 11:19:48,503 线程ID:[54] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 11:19:48,661 线程ID:[54] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 11:22:27,173 线程ID:[31] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 11:22:51,591 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 11:22:51,626 线程ID:[23] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 11:32:24,950 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 11:32:53,016 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 11:32:53,051 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 13:55:16,977 线程ID:[33] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get YnUser)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [YnFrame.Dal.Entities.YnUser#sa][SQL: SELECT ynuser0_.userId as userId17_0_, ynuser0_.organizationId as organiza2_17_0_, ynuser0_.userName as userName17_0_, ynuser0_.password as password17_0_, ynuser0_.sex as sex17_0_, ynuser0_.email as email17_0_, ynuser0_.officeTel as officeTel17_0_, ynuser0_.mobileTel as mobileTel17_0_, ynuser0_.sortNo as sortNo17_0_, ynuser0_.lastLoginDate as lastLog10_17_0_, ynuser0_.lastLoginIp as lastLog11_17_0_, ynuser0_.isAccountLocked as isAccou12_17_0_, ynuser0_.description as descrip13_17_0_, ynuser0_.employeeId as employeeId17_0_, ynuser0_.extExpandType as extExpa15_17_0_, ynuser0_.extExpandId as extExpa16_17_0_ FROM YnUser ynuser0_ WHERE ynuser0_.userId=?] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: 连接失去联系
+进程 ID: 55115796
+会话 ID: 1168 序列号: 56407
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id)
+   在 YnFrame.Services.YnUserService.Get(String userId)
+记录时间：2013-08-22 14:41:20,506 线程ID:[36] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 14:41:46,660 线程ID:[28] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 14:41:46,694 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 15:28:44,166 线程ID:[35] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 15:29:12,961 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 15:29:12,993 线程ID:[35] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 17:04:36,473 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 17:05:01,779 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 17:05:01,814 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 17:05:24,383 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 17:05:24,431 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 17:28:23,662 线程ID:[22] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 17:28:23,730 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 18:02:19,494 线程ID:[29] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-22 18:02:43,870 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-22 18:02:43,905 线程ID:[22] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:00:09,766 线程ID:[40] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmWmsPreparationMain)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationMain#40][SQL: SELECT ascmwmspre0_.id as id64_0_, ascmwmspre0_.organizationId as organiza2_64_0_, ascmwmspre0_.createUser as createUser64_0_, ascmwmspre0_.createTime as createTime64_0_, ascmwmspre0_.modifyUser as modifyUser64_0_, ascmwmspre0_.modifyTime as modifyTime64_0_, ascmwmspre0_.docNumber as docNumber64_0_, ascmwmspre0_.manualDocNumber as manualDo8_64_0_, ascmwmspre0_.warehouseId as warehous9_64_0_, ascmwmspre0_.status as status64_0_, ascmwmspre0_.type as type64_0_, ascmwmspre0_.description as descrip12_64_0_ FROM Ascm_Wms_Preparation_Main ascmwmspre0_ WHERE ascmwmspre0_.id=?] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: 连接失去联系
+进程 ID: 56295586
+会话 ID: 803 序列号: 15129
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id)
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationMainService.Get(Int32 id) 位置 E:\CompanyProject\美的ASCM\SVN\MideaAscm.Services\Warehouse\AscmWmsPreparationMainService.cs:行号 28
+记录时间：2013-08-23 09:00:09,790 线程ID:[40] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find AscmWmsPreparationDetail)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Warehouse.Entities.AscmWmsPreparationMain#40][SQL: SELECT ascmwmspre0_.id as id64_0_, ascmwmspre0_.organizationId as organiza2_64_0_, ascmwmspre0_.createUser as createUser64_0_, ascmwmspre0_.createTime as createTime64_0_, ascmwmspre0_.modifyUser as modifyUser64_0_, ascmwmspre0_.modifyTime as modifyTime64_0_, ascmwmspre0_.docNumber as docNumber64_0_, ascmwmspre0_.manualDocNumber as manualDo8_64_0_, ascmwmspre0_.warehouseId as warehous9_64_0_, ascmwmspre0_.status as status64_0_, ascmwmspre0_.type as type64_0_, ascmwmspre0_.description as descrip12_64_0_ FROM Ascm_Wms_Preparation_Main ascmwmspre0_ WHERE ascmwmspre0_.id=?] ---> Oracle.DataAccess.Client.OracleException: ORA-03135: 连接失去联系
+进程 ID: 56295586
+会话 ID: 803 序列号: 15129
+   在 Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.DataAccess.Client.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationMainService.Get(Int32 id) 位置 E:\CompanyProject\美的ASCM\SVN\MideaAscm.Services\Warehouse\AscmWmsPreparationMainService.cs:行号 33
+   在 MideaAscm.Services.Warehouse.AscmWmsPreparationDetailService.GetList(YnPage ynPage, String sortName, String sortOrder, Int32 mainId, String queryWord, String whereOther) 位置 E:\CompanyProject\美的ASCM\SVN\MideaAscm.Services\Warehouse\AscmWmsPreparationDetailService.cs:行号 77
+记录时间：2013-08-23 09:26:09,025 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-23 09:26:37,228 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:26:37,264 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:36:03,702 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-23 09:36:28,054 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:36:28,087 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:38:30,704 线程ID:[24] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:38:30,782 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:43:45,318 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:43:45,397 线程ID:[34] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:44:20,903 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:44:21,000 线程ID:[34] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:46:02,928 线程ID:[32] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:46:03,009 线程ID:[31] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:58:49,138 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 09:58:49,226 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:05:47,800 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:05:47,897 线程ID:[26] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:07:20,986 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:07:21,056 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:14:28,840 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:14:28,922 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:14:50,360 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:14:50,456 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:15:01,368 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:15:01,450 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:16:11,009 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:16:11,091 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:25:12,013 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-23 10:25:37,454 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 10:25:37,488 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 11:00:01,651 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-23 11:00:28,885 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 11:00:28,919 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 17:19:20,950 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-23 17:19:49,258 线程ID:[7] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 17:19:49,293 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 17:23:01,633 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-23 17:24:14,670 线程ID:[18] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-23 17:24:14,705 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 08:46:35,396 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-24 08:47:05,058 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 08:47:05,092 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 09:16:24,113 线程ID:[8] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-24 09:19:16,335 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 09:19:16,370 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 09:35:47,041 线程ID:[33] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-24 09:36:16,202 线程ID:[29] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 09:36:16,236 线程ID:[7] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 10:14:56,786 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-24 10:15:23,114 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 10:15:23,148 线程ID:[7] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 10:44:10,739 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-24 10:44:40,361 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-24 10:44:40,396 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:00:18,843 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:04:54,703 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:05:10,093 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmUserInfo)
+NHibernate.Exceptions.GenericADOException: could not load an entity: [MideaAscm.Dal.Base.Entities.AscmUserInfo#sa][SQL: SELECT ascmuserin0_.userId as userId54_0_, ascmuserin0_.organizationId as organiza2_54_0_, ascmuserin0_.userName as userName54_0_, ascmuserin0_.password as password54_0_, ascmuserin0_.sex as sex54_0_, ascmuserin0_.email as email54_0_, ascmuserin0_.officeTel as officeTel54_0_, ascmuserin0_.mobileTel as mobileTel54_0_, ascmuserin0_.sortNo as sortNo54_0_, ascmuserin0_.lastLoginDate as lastLog10_54_0_, ascmuserin0_.lastLoginIp as lastLog11_54_0_, ascmuserin0_.isAccountLocked as isAccou12_54_0_, ascmuserin0_.description as descrip13_54_0_, ascmuserin0_.employeeId as employeeId54_0_, ascmuserin0_.extExpandType as extExpa15_54_0_, ascmuserin0_.extExpandId as extExpa16_54_0_ FROM YnUser ascmuserin0_ WHERE ascmuserin0_.userId=?] ---> System.Data.OracleClient.OracleException: ORA-12541: TNS: 无监听程序
+
+   在 System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   在 System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   在 System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OracleClient.OracleConnection.Open()
+   在 NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   在 NHibernate.AdoNet.ConnectionManager.GetConnection()
+   在 NHibernate.AdoNet.AbstractBatcher.Prepare(IDbCommand cmd)
+   在 NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd)
+   在 NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session)
+   在 NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   在 NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 YnBaseDal.NHibernateHelper.Get[T](Object id)
+   在 MideaAscm.Services.Base.AscmUserInfoService.TryGet(String id) 位置 F:\项目源码\美的项目\整合代码\MideaAscm\MideaAscm.Services\Base\AscmUserInfoService.cs:行号 42
+记录时间：2013-08-25 10:09:07,640 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:35:07,078 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:35:35,296 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:35:35,437 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:43:10,687 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:43:23,984 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:45:15,765 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:45:25,953 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:51:22,500 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:51:33,453 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:51:52,531 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:51:52,640 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:52:18,609 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:52:18,687 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:54:03,437 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:54:03,515 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:57:24,593 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:57:24,671 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:57:53,484 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:57:53,562 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:58:06,640 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:58:06,703 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 10:59:17,843 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-25 10:59:27,625 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-25 11:18:46,937 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-26 08:58:17,221 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-26 08:59:29,243 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-26 09:00:00,646 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-26 09:00:00,683 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-26 18:01:04,562 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-26 18:01:41,804 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-26 18:01:41,901 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-26 21:49:13,642 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-26 21:49:38,192 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 09:31:44,285 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-27 09:32:24,074 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 09:32:24,108 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 09:41:46,502 线程ID:[15] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-27 09:42:40,771 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 09:42:40,805 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 11:14:22,399 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-27 11:14:52,863 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 11:14:52,898 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 11:17:59,582 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-27 11:18:31,547 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 11:18:31,579 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 11:25:49,291 线程ID:[10] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-27 11:26:35,702 线程ID:[37] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 11:26:35,735 线程ID:[35] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 22:50:12,124 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-27 22:51:14,853 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-27 22:51:14,911 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 09:50:04,093 线程ID:[7] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-28 09:50:45,685 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 09:50:45,776 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 10:22:48,596 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-28 10:23:53,469 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 10:23:53,503 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 11:00:29,507 线程ID:[128] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-28 11:01:02,986 线程ID:[128] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 11:01:03,019 线程ID:[132] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 15:33:03,137 线程ID:[224] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-28 15:33:45,626 线程ID:[220] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 15:33:45,660 线程ID:[238] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 17:28:19,690 线程ID:[170] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-28 17:29:18,756 线程ID:[193] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-28 17:29:18,790 线程ID:[170] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 09:34:26,609 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 09:35:24,142 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 09:35:24,176 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 09:45:59,451 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 09:47:03,622 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 09:47:03,658 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 09:59:59,368 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 10:00:42,209 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 10:00:42,242 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 10:32:03,213 线程ID:[74] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 10:32:34,618 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 10:32:34,652 线程ID:[63] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:39:33,123 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 11:40:07,081 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:40:07,124 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:41:28,654 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:49:01,333 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 11:49:32,606 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:49:32,642 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:50:50,876 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 11:51:58,621 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 11:51:58,657 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 12:00:59,006 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 12:01:30,627 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 12:01:30,659 线程ID:[20] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:01:12,693 线程ID:[90] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:01:12,821 线程ID:[82] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:11:18,183 线程ID:[83] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:11:18,275 线程ID:[91] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:43:26,704 线程ID:[94] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 14:44:04,568 线程ID:[94] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:44:04,601 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:58:51,155 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 14:59:33,559 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 14:59:33,592 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 15:03:10,847 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 15:03:59,093 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 15:03:59,127 线程ID:[7] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 15:05:06,690 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 15:05:38,452 线程ID:[11] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 15:05:38,487 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 15:32:54,247 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 15:33:26,571 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 15:33:26,605 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 16:00:09,382 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 16:00:40,948 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 16:00:40,980 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 16:21:00,623 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 16:21:30,833 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 16:21:30,868 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:05:10,517 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 18:05:44,762 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:05:44,795 线程ID:[10] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:07:17,361 线程ID:[11] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 18:07:47,055 线程ID:[17] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:07:47,088 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:08:48,317 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 18:09:54,103 线程ID:[18] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:09:54,138 线程ID:[22] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:11:17,759 线程ID:[18] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 18:11:49,107 线程ID:[21] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:11:49,140 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:12:36,277 线程ID:[17] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 18:13:05,973 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:13:06,008 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:13:48,045 线程ID:[12] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 18:14:18,383 线程ID:[15] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:14:18,418 线程ID:[27] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 18:58:42,269 线程ID:[89] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 19:24:27,819 线程ID:[40] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 19:24:27,853 线程ID:[50] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 21:02:44,417 线程ID:[60] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-29 21:03:15,525 线程ID:[55] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-29 21:03:15,558 线程ID:[60] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 09:53:57,305 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 13:50:38,159 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 13:53:36,530 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 15:00:03,091 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 15:20:18,254 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 15:22:39,038 线程ID:[13] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 15:23:10,947 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 15:23:10,979 线程ID:[14] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 15:23:29,549 线程ID:[16] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmDeliBatSumMain)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 MideaAscm.Services.SupplierPreparation.AscmDeliBatSumMainService.GetSupplierUnloadingPoint(AscmDeliBatSumMain ascmDeliBatSumMain) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\SupplierPreparation\AscmDeliBatSumMainService.cs:行号 707
+   在 MideaAscm.Services.SupplierPreparation.AscmDeliBatSumMainService.GetEnterByDriverId(Int32 driverId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\SupplierPreparation\AscmDeliBatSumMainService.cs:行号 641
+记录时间：2013-08-30 15:25:43,386 线程ID:[5] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Get AscmDeliBatSumMain)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 MideaAscm.Services.SupplierPreparation.AscmDeliBatSumMainService.GetSupplierUnloadingPoint(AscmDeliBatSumMain ascmDeliBatSumMain) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\SupplierPreparation\AscmDeliBatSumMainService.cs:行号 707
+   在 MideaAscm.Services.SupplierPreparation.AscmDeliBatSumMainService.GetEnterByDriverId(Int32 driverId) 位置 E:\CompanyProject\美的ASCM\PCOC\MideaAscm.Services\SupplierPreparation\AscmDeliBatSumMainService.cs:行号 641
+记录时间：2013-08-30 15:31:24,156 线程ID:[6] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 15:31:55,280 线程ID:[6] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 15:31:55,315 线程ID:[4] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 17:53:17,026 线程ID:[216] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 17:53:47,462 线程ID:[220] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 17:53:47,495 线程ID:[217] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 18:00:38,860 线程ID:[5] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...
+记录时间：2013-08-30 18:01:09,268 线程ID:[12] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-30 18:01:09,300 线程ID:[13] 日志级别：ERROR 类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：查询失败(Find YnWebChannel)
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 YnCMS.Services.CMS.YnWebChannelService.GetList()
+记录时间：2013-08-31 09:56:34,995 线程ID:[4] 日志级别：INFO  类别：YnBaseClass2.Helper.LogHelper property:[(null)] - 描述：程序启动...

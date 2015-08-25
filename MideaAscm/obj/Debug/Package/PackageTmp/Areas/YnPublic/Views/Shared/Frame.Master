@@ -1,0 +1,303 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/jquery/jquery.portal.js"></script>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/jquery.easyui.ynvalidate.js"></script>
+	<link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/themes/default/portal.css" rel="stylesheet" type="text/css" />
+	<link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/css/frame.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript">
+        $.ajaxSetup({
+            cache: false //close AJAX cache
+        });
+        $(function () {
+            //$("#header").load("/Views/Shared/FrameHeader");
+            $("#header").load("/Shared/FrameHeader");
+            //$("#AccMenu").load("/YnPublic/YnFrame/AccMenu");
+            $("#centerTabs").tabs({
+                onContextMenu: function (e, title) {
+                    e.preventDefault();
+                    $('#tabsMenu').menu('show', {
+                        left: e.pageX,
+                        top: e.pageY
+                    }).data("tabTitle", title);
+                }
+            });
+            //实例化menu的onClick事件
+            $("#tabsMenu").menu({
+                onClick: function (item) {
+                    CloseTab(this, item.name);
+                }
+            });
+            //关闭事件
+            function CloseTab(menu, type) {
+                var curTabTitle = $(menu).data("tabTitle");
+                var tabs = $("#centerTabs");
+                if (type === "close") {
+                    tabs.tabs("close", curTabTitle);
+                    return;
+                }
+                var allTabs = tabs.tabs("tabs");
+                var closeTabsTitle = [];
+                $.each(allTabs, function () {
+                    var opt = $(this).panel("options");
+                    if (opt.closable && opt.title != curTabTitle && type === "Other") {
+                        closeTabsTitle.push(opt.title);
+                    } else if (opt.closable && type === "All") {
+                        closeTabsTitle.push(opt.title);
+                    }
+                });
+                for (var i = 0; i < closeTabsTitle.length; i++) {
+                    tabs.tabs("close", closeTabsTitle[i]);
+                }
+
+            }
+        })
+        function showAbout() {
+            $.messager.alert('关于系统...', '<%: ((YnFrame.Web.YnSite)ViewData["ynSite"]).name%>');
+        }
+        function openTab(title, url) {
+            if (!$('#centerTabs').tabs('exists', title)) {
+                //var iframeId = url.substring((url.lastIndexOf('/') + 1), url.indexOf('?'));
+                var iframeId = getFrameId(url);
+                //alert('#' + iframeId);
+                var content = '<iframe id="' + iframeId + '" scrolling="auto" frameborder="0" src="' + url + '" style="width:100%;height:100%;"></iframe>';
+                $('#centerTabs').tabs('add', {
+                    title: title,
+                    content: content,
+                    closable: true,
+                    overflow: 'hidden'
+                });
+                var tab = $('#centerTabs').tabs('getSelected');
+                $(tab[0]).attr("style", "overflow:hidden;padding:2px;");
+                $('#centerTabs').tabs('resize');
+            } else {
+                $('#centerTabs').tabs('select', title);
+            }
+        }
+        function closeCurrentTab() {
+            var tab = $('#centerTabs').tabs('getSelected');
+            if (tab) {
+                var index = $('#centerTabs').tabs('getTabIndex', tab);
+                $('#centerTabs').tabs('close', index);
+            }
+        }
+        function getFrameId(url) {
+            //var url1 = url.substring((url.lastIndexOf('/') + 1), url.indexOf('?'));
+            var url1 = url;
+            if (url.indexOf("?") >= 0)
+                url1 = url.substring(0, url.indexOf("?"));
+            var regExp1 = new RegExp("http:/", "g");
+            var newstart1 = url1.replace(regExp1, "");
+            var regExp2 = new RegExp("/", "g");
+            var newstart2 = newstart1.replace(regExp2, "_");
+            return newstart2;
+        }
+        function getTabPage(title) {
+            var tab = $('#centerTabs').tabs('getTab', title);
+            var content = tab.panel('options').content;
+            var src = $(content).attr('src');
+            //var iframeId = src.substring((src.lastIndexOf('/') + 1), src.indexOf('?'));
+            var iframeId = getFrameId(src);
+            //alert('#' + iframeId);
+            //alert($('#' + iframeId)[0]);
+            return $('#' + iframeId)[0].contentWindow;
+        }
+        function updateTabTitle(title) {
+            var tab = $('#centerTabs').tabs('getSelected');
+            $('#centerTabs').tabs('update', {
+                tab: tab,
+                options: { title: title, content: "" }
+            });
+        }
+        function ChangePwd() {
+            $('#editPassword').window('open');
+            $('#editPasswordForm')[0].reset();
+        }
+        function ChangePwdSubmit() {
+            var oldPassword = $('#oldPassword').val();
+            var newPassword1 = $('#newPassword1').val();
+            var newPassword2 = $('#newPassword2').val();
+            if (newPassword1 != newPassword2) {
+                $.messager.alert('错误', '两次输入的新密码不一致，请确认!', 'error');
+                return;
+            }
+            $.ajax({
+                url: '<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/YnPublic/YnUser/SetUserPassword/' + encodeURI("<%:Page.User.Identity.Name%>"),
+                type: 'post',
+                dataType: "json",
+                data: { oldPassword: oldPassword, password: newPassword1 },
+                beforeSend: function () {
+                    return $("#editPasswordForm").form('validate');
+                },
+                success: function (r) {
+                    if (r.result) {
+                        $('#editPassword').window('close');
+                    } else {
+                        $.messager.alert('确认', '设置口令失败:' + r.message, 'error');
+                    }
+                }
+            })
+        }
+        /*
+        $(function () {
+        $('#centerTabs').tabs({
+        onBeforeClose: function (title) {
+        var win = getTabPage(title);
+        //alert(win);
+        try {
+        var ret = win.onBeforeClose();
+        return ret;
+        } catch (e) { ; }
+
+        //                    if (confirm("asdf")) {
+        //                        return true;
+        //                    } else {
+        //                        return false;
+        //                    }
+        }
+        });
+        })*/
+    </script>
+</head>
+<body class="easyui-layout">
+	<div region="north" border="false" style="height:78px;overflow:hidden;">
+        <div id="header"></div>
+        <%--Html.RenderPartial("~/Views/Shared/FrameHeader.ascx"); --%>
+        <%-- 
+		<div class="header">
+            <table border="0" cellspacing="0" style="height:53px;width:100%;padding:0px;margin:0px;">
+                <tr>
+                    <td style="width:195px;" class="headerLogo">
+                    </td>
+                    <td style="" class="headerContent">
+                        <div class="headerBanner" style="height:53px;width:100%;">
+                            <embed src="<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Content/Images/ZhongHe.swf" height="53" width="459" wmode="transparent" quality="high">
+                            </embed>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+		</div>--%>
+		<div class="toolbar">
+            <table border="0" cellspacing="0" style="height:25px;width:100%;padding:0px;margin:0px;">
+                <tr>
+                    <td style="padding: 1px 2px 0px 4px;">
+                        <a href="javascript:void(0)" id="menu_Help" class="easyui-menubutton" style="height:20px;" menu="#menu_Help_Sub" iconCls="icon-help">帮助</a>
+                    </td>
+                    <td style="width:200px;text-align:right;padding: 1px 2px 0px 2px;">
+                        <a href="javascript:void(0)" onclick="ChangePwd();" id="menu_ChangePwd" style="height:20px;" class="easyui-linkbutton" plain="true">修改密码</a>
+                        <%: Html.ActionLink("退出", "LogOff", "YnAccount", new { area = "" }, new { @class = "easyui-linkbutton", id = "menu_Exit", style = "height:20px;", plain = "true" })%>
+                    </td>
+                </tr>
+            </table>
+		</div>
+	    <div id="menu_Help_Sub" style="width:100px;">
+		    <div>帮忙</div>
+		    <div onclick="javascript:showAbout();">关于</div>
+	    </div>
+	</div>
+	<div region="west" split="true" border="true" title="<img alt=二级栏目 src='<%= Request.ApplicationPath=="/"?"":Request.ApplicationPath %>/Areas/YnPublic/Content/images/menu.GIF'>功能菜单" style="width:200px;padding:0px;background:#E6F0F7;overflow:hidden;" class="west_menu">
+		<div class="easyui-accordion" fit="true" border="false" id="AccMenu">
+        
+            <%if (Request.IsAuthenticated) {%>
+                <%Html.RenderAction("AccMenu", "YnFrame", new { area = "YnPublic" });%>
+            <%}%>
+            <!--
+			<div title="Title1" style="padding:10px;overflow:auto;">
+				<p>content1</p>
+				<p>content1</p>
+				<p>content1</p>
+				<p>content1</p>
+				<p>content1</p>
+				<p>content1</p>
+				<p>content1</p>
+				<p>content12</p>
+			</div>
+            
+			<div title="Title2" selected="true" style="padding:10px;">
+				content2
+			</div>
+			<div title="Title3" style="padding:10px">
+				content3
+			</div>-->
+		</div>
+	</div>
+	<div region="south" border="false" style="height:23px;padding:0px;">
+		<div class="footer">
+			<div class="footerContent">
+		        <table border="0" cellspacing="0" style="height:16px;width:100%;padding:0px;margin:0px;">
+			        <tr style="height:16px;">
+				        <td width="100%" align="left">&nbsp;欢迎您，<b><%=((YnFrame.Dal.Entities.YnUser)ViewData["ynUser"]).userName2%></b>!</td>
+			        </tr>
+		        </table>
+			</div>
+		</div>
+	</div>
+	<div region="center" title="">
+		<div class="easyui-tabs" fit="true" border="false" id="centerTabs">
+            <%if (Request.IsAuthenticated) {%>
+                <%Html.RenderAction("FrameHome", "YnFrame", new { area = "YnPublic" });%>
+            <%}%>
+            <%-- <%Html.RenderPartial("~/Areas/Invoicing/Views/Shared/PortalBulletin.ascx"); %>--%>
+		</div>
+        <div id="tabsMenu" class="easyui-menu" style="width:120px;">  
+            <div name="close">关闭</div>  
+            <div name="Other">关闭其他</div>  
+            <div name="All">关闭所有</div>
+        </div> 
+	</div>
+    <div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+	<div id="editPassword" class="easyui-window" title="设置用户口令【<%:Page.User.Identity.Name%>】" style="padding: 10px;width:500px;height:300px;"
+		iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" resizable="false" collapsible="false" modal="true" shadow="true">
+		<div class="easyui-layout" fit="true">
+			<div region="center" id="editPasswordContent" border="false" style="padding:10px;background:#fff;border:1px solid #ccc;">
+		        <form id="editPasswordForm" method="post" style="">
+			        <table style="width:100%;" border="0" cellpadding="0" cellspacing="0">
+				        <tr style="height:32px">
+					        <td style="width: 20%; text-align:right;" nowrap>
+						        <span>现在的密码：</span>
+					        </td>
+					        <td style="width:80%">
+						        <input class="easyui-validatebox" required="true" id="oldPassword" name="oldPassword" type="password" style="width:96%;" />
+					        </td>
+				        </tr>
+				        <tr style="height:32px">
+					        <td style="width: 20%; text-align:right;" nowrap>
+						        <span>设置新的密码：</span>
+					        </td>
+					        <td style="width:80%">
+						        <input class="easyui-validatebox" required="true" id="newPassword1" name="newPassword1" type="password" style="width:96%;" />
+					        </td>
+				        </tr>
+				        <tr style="height:32px">
+					        <td style="width: 20%; text-align:right;" nowrap>
+						        <span>重复新的密码：</span>
+					        </td>
+					        <td style="width:80%">
+						        <input class="easyui-validatebox" required="true" id="newPassword2" name="newPassword2" type="password" style="width:96%;" />
+					        </td>
+				        </tr>
+			        </table>
+		        </form>
+			</div>
+			<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+				<a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onclick="ChangePwdSubmit()">确认</a>
+				<a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onclick="$('#editPassword').window('close');">取消</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

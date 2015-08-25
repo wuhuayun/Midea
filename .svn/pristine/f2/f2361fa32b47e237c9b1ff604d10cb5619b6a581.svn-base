@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MideaAscm.Dal.Base.Entities;
+using MideaAscm.Dal.FromErp.Entities;
+
+namespace MideaAscm.Dal.Warehouse.Entities
+{
+    /// <summary>库存转移主表</summary>
+    public class AscmWmsStockTransMain
+    {
+        /// <summary>ID</summary>
+        public virtual int id { get; set; }
+        ///<summary>库存组织ID</summary>
+        public virtual int organizationId { get; set; }
+        ///<summary>创建人</summary>
+        public virtual string createUser { get; set; }
+        ///<summary>创建时间</summary>
+        public virtual string createTime { get; set; }
+        ///<summary>最后更新人</summary>
+        public virtual string modifyUser { get; set; }
+        ///<summary>最后更新时间</summary>
+        public virtual string modifyTime { get; set; }
+        /// <summary>仓库转移单号:从MES申请</summary>
+        public virtual string docNumber { get; set; }
+        /// <summary>事务类型:从MES下载表</summary>
+        public virtual string transType { get; set; }
+        ///<summary>转移原因</summary>
+        public virtual int reasonId { get; set; }
+        /// <summary>来源仓库</summary>
+        public virtual string fromWarehouseId { get; set; }
+        /// <summary>目标仓库</summary>
+        public virtual string toWarehouseId { get; set; }
+        /// <summary>来源仓库人员</summary>
+        public virtual string fromWarehouseUser { get; set; }
+        /// <summary>目标仓库人员</summary>
+        public virtual string toWarehouseUser { get; set; }
+        ///<summary>备注</summary>
+        public virtual string memo { get; set; }
+        ///<summary>手工单号（自动生成 规则：姓名缩写+yyyy+MM+001）</summary>
+        public virtual string manualDocNumber { get; set; }
+        ///<summary>责任人</summary>
+        public virtual string responsiblePerson { get; set; }
+        ///<summary>参考</summary>
+        public virtual string reference { get; set; }
+		///<summary>状态</summary>
+		public virtual string status { get; set; }
+		/// <summary>上传日期</summary>
+		public virtual string uploadTime { get; set; }
+		/// <summary>上传返回代码</summary>
+		public virtual string returnCode { get; set; }
+		/// <summary>上传返回消息</summary>
+		public virtual string returnMessage { get; set; }
+
+		//上传状态
+		public string uploadStatusCn
+		{
+			get
+			{
+				if (string.IsNullOrEmpty(returnCode)) return "";
+				if (returnCode == "0") return "成功！";
+
+				return "失败！";
+			}
+		}
+
+		//上传日期
+		public string uploadTimeShow
+		{
+			get
+			{
+				if (YnBaseClass2.Helper.DateHelper.GetDateTime(uploadTime) != null)
+					return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(uploadTime)).ToString("yyyy-MM-dd");
+				return "";
+			}
+		}
+
+        //辅助信息
+        public string _createTime
+        {
+            get
+            {
+                if (YnBaseClass2.Helper.DateHelper.GetDateTime(createTime) != null)
+                    return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(createTime)).ToString("yyyy-MM-dd HH:mm");
+                return "";
+            }
+        }
+        public string _modifyTime
+        {
+            get
+            {
+                if (YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime) != null)
+                    return ((DateTime)YnBaseClass2.Helper.DateHelper.GetDateTime(modifyTime)).ToString("yyyy-MM-dd HH:mm");
+                return "";
+            }
+        }
+        public string statusCn { get { return StatusDefine.DisplayText(status); } }
+
+        public AscmMtlTransactionReasons ascmMtlTransactionReasons { get; set; }
+        public string reasonName { get { if (ascmMtlTransactionReasons != null) return ascmMtlTransactionReasons.reasonName; return ""; } }
+
+        /*
+         *  2014.12.2 子库转移主表保存初始状态为草稿
+         */
+        public class StatusDefine
+        {
+            /// <summary>草稿</summary>
+            public const string draft = "draft";
+            /// <summary>待审核</summary>
+            public const string pending = "pending";
+            /// <summary>已审核</summary>
+            public const string review = "review";
+            /// <summary>已确认</summary>
+            public const string confirm = "confirm";
+
+            public static string DisplayText(string status)
+            {
+                switch (status)
+                {
+                    case draft: return "草稿";
+                    case pending: return "待审核";
+                    case review: return "已审核";
+                    case confirm: return "已确认";
+                    default: return status;
+                }
+            }
+            public static List<string> GetList()
+            {
+                List<string> list = new List<string>();
+                list.Add(draft);
+                list.Add(review);
+                list.Add(confirm);
+                list.Add(pending);
+                return list;
+            }
+        }
+    }
+}

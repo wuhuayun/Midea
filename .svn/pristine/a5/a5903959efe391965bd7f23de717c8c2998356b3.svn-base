@@ -1,0 +1,992 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using DevComponents.DotNetBar;
+using MideaAscm.Dal.GetMaterialManage.Entities;
+using DevComponents.AdvTree;
+using Newtonsoft.Json;
+using MideaAscm.Dal.FromErp.Entities;
+
+namespace MideaAscm.Pad
+{
+    public partial class frmLogisticsMonitoringView : DevComponents.DotNetBar.OfficeForm
+    {
+
+        private MonthCalendar monthCalendar;
+        private TaskbarNotifier taskbarNotifier1;
+        private ElementStyle fontColor_Gray = null; //Finished Task's Style And Finished Job's Style
+        private ElementStyle fontColor_Blue = null; //Executed Task's Style
+        private ElementStyle fontColor_Red = null; // Not Statisfied Job's Style
+        private ElementStyle fontColor_Black = null; // Statisfied Job's Style
+        private string taskId { get; set; } //Task's Id
+        private string jobId { get; set; } //DiscreteJob's WipEntityId
+        private AscmGetMaterialTask taskDetails { get; set; }
+        private string releaseHeaderIds = null;
+
+        public frmLogisticsMonitoringView()
+        {
+            InitializeComponent();
+        }
+
+        public void FormActivated()
+        {
+
+        }
+
+        private void frmLogisticsMonitoringView_Load(object sender, EventArgs e)
+        {
+            BindDataToolbarControls();
+            CustomAdvTreeNodesStyleInit(this.advTreeGroup);
+            StructureAdvTreeFristLevelColumns(this.advTreeGroup);
+
+            pageControlTask.Bind();
+        }
+
+        #region Combination Of Controls(Textbox And MonthCalendar)
+        private void textBoxItem_GotFocus(object sender, EventArgs e)
+        {
+            if (this.Controls.Contains(this.monthCalendar))
+                this.Controls.Remove(this.monthCalendar);
+
+            BaseItem baseItem = sender as BaseItem;
+            if (baseItem.Tag != null)
+                baseItem.Tag = baseItem.Focused;
+
+            if (baseItem != null && baseItem.Focused)
+            {
+                monthCalendar = new MonthCalendar();
+                this.monthCalendar.Location = new System.Drawing.Point(89, 26);
+                this.monthCalendar.Name = "monthCalendar";
+                this.monthCalendar.TabIndex = 10;
+
+
+                if (this.monthCalendar.Width > baseItem.DisplayRectangle.Location.X)
+                    this.monthCalendar.Location = new System.Drawing.Point(baseItem.DisplayRectangle.Location.X, this.monthCalendar.Location.Y);
+                else
+                    this.monthCalendar.Location = new System.Drawing.Point(baseItem.DisplayRectangle.Location.X + baseItem.DisplayRectangle.Size.Width - this.monthCalendar.DisplayRectangle.Size.Width, this.monthCalendar.Location.Y);
+
+                this.monthCalendar.Tag = sender;
+                this.monthCalendar.DateSelected += new DateRangeEventHandler(monthCalendar_DateSelected);
+                this.monthCalendar.MouseLeave += new EventHandler(monthCalendar_MouseLeave);
+
+                this.Controls.Add(this.monthCalendar);
+                this.monthCalendar.Show();
+                this.monthCalendar.BringToFront();
+            }
+            this.Focus();
+        }
+
+        private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            BaseItem baseItem = monthCalendar.Tag as BaseItem;
+            if (baseItem != null)
+                baseItem.Text = e.Start.Date.ToString("yyyy-MM-dd");
+        }
+
+        private void monthCalendar_MouseLeave(object sender, EventArgs e)
+        {
+            ((MonthCalendar)sender).Dispose();
+        }
+        #endregion
+
+        #region TaskBarNotifier's Event And Bind Data
+        private void CloseClick(object obj, EventArgs ea)
+        {
+            //MessageBox.Show("Closed was Clicked");
+        }
+
+        private void TitleClick(object obj, EventArgs ea)
+        {
+            int count = 0;
+            string taskString = "ALL";
+            List<AscmGetMaterialTask> list = DataBindAdvTreeFristLevelNode(ref count, taskString);
+            if (list != null && list.Count > 0)
+            {
+                advTreeGroup.BeginInit();
+                StructureAdvTreeFristLevelNode(list, advTreeGroup);
+                advTreeGroup.EndInit();
+            }
+            pageControlTask.DataBind(list);
+        }
+
+        private void ContentClick(object obj, EventArgs ea)
+        {
+            int count = 0;
+            string taskString = taskbarNotifier1.ContentText.Replace("\r", ",");
+            List<AscmGetMaterialTask> list = DataBindAdvTreeFristLevelNode(ref count, taskString);
+            if (list != null && list.Count > 0)
+            {
+                advTreeGroup.BeginInit();
+                StructureAdvTreeFristLevelNode(list, advTreeGroup);
+                advTreeGroup.EndInit();
+            }
+            pageControlTask.DataBind(list);
+        }
+
+        public string GetTaskBarNotifierData()
+        {
+            string message = "";
+            string taskString = string.Empty;
+
+            try
+            {
+                AscmWebService.AscmWebService Service = new AscmWebService.AscmWebService();
+                taskString = Service.GetTaskbarNotifierMessage(frmMainView.encryptTicket, frmMainView.userName, ref message);
+                taskString = taskString.Replace(",", "\r");
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+
+            return taskString;
+        }
+        #endregion
+
+        #region Toolbar Control To Bind Data
+        private void BindDataToolbarControls()
+        {
+            //Start time
+            tbItemStart.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            //Task Type
+            if (cbItemTaskType.Items.Count > 0)
+                cbItemTaskType.Items.Clear();
+
+            cbItemTaskType.Items.Add("");
+            List<int> listTaskType = AscmDiscreteJobs.IdentificationIdDefine.GetList();
+            foreach (int item in listTaskType)
+            {
+                cbItemTaskType.Items.Add(AscmDiscreteJobs.IdentificationIdDefine.DisplayText(item));
+            }
+
+            //Material Category Status
+            if (cbItemMtlCategoryStatus.Items.Count > 0)
+                cbItemMtlCategoryStatus.Items.Clear();
+
+            cbItemMtlCategoryStatus.Items.Add("");
+            List<string> listMtlCategoryStatus = MtlCategoryStatusDefine.GetList();
+            foreach (string item in listMtlCategoryStatus)
+            {
+                cbItemMtlCategoryStatus.Items.Add(MtlCategoryStatusDefine.DisplayText(item));
+            }
+            cbItemMtlCategoryStatus.Items.Add("特殊子库");
+            cbItemMtlCategoryStatus.Items.Add("临时任务");
+
+            //Task Status
+            if (cbItemTaskStatus.Items.Count > 0)
+                cbItemTaskStatus.Items.Clear();
+
+            cbItemTaskStatus.Items.Add("");
+            List<string> listTaskStatus = AscmGetMaterialTask.StatusDefine.GetList();
+            foreach (string item in listTaskStatus)
+            {
+                if (item != "NOTALLOCATE")
+                    cbItemTaskStatus.Items.Add(AscmGetMaterialTask.StatusDefine.DisplayText(item));
+            }
+
+            //Task Time
+            if (cbItemTaskTime.Items.Count > 0)
+                cbItemTaskTime.Items.Clear();
+
+            cbItemTaskTime.Items.Add("");
+            cbItemTaskTime.Items.Add("上午");
+            cbItemTaskTime.Items.Add("下午");
+        }
+        #endregion
+
+        #region Gets And Bind AdvTree's Level Data
+        private List<AscmGetMaterialTask> DataBindAdvTreeFristLevelNode(ref int count, string taskString)
+        {
+            List<AscmGetMaterialTask> list = null;
+            string message = string.Empty;
+            string _ynPage = string.Empty;
+
+            YnBaseDal.YnPage ynPage = new YnBaseDal.YnPage();
+            ynPage.SetPageSize(pageControlTask.PageSize);
+            ynPage.SetCurrentPage((pageControlTask.PageCurrent <= 0) ? 1 : pageControlTask.PageCurrent);
+            _ynPage = YnBaseClass2.Helper.ObjectHelper.Serialize(ynPage);
+
+            try
+            {
+                string queryType = string.Empty;
+                if (cbItemTaskType.SelectedItem != null)
+                {
+                    switch (cbItemTaskType.SelectedItem.ToString())
+                    {
+                        case "总装":
+                            queryType = "1";
+                            break;
+                        case "电装":
+                            queryType = "2";
+                            break;
+                        default:
+                            queryType = "";
+                            break;
+                    }
+                }
+
+                string queryFormat = string.Empty;
+                if (cbItemMtlCategoryStatus.SelectedItem != null)
+                {
+                    switch (cbItemMtlCategoryStatus.SelectedItem.ToString())
+                    {
+                        case "有库存":
+                            queryFormat = "INSTOCK";
+                            break;
+                        case "须备料":
+                            queryFormat = "PRESTOCK";
+                            break;
+                        case "须配料":
+                            queryFormat = "MIXSTOCK";
+                            break;
+                        case "特殊子库":
+                            queryFormat = "SPECWAREHOUSE";
+                            break;
+                        case "临时任务":
+                            queryFormat = "TEMPTASK";
+                            break;
+                        default:
+                            queryFormat = "";
+                            break;
+                    }
+                }
+
+                string queryStatus = string.Empty;
+                if (cbItemTaskStatus.SelectedItem != null)
+                {
+                    switch (cbItemTaskStatus.SelectedItem.ToString())
+                    {
+                        case "已分配":
+                            queryStatus = "NOTEXECUTE";
+                            break;
+                        case "执行中":
+                            queryStatus = "EXECUTE";
+                            break;
+                        case "已完成":
+                            queryStatus = "FINISH";
+                            break;
+                        case "已关闭":
+                            queryStatus = "CLOSE";
+                            break;
+                        default:
+                            queryStatus = "";
+                            break;
+                    }
+                }
+
+                string queryLine = (tbItemProductLine.Text == "") ? string.Empty : tbItemProductLine.Text.ToUpper().ToString();
+                string queryTime = (cbItemTaskTime.SelectedItem == null) ? string.Empty : cbItemTaskTime.SelectedItem.ToString();
+                string queryWarehouse = (tbItemWarehouse.Text == "") ? string.Empty : tbItemWarehouse.Text.ToUpper().ToString();
+
+                AscmWebService.AscmWebService service = new AscmWebService.AscmWebService();
+                string jsonString = service.GetMonitorTaskList(frmMainView.encryptTicket, frmMainView.userName, tbItemStart.Text, tbItemEnd.Text, tbItemJobStart.Text, tbItemJobEnd.Text, queryType, queryFormat, queryStatus, queryLine, queryTime, queryWarehouse, tbItemWipEntity.Text, taskString, ref _ynPage, ref message);
+                if (!string.IsNullOrEmpty(jsonString))
+                {
+                    list = (List<AscmGetMaterialTask>)JsonConvert.DeserializeObject(jsonString, typeof(List<AscmGetMaterialTask>));
+                    if (list != null && list.Count > 0)
+                    {
+                        ynPage = (YnBaseDal.YnPage)YnBaseClass2.Helper.ObjectHelper.Deserialize(typeof(YnBaseDal.YnPage), _ynPage);
+                        count = ynPage.GetRecordCount();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return list;
+        }
+
+        private List<AscmWipDiscreteJobs> DataBindAdvTreeSecondLevelNode(int id)
+        {
+            List<AscmWipDiscreteJobs> list = null;
+            string message = string.Empty;
+
+            AscmWebService.AscmWebService service = new AscmWebService.AscmWebService();
+            string jsonString = service.GetMonitorJobList(frmMainView.encryptTicket, id, ref message);
+            if (!string.IsNullOrEmpty(jsonString))
+            { 
+                list = (List<AscmWipDiscreteJobs>)JsonConvert.DeserializeObject(jsonString, typeof(List<AscmWipDiscreteJobs>));
+            }
+
+            return list;
+        }
+        #endregion
+
+        #region Sturcture AdvTree's Nodes
+        private void StructureAdvTreeFristLevelColumns(AdvTree advTree)
+        {
+            if (advTree.Columns.Count > 0)
+                advTree.Columns.Clear();
+
+            DevComponents.AdvTree.ColumnHeader id = new DevComponents.AdvTree.ColumnHeader();
+            id.ColumnName = "id";
+            id.DataFieldName = "id";
+            id.Name = "id";
+            id.Width.Absolute = 55;
+
+            DevComponents.AdvTree.ColumnHeader taskId = new DevComponents.AdvTree.ColumnHeader();
+            taskId.ColumnName = "taskIdCn";
+            taskId.DataFieldName = "taskIdCn";
+            taskId.Name = "taskIdCn";
+            taskId.Text = "任务号";
+            taskId.Width.Absolute = 60;
+
+            //DevComponents.AdvTree.ColumnHeader IdentificationIdCN = new DevComponents.AdvTree.ColumnHeader();
+            //IdentificationIdCN.ColumnName = "IdentificationIdCN";
+            //IdentificationIdCN.DataFieldName = "IdentificationIdCN";
+            //IdentificationIdCN.Name = "IdentificationIdCN";
+            //IdentificationIdCN.Text = "类型";
+            //IdentificationIdCN.Width.Absolute = 50;
+
+            DevComponents.AdvTree.ColumnHeader productLine = new DevComponents.AdvTree.ColumnHeader();
+            productLine.ColumnName = "productLine";
+            productLine.DataFieldName = "productLine";
+            productLine.Name = "productLine";
+            productLine.Text = "生产线";
+            productLine.Width.Absolute = 60;
+
+            DevComponents.AdvTree.ColumnHeader warehouserId = new DevComponents.AdvTree.ColumnHeader();
+            warehouserId.ColumnName = "warehouserId";
+            warehouserId.DataFieldName = "warehouserId";
+            warehouserId.Name = "warehouserId";
+            warehouserId.Text = "仓库";
+            warehouserId.Width.Absolute = 75;
+            
+            DevComponents.AdvTree.ColumnHeader categoryStatusCN = new DevComponents.AdvTree.ColumnHeader();
+            categoryStatusCN.ColumnName = "categoryStatusCN";
+            categoryStatusCN.DataFieldName = "categoryStatusCN";
+            categoryStatusCN.Name = "categoryStatusCN";
+            categoryStatusCN.Text = "类别状态";
+            categoryStatusCN.Width.Absolute = 73;
+
+            DevComponents.AdvTree.ColumnHeader materialDocNumber = new DevComponents.AdvTree.ColumnHeader();
+            materialDocNumber.ColumnName = "materialDocNumber";
+            materialDocNumber.DataFieldName = "materialDocNumber";
+            materialDocNumber.Name = "materialDocNumber";
+            materialDocNumber.Text = "物料编码";
+            materialDocNumber.Width.Absolute = 100;
+
+            DevComponents.AdvTree.ColumnHeader tipCN = new DevComponents.AdvTree.ColumnHeader();
+            tipCN.ColumnName = "tipCN";
+            tipCN.DataFieldName = "tipCN";
+            tipCN.Name = "tipCN";
+            tipCN.Text = "内容";
+            tipCN.Width.Absolute = 40;
+
+            DevComponents.AdvTree.ColumnHeader taskTime = new DevComponents.AdvTree.ColumnHeader();
+            taskTime.ColumnName = "taskTime";
+            taskTime.DataFieldName = "taskTime";
+            taskTime.Name = "taskTime";
+            taskTime.Text = "时间";
+            taskTime.Width.Absolute = 40;
+
+            DevComponents.AdvTree.ColumnHeader statusCN = new DevComponents.AdvTree.ColumnHeader();
+            statusCN.ColumnName = "statusCN";
+            statusCN.DataFieldName = "statusCN";
+            statusCN.Name = "statusCN";
+            statusCN.Text = "状态";
+            statusCN.Width.Absolute = 60;
+
+            DevComponents.AdvTree.ColumnHeader totalRequiredQuantity = new DevComponents.AdvTree.ColumnHeader();
+            totalRequiredQuantity.ColumnName = "totalRequiredQuantity";
+            totalRequiredQuantity.DataFieldName = "totalRequiredQuantity";
+            totalRequiredQuantity.Name = "totalRequiredQuantity";
+            totalRequiredQuantity.Text = "需求数";
+            totalRequiredQuantity.Width.Absolute = 70;
+
+            DevComponents.AdvTree.ColumnHeader totalWmsPreparationQuantity = new DevComponents.AdvTree.ColumnHeader();
+            totalWmsPreparationQuantity.ColumnName = "totalWmsPreparationQuantity";
+            totalWmsPreparationQuantity.DataFieldName = "totalWmsPreparationQuantity";
+            totalWmsPreparationQuantity.Name = "totalWmsPreparationQuantity";
+            totalWmsPreparationQuantity.Text = "备料数";
+            totalWmsPreparationQuantity.Width.Absolute = 70;
+
+            DevComponents.AdvTree.ColumnHeader totalGetMaterialQuantity = new DevComponents.AdvTree.ColumnHeader();
+            totalGetMaterialQuantity.ColumnName = "totalGetMaterialQuantity";
+            totalGetMaterialQuantity.DataFieldName = "totalGetMaterialQuantity";
+            totalGetMaterialQuantity.Name = "totalGetMaterialQuantity";
+            totalGetMaterialQuantity.Text = "领料数";
+            totalGetMaterialQuantity.Width.Absolute = 70;
+
+            advTree.Columns.Add(id);
+            advTree.Columns.Add(taskId);
+            //advTree.Columns.Add(IdentificationIdCN);
+            advTree.Columns.Add(productLine);
+            advTree.Columns.Add(warehouserId);
+            advTree.Columns.Add(categoryStatusCN);
+            advTree.Columns.Add(materialDocNumber);
+            advTree.Columns.Add(tipCN);
+            advTree.Columns.Add(taskTime);
+            advTree.Columns.Add(statusCN);
+            advTree.Columns.Add(totalRequiredQuantity);
+            advTree.Columns.Add(totalWmsPreparationQuantity);
+            advTree.Columns.Add(totalGetMaterialQuantity);
+        }
+        
+        private void StructureAdvTreeFristLevelNode(List<AscmGetMaterialTask> list, AdvTree advTree)
+        {
+            advTree.Nodes.Clear();
+
+            if (list != null && list.Count > 0)
+            {
+                foreach (AscmGetMaterialTask ascmGetMaterialTask in list)
+                {
+                    Node fristNode = new Node();
+                    fristNode.Tag = ascmGetMaterialTask;
+                    fristNode.Text = ascmGetMaterialTask.id.ToString();
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.taskIdCn))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.taskId));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.productLine))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.productLine));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.warehouserId))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.warehouserId));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.categoryStatusCN))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.categoryStatusCN));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.materialDocNumber))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.materialDocNumber));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.tipCN))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.tipCN));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.taskTime))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.taskTime));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.statusCN))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.statusCN));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.totalRequiredQuantity.ToString()))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.totalRequiredQuantity.ToString()));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.totalWmsPreparationQuantity.ToString()))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.totalWmsPreparationQuantity.ToString()));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.totalGetMaterialQuantity.ToString()))
+                        fristNode.Cells.Add(new Cell(ascmGetMaterialTask.totalGetMaterialQuantity.ToString()));
+                    else
+                        fristNode.Cells.Add(new Cell(" "));
+
+
+                    if (!string.IsNullOrEmpty(ascmGetMaterialTask.relatedMark))
+                        fristNode.Image = global::MideaAscm.Pad.Properties.Resources.flag_blue;
+                    else
+                        fristNode.Image = global::MideaAscm.Pad.Properties.Resources.flag_white;
+
+                    if (ascmGetMaterialTask.status == "FINISH")
+                        fristNode.Style = fontColor_Gray;
+                    else if (ascmGetMaterialTask.status == "EXECUTE")
+                        fristNode.Style = fontColor_Blue;
+
+                    fristNode.CheckBoxVisible = true;
+                    fristNode.Expanded = false;
+
+                    Node node = new Node();
+                    node.Text = "";
+                    fristNode.Nodes.Add(node);
+
+                    advTree.Nodes.Add(fristNode);
+                }
+            }
+        }
+
+        private void StructureAdvTreeSecondLevelColumns(Node groupNode)
+        {
+            if (groupNode.NodesColumns.Count > 0)
+                groupNode.NodesColumns.Clear();
+            
+            DevComponents.AdvTree.ColumnHeader ascmWipEntities_Name = new DevComponents.AdvTree.ColumnHeader();
+            ascmWipEntities_Name.Name = "ascmWipEntities_Name";
+            ascmWipEntities_Name.Text = "作业号";
+            ascmWipEntities_Name.Width.Absolute = 165;
+
+            DevComponents.AdvTree.ColumnHeader scheduledStartDateSimple = new DevComponents.AdvTree.ColumnHeader();
+            scheduledStartDateSimple.Name = "scheduledStartDateSimple";
+            scheduledStartDateSimple.Text = "作业日期";
+            scheduledStartDateSimple.Width.Absolute = 85;
+
+            DevComponents.AdvTree.ColumnHeader ascmDiscreteJobs_line = new DevComponents.AdvTree.ColumnHeader();
+            ascmDiscreteJobs_line.Name = "ascmDiscreteJobs_line";
+            ascmDiscreteJobs_line.Text = "生产线";
+            ascmDiscreteJobs_line.Width.Absolute = 68;
+            
+            DevComponents.AdvTree.ColumnHeader ascmMaterialItem_DocNumber = new DevComponents.AdvTree.ColumnHeader();
+            ascmMaterialItem_DocNumber.Name = "ascmMaterialItem_DocNumber";
+            ascmMaterialItem_DocNumber.Text = "装配件";
+            ascmMaterialItem_DocNumber.Width.Absolute = 105;
+            
+            DevComponents.AdvTree.ColumnHeader ascmMaterialItem_Description = new DevComponents.AdvTree.ColumnHeader();
+            ascmMaterialItem_Description.Name = "ascmMaterialItem_Description";
+            ascmMaterialItem_Description.Text = "装配件描述";
+            ascmMaterialItem_Description.Width.Absolute = 140;
+            
+            DevComponents.AdvTree.ColumnHeader netQuantity = new DevComponents.AdvTree.ColumnHeader();
+            netQuantity.Name = "netQuantity";
+            netQuantity.Text = "计划数";
+            netQuantity.Width.Absolute = 65;
+            
+            DevComponents.AdvTree.ColumnHeader totalRequiredQuantity = new DevComponents.AdvTree.ColumnHeader();
+            totalRequiredQuantity.Name = "totalRequiredQuantity";
+            totalRequiredQuantity.Text = "总数量";
+            totalRequiredQuantity.Width.Absolute = 65;
+            
+            DevComponents.AdvTree.ColumnHeader totalPreparationQuantity = new DevComponents.AdvTree.ColumnHeader();
+            totalPreparationQuantity.Name = "totalPreparationQuantity";
+            totalPreparationQuantity.Text = "备料数";
+            totalPreparationQuantity.Width.Absolute = 65;
+            
+
+            DevComponents.AdvTree.ColumnHeader totalGetMaterialQuantity = new DevComponents.AdvTree.ColumnHeader();
+            totalGetMaterialQuantity.Name = "totalGetMaterialQuantity";
+            totalGetMaterialQuantity.Text = "领料数";
+            totalGetMaterialQuantity.Width.Absolute = 65;
+
+            groupNode.NodesColumns.Add(ascmWipEntities_Name);
+            groupNode.NodesColumns.Add(scheduledStartDateSimple);
+            groupNode.NodesColumns.Add(ascmDiscreteJobs_line);
+            groupNode.NodesColumns.Add(ascmMaterialItem_DocNumber);
+            groupNode.NodesColumns.Add(ascmMaterialItem_Description);
+            groupNode.NodesColumns.Add(netQuantity);
+            groupNode.NodesColumns.Add(totalRequiredQuantity);
+            groupNode.NodesColumns.Add(totalPreparationQuantity);
+            groupNode.NodesColumns.Add(totalGetMaterialQuantity);
+
+            groupNode.NodesColumnsHeaderVisible = true;
+        }
+
+        private void StrucureAdvTreeSecondLevelNode(List<AscmWipDiscreteJobs> list, Node groupNode)
+        {
+            //DotNetBar <a href="textmarkup">text-markup</a> is fully supported
+            foreach (AscmWipDiscreteJobs ascmWipDiscreteJobs in list)
+            {
+                Node subNode = new Node();
+                subNode.Tag = ascmWipDiscreteJobs;
+                if (!string.IsNullOrEmpty(ascmWipDiscreteJobs.ascmWipEntities_Name))
+                    subNode.Text = ascmWipDiscreteJobs.ascmWipEntities_Name;
+                else
+                    subNode.Text = " ";
+
+                if (!string.IsNullOrEmpty(ascmWipDiscreteJobs.scheduledStartDateSimple))
+                    subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.scheduledStartDateSimple));
+                else
+                    subNode.Cells.Add(new Cell(" "));
+
+                if (!string.IsNullOrEmpty(ascmWipDiscreteJobs.ascmDiscreteJobs_line))
+                    subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.ascmDiscreteJobs_line));
+                else
+                    subNode.Cells.Add(new Cell(" "));
+
+                if (!string.IsNullOrEmpty(ascmWipDiscreteJobs.ascmMaterialItem_DocNumber))
+                    subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.ascmMaterialItem_DocNumber));
+                else
+                    subNode.Cells.Add(new Cell(" "));
+
+                if (!string.IsNullOrEmpty(ascmWipDiscreteJobs.ascmMaterialItem_Description))
+                    subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.ascmMaterialItem_Description));
+                else
+                    subNode.Cells.Add(new Cell(" "));
+
+                subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.netQuantity.ToString()));
+                subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.totalRequiredQuantity.ToString()));
+                subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.totalPreparationQuantity.ToString()));
+                subNode.Cells.Add(new Cell(ascmWipDiscreteJobs.totalGetMaterialQuantity.ToString()));
+                if (ascmWipDiscreteJobs.ascmMarkTaskLog != null)
+                    subNode.Image = global::MideaAscm.Pad.Properties.Resources.flag_blue;
+                else
+                    subNode.Image = global::MideaAscm.Pad.Properties.Resources.flag_white;
+
+                if (ascmWipDiscreteJobs.totalRequiredQuantity - ascmWipDiscreteJobs.totalSumQuantity > 0 && ascmWipDiscreteJobs.totalRequiredQuantity - ascmWipDiscreteJobs.totalGetMaterialQuantity > 0) 
+                {
+                    subNode.Style = fontColor_Red;
+                }
+                else if (ascmWipDiscreteJobs.totalRequiredQuantity - ascmWipDiscreteJobs.totalSumQuantity == 0 && ascmWipDiscreteJobs.totalRequiredQuantity - ascmWipDiscreteJobs.totalGetMaterialQuantity > 0) 
+                {
+                    subNode.Style = fontColor_Black;
+                }
+                else if (ascmWipDiscreteJobs.totalRequiredQuantity - ascmWipDiscreteJobs.totalSumQuantity == 0 && ascmWipDiscreteJobs.totalRequiredQuantity - ascmWipDiscreteJobs.totalGetMaterialQuantity == 0) 
+                {
+                    subNode.Style = fontColor_Gray;
+                }
+
+                subNode.CheckBoxVisible = true;
+
+                groupNode.Nodes.Add(subNode);
+            }
+        }
+        #endregion
+
+        #region Custom AdvTree's Nodes Style
+        private void CustomAdvTreeNodesStyleInit(AdvTree advTree)
+        {
+            fontColor_Gray = new ElementStyle();
+            fontColor_Gray.TextColor = Color.DarkGray;
+            advTree.Styles.Add(fontColor_Gray);
+
+            fontColor_Blue = new ElementStyle();
+            fontColor_Blue.TextColor = Color.Blue;
+            advTree.Styles.Add(fontColor_Blue);
+
+            fontColor_Black = new ElementStyle();
+            fontColor_Black.TextColor = Color.Black;
+            advTree.Styles.Add(fontColor_Black);
+
+            fontColor_Red = new ElementStyle();
+            fontColor_Red.TextColor = Color.Red;
+            advTree.Styles.Add(fontColor_Red);
+        }
+        #endregion
+
+        private int pageControlTask_EventPaging(CustomControl.EventPagingArg e)
+        {
+            int count = 0;
+            List<AscmGetMaterialTask> list = DataBindAdvTreeFristLevelNode(ref count, "");
+            if (list != null && list.Count > 0)
+            {
+                advTreeGroup.BeginInit();
+                StructureAdvTreeFristLevelNode(list, advTreeGroup);
+                advTreeGroup.EndInit();
+            }
+            else
+            {
+                this.advTreeGroup.Nodes.Clear();
+            }
+            pageControlTask.DataBind(list);
+
+            return count;
+        }
+
+        private void btnItemSearch_Click(object sender, EventArgs e)
+        {
+            pageControlTask.Bind();
+        }
+
+        private void advTreeGroup_BeforeExpand(object sender, AdvTreeNodeCancelEventArgs e)
+        {
+            Node nodeParent = e.Node;
+            nodeParent.Nodes.Clear();
+
+            AscmGetMaterialTask ascmGetMaterialTask = nodeParent.Tag as AscmGetMaterialTask;
+            if (ascmGetMaterialTask != null)
+            {
+                //Structure nodes columns
+                StructureAdvTreeSecondLevelColumns(nodeParent);
+                //Get discretejobs list
+                List<AscmWipDiscreteJobs> list = DataBindAdvTreeSecondLevelNode(ascmGetMaterialTask.id);
+                if (list != null && list.Count > 0)
+                {
+                    advTreeGroup.BeginInit();
+                    StrucureAdvTreeSecondLevelNode(list, nodeParent);
+                    advTreeGroup.EndInit();
+                }
+            }
+        }
+
+        private void advTreeGroup_NodeDoubleClick(object sender, TreeNodeMouseEventArgs e)
+        {
+            if (e.Node.Parent != null)
+            {
+                //Double click discretejob, pop-up dialog
+                frmMaterialListDialog frmMaterialListDialog = new frmMaterialListDialog();
+
+                if (e.Node.Parent.Tag as AscmGetMaterialTask != null)
+                    frmMaterialListDialog.taskId = ((AscmGetMaterialTask)e.Node.Parent.Tag).id;
+                else
+                    frmMaterialListDialog.taskId = 0;
+
+                if (e.Node.Tag as AscmWipDiscreteJobs != null)
+                    frmMaterialListDialog.jobId = ((AscmWipDiscreteJobs)e.Node.Tag).wipEntityId;
+                else
+                    frmMaterialListDialog.jobId = 0;
+
+                frmMaterialListDialog.ShowDialog();
+            }
+        }
+
+        private void advTreeGroup_NodeClick(object sender, TreeNodeMouseEventArgs e)
+        {
+            e.Node.Checked = !e.Node.Checked;
+
+            if (!string.IsNullOrEmpty(releaseHeaderIds))
+                releaseHeaderIds += ",";
+
+            if (e.Node.Parent != null)
+            {
+                //Select discretejob to get data, and then excuted mark operation
+                if (e.Node.Parent.Tag as AscmGetMaterialTask != null)
+                    this.taskId = ((AscmGetMaterialTask)e.Node.Parent.Tag).id.ToString();
+
+                if (e.Node.Tag as AscmWipDiscreteJobs != null)
+                    this.jobId = ((AscmWipDiscreteJobs)e.Node.Tag).wipEntityId.ToString();
+
+                //Confirmed tasks Id or discrete jobs Id
+                string getMaterialId = this.taskId + "[" + this.jobId + "]";
+                if (e.Node.Checked)
+                {
+                    releaseHeaderIds += getMaterialId;
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(releaseHeaderIds))
+                        releaseHeaderIds = releaseHeaderIds.Replace(getMaterialId, "");
+                }
+            }
+            else
+            {
+                //Select task's details
+                if (e.Node.Tag as AscmGetMaterialTask != null)
+                    this.taskDetails = (AscmGetMaterialTask)e.Node.Tag;
+
+                //Select the job associated with the selected task
+                if (e.Node.Expanded)
+                {
+                    foreach (Node node in e.Node.Nodes)
+                    {
+                        node.Checked = e.Node.Checked;
+                    }
+                }
+                    
+                //Confirmed tasks Id or discrete jobs Id
+                string getMaterialId = this.taskDetails.id.ToString();
+                if (e.Node.Checked)
+                {
+                    releaseHeaderIds += getMaterialId;
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(releaseHeaderIds))
+                        releaseHeaderIds = releaseHeaderIds.Replace(getMaterialId, "");
+                }
+            }
+        }
+
+        private void btnItemRun_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                string message = string.Empty;
+                string[] myArray = releaseHeaderIds.Split(',');
+                string newReleaseHeaderIds = string.Empty;
+                foreach (string item in myArray)
+                {
+                    if (!string.IsNullOrEmpty(newReleaseHeaderIds) && !string.IsNullOrEmpty(item))
+                        newReleaseHeaderIds += ",";
+                    if (!string.IsNullOrEmpty(item))
+                        newReleaseHeaderIds += item;
+                }
+                releaseHeaderIds = newReleaseHeaderIds;
+                if (string.IsNullOrEmpty(releaseHeaderIds))
+                {
+                    MessageBox.Show("请选择任务！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    AscmWebService.AscmWebService Service = new AscmWebService.AscmWebService();
+                    if (Service.StartExcuteTask(frmMainView.encryptTicket, frmMainView.userName, releaseHeaderIds, ref message))
+                    {
+                        MessageBoxEx.Show("任务开始执行!", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pageControlTask.Bind();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                releaseHeaderIds = "";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnItemSure_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = "";
+                AscmWebService.AscmWebService Service = new AscmWebService.AscmWebService();
+                if (Service.ConfrimedBatchGetmaterials(frmMainView.encryptTicket, frmMainView.userName, releaseHeaderIds, ref message))
+                {
+                    MessageBoxEx.Show("领料成功!", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pageControlTask.Bind();
+                }
+                else
+                {
+                    MessageBox.Show(message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                releaseHeaderIds = "";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnItemStop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = string.Empty;
+                if (string.IsNullOrEmpty(releaseHeaderIds))
+                {
+                    MessageBox.Show("请选择任务！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    string[] myArray = releaseHeaderIds.Split(',');
+                    string newReleaseHeaderIds = string.Empty;
+                    foreach (string item in myArray)
+                    {
+                        if (!string.IsNullOrEmpty(newReleaseHeaderIds) && !string.IsNullOrEmpty(item))
+                            newReleaseHeaderIds += ",";
+                        if (!string.IsNullOrEmpty(item))
+                            newReleaseHeaderIds += item;
+                    }
+                    releaseHeaderIds = newReleaseHeaderIds;
+                    AscmWebService.AscmWebService Service = new AscmWebService.AscmWebService();
+                    if (Service.EndExcuteTask(frmMainView.encryptTicket, frmMainView.userName, releaseHeaderIds, ref message))
+                    {
+                        MessageBoxEx.Show("任务已结束!", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pageControlTask.Bind();
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                releaseHeaderIds = "";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnItemMark_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = string.Empty;
+                AscmWebService.AscmWebService Service = new AscmWebService.AscmWebService();
+                if (Service.MarkTask(frmMainView.encryptTicket, frmMainView.userName, this.taskId, this.jobId, ref message))
+                    pageControlTask.Bind();
+                else
+                    MessageBox.Show(message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnItemUnMark_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = string.Empty;
+                AscmWebService.AscmWebService Service = new AscmWebService.AscmWebService();
+                if (Service.UnMarkTask(frmMainView.encryptTicket, frmMainView.userName, this.taskId, this.jobId, ref message))
+                    pageControlTask.Bind();
+                else
+                    MessageBox.Show(message, "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnItemTotal_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "frmSumMaterialListView")
+                {
+                    form.Focus();
+                    return;
+                }
+            }
+            frmSumMaterialListView frmSumMaterialListView = new frmSumMaterialListView();
+            frmSumMaterialListView.MdiParent = this.ParentForm;
+            frmSumMaterialListView.BringToFront();
+            frmSumMaterialListView.Show();
+        }
+
+        private void btnItemTaskDetail_Click(object sender, EventArgs e)
+        {
+            if (this.advTreeGroup.Nodes.Count > 0 && taskDetails != null)
+            {
+                frmViewTaskDetailsDialog frmViewTaskDetailsDialog = new frmViewTaskDetailsDialog();
+                frmViewTaskDetailsDialog.taskDetails = this.taskDetails;
+                frmViewTaskDetailsDialog.ShowDialog();
+            }
+            else
+            {
+                taskDetails = null;
+                MessageBoxEx.Show("未选中任务！","错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnItemRefresh_Click(object sender, EventArgs e)
+        {
+            //pageControlTask.Bind();
+
+            taskbarNotifier1 = new TaskbarNotifier();
+            taskbarNotifier1.SetBackgroundBitmap(new Bitmap(GetType(), "bg_message1.gif"), Color.FromArgb(255, 0, 255));
+            taskbarNotifier1.SetCloseBitmap(new Bitmap(GetType(), "close.bmp"), Color.FromArgb(255, 0, 255), new Point(263, 8));
+            taskbarNotifier1.TitleRectangle = new Rectangle(195, 100, 70, 25);
+            taskbarNotifier1.ContentRectangle = new Rectangle(30, 30, 190, 68);
+            taskbarNotifier1.TitleClick += new EventHandler(TitleClick);
+            taskbarNotifier1.ContentClick += new EventHandler(ContentClick);
+            taskbarNotifier1.CloseClick += new EventHandler(CloseClick);
+
+            taskbarNotifier1.CloseClickable = true;
+            taskbarNotifier1.TitleClickable = true;
+            taskbarNotifier1.ContentClickable = true;
+            taskbarNotifier1.EnableSelectionRectangle = false;
+            taskbarNotifier1.KeepVisibleOnMousOver = true;	// Added Rev 002
+            taskbarNotifier1.ReShowOnMouseOver = false;		// Added Rev 002
+
+            string taskString = GetTaskBarNotifierData();
+
+            if (!string.IsNullOrEmpty(taskString))
+            {
+                taskbarNotifier1.Show("查看", taskString, 500, 3000, 500);
+            }
+        }
+    }
+}
